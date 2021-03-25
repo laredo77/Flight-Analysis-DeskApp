@@ -23,6 +23,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string xmlPath;
+        public string csvPath;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,9 +36,8 @@ namespace WpfApp1
         // browse XML file
         private void openXMLButton_Click(object sender, RoutedEventArgs e)
         {
-
+            xmlPath = XMLPathTextBox.Text; 
         }
-
 
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
@@ -103,7 +104,7 @@ namespace WpfApp1
         // browse CSV file button
         private void openCSVButton_Click(object sender, RoutedEventArgs e)
         {
-
+            csvPath = CSVPathTextBox.Text;
         }
     }
 }
