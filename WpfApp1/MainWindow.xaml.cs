@@ -61,7 +61,7 @@ namespace WpfApp1
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //dd
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
