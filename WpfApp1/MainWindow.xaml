@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="37,363,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
+        <Button x:Name="stopButton" Content="Button" HorizontalAlignment="Left" Margin="395,323,0,0" VerticalAlignment="Top" Width="45" Height="32" Click="stopButton_Click"/>
+        <Button x:Name="pauseButton" Content="Button" HorizontalAlignment="Left" Margin="332,321,0,0" VerticalAlignment="Top" Width="39" Height="34" Click="pauseButton_Click"/>
+        <Button x:Name="nextButton" Content="Button" HorizontalAlignment="Left" Margin="456,322,0,0" VerticalAlignment="Top" Width="44" Height="33" Click="nextButton_Click"/>
+        <Button x:Name="doubleNextButton" Content="Button" HorizontalAlignment="Left" Margin="521,322,0,0" VerticalAlignment="Top" Width="44" Height="32" RenderTransformOrigin="2.227,0.436" Click="doubleNextButton_Click"/>
+        <Button x:Name="playButton" Content="Button" HorizontalAlignment="Left" Margin="273,317,0,0" VerticalAlignment="Top" Width="40" Height="38" Click="playButton_Click"/>
+        <Button x:Name="previousButton" Content="Button" HorizontalAlignment="Left" Margin="207,318,0,0" VerticalAlignment="Top" Width="42" Height="36" Click="previousButton_Click"/>
+        <Button x:Name="doublePreviousButton" Content="Button" HorizontalAlignment="Left" Margin="140,316,0,0" VerticalAlignment="Top" Width="49" Height="42" Click="doublePreviousButton_Click"/>
+        <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="581,323,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="playSpeedTextBox" HorizontalAlignment="Left" Height="44" Margin="654,314,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="timeLabel" Content="Label" HorizontalAlignment="Left" Margin="732,327,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106"/>
+        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="12,8,0,0" VerticalAlignment="Top" Width="99" Height="43" Click="openFlightGear_Click"/>
+        <Slider HorizontalAlignment="Left" Margin="594,164,0,0" VerticalAlignment="Top" Height="67" Width="162" ValueChanged="Slider_ValueChanged"/>
+        <Slider HorizontalAlignment="Left" Margin="502,75,0,0" VerticalAlignment="Top" Height="26" Width="155" RenderTransformOrigin="0.5,0.5">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.922"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Button x:Name="openXMLButton" Content="Open XML" HorizontalAlignment="Left" Margin="28,264,0,0" VerticalAlignment="Top" Width="94" Height="45" Click="openXMLButton_Click"/>
+        <Ellipse Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="118" Margin="619,28,0,0" Stroke="Black" VerticalAlignment="Top" Width="121"/>
+        <Ellipse Fill="#FF111112" HorizontalAlignment="Left" Height="78" Margin="638,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="82"/>
+        <Button x:Name="openCSVButton" Content="Button" HorizontalAlignment="Left" Margin="32,319,0,0" VerticalAlignment="Top" Width="92" Height="38" Click="openCSVButton_Click"/>
+
+    </Grid>
+</Window>
