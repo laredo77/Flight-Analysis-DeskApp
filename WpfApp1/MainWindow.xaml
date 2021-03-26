@@ -76,8 +76,8 @@
         <TextBox x:Name="flightGearPathTextBox" HorizontalAlignment="Left" Height="23" Margin="220,471,0,0" TextWrapping="Wrap" Text="FlightGear path" VerticalAlignment="Top" Width="100"/>
         <TextBox x:Name="XMLPathTextBox" HorizontalAlignment="Left" Height="23" Margin="340,471,0,0" TextWrapping="Wrap" Text="XML path" VerticalAlignment="Top" Width="100"/>
         <TextBox x:Name="CSVPathTextBox" HorizontalAlignment="Left" Height="23" Margin="460,471,0,0" TextWrapping="Wrap" Text="CSV path" VerticalAlignment="Top" Width="100"/>
-        
-        <Slider HorizontalAlignment="Left" Margin="594,164,0,0" VerticalAlignment="Top" Height="67" Width="162" ValueChanged="Slider_ValueChanged"/>
+
+        <Slider HorizontalAlignment="Left" Margin="592,167,0,0" VerticalAlignment="Top" Height="67" Width="162" ValueChanged="Slider_ValueChanged"/>
         <Slider HorizontalAlignment="Left" Margin="502,75,0,0" VerticalAlignment="Top" Height="26" Width="155" RenderTransformOrigin="0.5,0.5">
             <Slider.RenderTransform>
                 <TransformGroup>
@@ -89,6 +89,26 @@
             </Slider.RenderTransform>
         </Slider>
         <Image Source="/Pictures/pic1.jpg" HorizontalAlignment="Left" Height="113" Margin="617,28,0,0" VerticalAlignment="Top" Width="117"/>
+        <Slider x:Name="altimeterSlider" HorizontalAlignment="Left" Margin="613,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="26" Width="81">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.569"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider x:Name="airspeedSlider" HorizontalAlignment="Left" Margin="658,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="26" Width="81">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-89.569"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
 
     </Grid>
 </Window>
