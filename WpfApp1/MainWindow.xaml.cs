@@ -65,16 +65,16 @@ namespace WpfApp1
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            client.start(csvPath, 100);
+            client.start(csvPath);
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            client.start(csvPath, 150);
+            client.setSleepAmount(200);
         }
         private void doublePreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            client.start(csvPath, 200);
+            client.setSleepAmount(400);
         }
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -88,12 +88,12 @@ namespace WpfApp1
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            client.start(csvPath, 70);
+            client.setSleepAmount(50);
         }
 
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
         {
-            client.start(csvPath, 50);
+            client.setSleepAmount(10);
         }
     }
 }

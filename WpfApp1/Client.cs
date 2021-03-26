@@ -9,23 +9,31 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    public class Client
+    public class Client 
     {
         private int currentLineNumber;
-
+        private int sleepAmount;
         public Client()
         {
             currentLineNumber = 0;
+            sleepAmount = 100;
         }
-
-        public void start(string csvFilePath, int sleepAmount)
+        public int getSleepAmount()
+        {
+            return this.sleepAmount;
+        }
+        public void setSleepAmount(int sleepAmount)
+        {
+            this.sleepAmount = sleepAmount;
+        }
+        public void start(string csvFilePath)
         {
             int counter = 0;
             TcpClient client = new TcpClient("127.0.0.1", 5400);
             // Get a client stream for reading and writing.
             NetworkStream stream = client.GetStream();
             stream.Flush();
-            IEnumerable<string> lines = File.ReadLines(csvFilePath);
+            var lines = File.ReadLines(csvFilePath);
 
             foreach (string line in lines)
             {
@@ -39,7 +47,7 @@ namespace WpfApp1
                     // Send the message to the connected TcpServer.
                     stream.Write(data, 0, data.Length);
                     stream.Flush();
-                    Thread.Sleep(sleepAmount);
+                    Thread.Sleep(this.sleepAmount);
                     currentLineNumber++;
                 }
                 counter++;
