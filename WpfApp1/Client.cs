@@ -12,9 +12,11 @@ namespace WpfApp1
     public class Client 
     {
         private int currentLineNumber;
-        public Client()
+        private string flightGearPath;
+        public Client(string flightGearPath)
         {
             currentLineNumber = 0;
+            this.flightGearPath = flightGearPath;
         }
         public void start(string csvFilePath, int sleepAmount)
         {

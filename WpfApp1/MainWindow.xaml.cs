@@ -8,7 +8,7 @@ namespace WpfApp1
     {
         public string xmlPath;
         public string csvPath;
-        Client client = new Client();
+        Client client;
         public MainWindow()
         {
             InitializeComponent();
@@ -20,13 +20,47 @@ namespace WpfApp1
         // browse XML file
         private void openXMLButton_Click(object sender, RoutedEventArgs e)
         {
-            xmlPath = XMLPathTextBox.Text; 
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = "c:\\";
+            dialog.Filter = "XML Files|*.xml";
+            dialog.FilterIndex = 2;
+            dialog.RestoreDirectory = true;
+            if (dialog.ShowDialog() == true)
+            {
+                xmlPath = dialog.FileName;
+            } 
         }
-
+        // browse CSV file button
+        private void openCSVButton_Click(object sender, RoutedEventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = "c:\\";
+            dialog.Filter = "CSV Files(*.csv)| *.csv";
+            dialog.FilterIndex = 2;
+            dialog.RestoreDirectory = true;
+            if (dialog.ShowDialog() == true)
+            {
+                csvPath = dialog.FileName;
+            }
+        }
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
         {
-            
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = "c:\\";
+            dialog.Filter = "INK Files(*.ink)| *.ink";
+            dialog.FilterIndex = 2;
+            dialog.RestoreDirectory = true;
+            if (dialog.ShowDialog() == true)
+            {
+                client = new Client(dialog.FileName);
+            }
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
@@ -60,11 +94,6 @@ namespace WpfApp1
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
         {
             client.start(csvPath, 50);
-        }
-        // browse CSV file button
-        private void openCSVButton_Click(object sender, RoutedEventArgs e)
-        {
-            csvPath = CSVPathTextBox.Text;
         }
     }
 }

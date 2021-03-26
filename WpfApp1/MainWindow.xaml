@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid Background="#FFB4B4B4">
 
         <Slider x:Name="slider" HorizontalAlignment="Left" Margin="94,378,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
@@ -73,9 +73,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBox x:Name="flightGearPathTextBox" HorizontalAlignment="Left" Height="23" Margin="220,471,0,0" TextWrapping="Wrap" Text="FlightGear path" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="XMLPathTextBox" HorizontalAlignment="Left" Height="23" Margin="340,471,0,0" TextWrapping="Wrap" Text="XML path" VerticalAlignment="Top" Width="100"/>
-        <TextBox x:Name="CSVPathTextBox" HorizontalAlignment="Left" Height="23" Margin="460,471,0,0" TextWrapping="Wrap" Text="CSV path" VerticalAlignment="Top" Width="100"/>
 
         <Slider HorizontalAlignment="Left" Margin="592,167,0,0" VerticalAlignment="Top" Height="67" Width="162" ValueChanged="Slider_ValueChanged"/>
         <Slider HorizontalAlignment="Left" Margin="502,75,0,0" VerticalAlignment="Top" Height="26" Width="155" RenderTransformOrigin="0.5,0.5">
