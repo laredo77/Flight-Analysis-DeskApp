@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    public class Client 
+    public class Client
     {
         private int currentLineNumber;
-        private string flightGearPath;
-        public Client(string flightGearPath)
+
+        public Client()
         {
             currentLineNumber = 0;
-            this.flightGearPath = flightGearPath;
         }
+
         public void start(string csvFilePath, int sleepAmount)
         {
             int counter = 0;

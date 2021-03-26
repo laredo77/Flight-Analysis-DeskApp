@@ -8,7 +8,7 @@ namespace WpfApp1
     {
         public string xmlPath;
         public string csvPath;
-        Client client;
+        Client client = new Client();
         public MainWindow()
         {
             InitializeComponent();
@@ -54,12 +54,12 @@ namespace WpfApp1
             var filePath = string.Empty;
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.InitialDirectory = "c:\\";
-            dialog.Filter = "INK Files(*.ink)| *.ink";
+            dialog.Filter = "EXE Files(*.exe)| *.exe";
             dialog.FilterIndex = 2;
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
-                client = new Client(dialog.FileName);
+                System.Diagnostics.Process.Start(dialog.FileName);
             }
         }
 
