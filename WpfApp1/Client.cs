@@ -25,7 +25,7 @@ namespace WpfApp1
             // Get a client stream for reading and writing.
             NetworkStream stream = client.GetStream();
             stream.Flush();
-            var lines = File.ReadLines(csvFilePath);
+            IEnumerable<string> lines = File.ReadLines(csvFilePath);
 
             foreach (string line in lines)
             {

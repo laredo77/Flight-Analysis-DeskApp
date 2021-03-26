@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid Background="#FFB4B4B4">
-
         <Slider x:Name="slider" HorizontalAlignment="Left" Margin="94,378,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
-
         <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="140,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\doublePrevious.jpg"/>
@@ -86,22 +84,22 @@
             </Slider.RenderTransform>
         </Slider>
         <Image Source="/Pictures/pic1.jpg" HorizontalAlignment="Left" Height="113" Margin="617,28,0,0" VerticalAlignment="Top" Width="117"/>
-        <Slider x:Name="altimeterSlider" HorizontalAlignment="Left" Margin="613,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="26" Width="81">
+        <Slider x:Name="altimeterSlider" Value="0" TickPlacement="BottomRight" TickFrequency="50" HorizontalAlignment="Left" Margin="607,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="25" Width="92" Minimum="-700" Maximum="700">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-89.569"/>
+                    <RotateTransform Angle="-90"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Slider x:Name="airspeedSlider" HorizontalAlignment="Left" Margin="658,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="26" Width="81">
+        <Slider x:Name="airspeedSlider" Value="0" TickPlacement="BottomRight" TickFrequency="10" HorizontalAlignment="Left" Margin="667,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="25" Width="92" Minimum="0" Maximum="200">
             <Slider.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
                     <SkewTransform/>
-                    <RotateTransform Angle="-89.569"/>
+                    <RotateTransform Angle="-90"/>
                     <TranslateTransform/>
                 </TransformGroup>
             </Slider.RenderTransform>
