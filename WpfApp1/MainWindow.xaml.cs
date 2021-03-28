@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Threading;
 namespace WpfApp1
 {
     /// <summary>
@@ -12,6 +13,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -30,7 +32,7 @@ namespace WpfApp1
             if (dialog.ShowDialog() == true)
             {
                 xmlPath = dialog.FileName;
-            } 
+            }
         }
         // browse CSV file button
         private void openCSVButton_Click(object sender, RoutedEventArgs e)
@@ -83,7 +85,7 @@ namespace WpfApp1
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
-            //dd
+            client.stop();
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
