@@ -108,6 +108,7 @@
     <Resource Include="Pictures\stop.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="controls\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
