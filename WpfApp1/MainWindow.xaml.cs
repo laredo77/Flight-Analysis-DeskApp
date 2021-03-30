@@ -1,5 +1,8 @@
 ﻿using System.Windows;
 using System.Threading;
+using System;
+using System.Collections.Generic;
+
 namespace WpfApp1
 {
     /// <summary>
@@ -10,10 +13,12 @@ namespace WpfApp1
         public string xmlPath;
         public string csvPath;
         Client client = new Client();
+        FlightGearViewModel vm;
         public MainWindow()
         {
             InitializeComponent();
-            
+            vm = new FlightGearViewModel(new FlightGearModel(new TelnetClient()));
+            DataContext = vm;
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -34,7 +39,7 @@ namespace WpfApp1
                 xmlPath = dialog.FileName;
             }
         }
-        // browse CSV file button
+
         private void openCSVButton_Click(object sender, RoutedEventArgs e)
         {
             var fileContent = string.Empty;
@@ -95,7 +100,11 @@ namespace WpfApp1
 
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
         {
-            client.setSleepAmount(10);
+            //client.setSleepAmount(10);
+        }
+
+        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
         }
     }
 }

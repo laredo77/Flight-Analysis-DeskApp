@@ -94,16 +94,6 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <Slider x:Name="speedClock" Value = "{Binding }" TickPlacement="BottomRight" TickFrequency="10" HorizontalAlignment="Left" Margin="667,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="25" Width="92" Minimum="0" Maximum="200">
-            <Slider.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Slider.RenderTransform>
-        </Slider>
-
+        <ProgressBar Value ="{Binding VM_Speedometer}" HorizontalAlignment="Left" Margin="200,250,0,0" Height="30" VerticalAlignment="Top" Width="300"/>
     </Grid>
 </Window>
