@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SpeedClockM.cs" />
+    <Compile Include="SpeedClockV.cs" />
+    <Compile Include="SpeedClockVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,11 +110,6 @@
     <Resource Include="Pictures\previous.jpg" />
     <Resource Include="Pictures\stop.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controls\" />
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
