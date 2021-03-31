@@ -3,6 +3,11 @@ using System.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net.Sockets;
+using System.Text;
+using System.Threading.Tasks;
 
 
 namespace WpfApp1
@@ -14,6 +19,7 @@ namespace WpfApp1
     {
         public string xmlPath;
         public string csvPath;
+        private Thread t = null;
         ITelnetClient telnetClient;
         FlightGearViewModel vm;
         public MainWindow()
@@ -73,8 +79,7 @@ namespace WpfApp1
 
                 ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
                 startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.Arguments = "--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
-                                        
+                startInfo.Arguments = $"--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
                 Process.Start(startInfo);
                 //System.Diagnostics.Process.Start(dialog.FileName);
                 //telnetClient.connect("127.0.0.1", 5400);
@@ -91,7 +96,25 @@ namespace WpfApp1
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            t = new Thread( delegate() {
+                TcpClient client = new TcpClient("127.0.0.1", 5400);
+                // Get a client stream for reading and writing.
+                NetworkStream stream = client.GetStream();
+                stream.Flush();
+                var lines = File.ReadLines(@csvPath);
+                foreach (string line in lines)
+                {
+                string abc = line + "\r\n";
+                // Translate the passed message into ASCII and store it as a Byte array.
+                Byte[] data = ASCIIEncoding.ASCII.GetBytes(abc);
+                stream.Write(data, 0, data.Length);
+                stream.Flush();
+                Thread.Sleep(250);
+                }
+                stream.Close();
+                client.Close();
+            });
+            t.Start();
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
@@ -100,7 +123,6 @@ namespace WpfApp1
         }
         private void doublePreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            
         }
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {

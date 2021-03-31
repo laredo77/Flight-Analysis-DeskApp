@@ -92,9 +92,10 @@ namespace WpfApp1
             {
                 while (!stop)
                 {
-                    //var lines = File.ReadAllLines(@csvPath);
+
+                    //var lines = File.ReadAllLines(@"C:\\Users\\lared\\Desktop\\reg_flight.csv");
                     //var delimitedLine = line.Split(',');
-                    //Speedometer = float.Parse(delimitedLine[14]);
+                    //Speedometer = float.Parse(delimitedLine[21]);
 
                    //telnetClient.write("h");
                     //Speedometer = float.Parse(telnetClient.read());
