@@ -3,10 +3,6 @@ using System.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 
 
 namespace WpfApp1
@@ -25,7 +21,7 @@ namespace WpfApp1
             InitializeComponent();
             vm = new FlightGearViewModel(new FlightGearModel(new TelnetClient()));
             vm.start();
-            DataContext = vm;
+            DataContext = vm;    
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
