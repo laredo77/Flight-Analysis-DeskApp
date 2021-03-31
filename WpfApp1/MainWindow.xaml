@@ -94,6 +94,6 @@
                 </TransformGroup>
             </Slider.RenderTransform>
         </Slider>
-        <ProgressBar Value ="{Binding VM_Speedometer}" HorizontalAlignment="Left" Margin="200,250,0,0" Height="30" VerticalAlignment="Top" Width="300"/>
+        <ProgressBar Value ="{Binding VM_Speedometer, Mode=OneWay}" HorizontalAlignment="Left" Margin="200,250,0,0" Height="30" VerticalAlignment="Top" Width="300"/>
     </Grid>
 </Window>

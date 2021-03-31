@@ -60,12 +60,28 @@ namespace WpfApp1
         {
             new Thread(delegate ()
             {
+                int i = 20;
                 while (!stop)
                 {
-                    telnetClient.write("h");
-                    Speedometer = float.Parse(telnetClient.read());
+                   //telnetClient.write("h");
+                    //Speedometer = float.Parse(telnetClient.read());
+                    //var lines = File.ReadAllLines(@"C:\\Users\\lared\\Desktop\\reg_flight.csv");
+                    //var delimitedLine = line.Split(',');
+                    //var value = delimitedLine[14];
+                    //int i = 20;
+                    Speedometer = i + 10;
+                    i++;
 
+                    //Speedometer = float.Parse(value);
+                    //foreach (string line in lines)
+                    //{
+                        //var delimitedLine = line.Split(',');
+                        //var value = delimitedLine[22];
+                        //Speedometer = float.Parse(value);
+                        //Thread.Sleep(250);
+                    //}
                     Thread.Sleep(250);
+                    //Thread.Sleep(250);
 
                 }
             }).Start();

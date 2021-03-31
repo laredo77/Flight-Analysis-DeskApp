@@ -12,12 +12,13 @@ namespace WpfApp1
     {
         public string xmlPath;
         public string csvPath;
-        Client client = new Client();
+    
         FlightGearViewModel vm;
         public MainWindow()
         {
             InitializeComponent();
             vm = new FlightGearViewModel(new FlightGearModel(new TelnetClient()));
+            vm.start();
             DataContext = vm;
         }
 
@@ -72,16 +73,16 @@ namespace WpfApp1
 
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            client.start(csvPath);
+            
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            client.setSleepAmount(200);
+            
         }
         private void doublePreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            client.setSleepAmount(400);
+            
         }
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -90,17 +91,16 @@ namespace WpfApp1
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
-            client.stop();
+            
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            client.setSleepAmount(50);
+            
         }
 
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
         {
-            //client.setSleepAmount(10);
         }
 
         private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

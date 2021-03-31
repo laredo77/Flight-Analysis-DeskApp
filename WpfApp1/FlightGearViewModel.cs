@@ -17,12 +17,17 @@ namespace WpfApp1
         public FlightGearViewModel(IFlightGearModel model)
         {
             this.model = model;
+           
             model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
 
+        public void start()
+        {
+            model.start();
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
