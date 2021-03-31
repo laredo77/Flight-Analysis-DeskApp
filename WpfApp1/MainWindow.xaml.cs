@@ -3,6 +3,8 @@ using System.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Syncfusion.UI.Xaml.Gauges;
+using System.Windows.Media;
 
 namespace WpfApp1
 {
@@ -20,7 +22,7 @@ namespace WpfApp1
             InitializeComponent();
             vm = new FlightGearViewModel(new FlightGearModel(new TelnetClient()));
             vm.start();
-            DataContext = vm;
+            DataContext = vm;    
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -74,8 +76,8 @@ namespace WpfApp1
                 //Process cmd = new Process();
                 System.Diagnostics.Process.Start(dialog.FileName);
                 //cmd.Start(dialog.FileName);
-                System.Diagnostics.Process.StandardInput.WriteLine("--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small");
-                System.Diagnostics.Process.StandardInput.WriteLine("--fdm=null");
+                //System.Diagnostics.Process.StandardInput.WriteLine("--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small");
+                //System.Diagnostics.Process.StandardInput.WriteLine("--fdm=null");
                 //System.Diagnostics.Process.StandardInput.Flush();
                 //System.Diagnostics.Process.StandardInput.Close();
             }
