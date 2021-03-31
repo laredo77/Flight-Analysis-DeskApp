@@ -3,6 +3,11 @@ using System.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
 
 namespace WpfApp1
 {
@@ -13,7 +18,7 @@ namespace WpfApp1
     {
         public string xmlPath;
         public string csvPath;
-    
+        ITelnetClient telnetClient;
         FlightGearViewModel vm;
         public MainWindow()
         {
@@ -59,8 +64,6 @@ namespace WpfApp1
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
         { 
-            string first_command = "--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small";
-            string second_command = "--fdm=null";
 
             var fileContent = string.Empty;
             var filePath = string.Empty;
@@ -71,28 +74,23 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
-                //Process cmd = new Process();
-                System.Diagnostics.Process.Start(dialog.FileName);
-                //cmd.Start(dialog.FileName);
-                System.Diagnostics.Process.StandardInput.WriteLine("--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small");
-                System.Diagnostics.Process.StandardInput.WriteLine("--fdm=null");
-                //System.Diagnostics.Process.StandardInput.Flush();
-                //System.Diagnostics.Process.StandardInput.Close();
-            }
- 
-            //Process cmd = new Process();
-            //cmd.StartInfo.FileName = "cmd.exe";
-            //cmd.StartInfo.RedirectStandardInput = true;
-            //cmd.StartInfo.RedirectStandardOutput = true;
-            //cmd.StartInfo.CreateNoWindow = true;
-            //cmd.StartInfo.UseShellExecute = false;
-            //cmd.Start();
 
-            //cmd.StandardInput.WriteLine("echo Oscar");
-            //cmd.StandardInput.Flush();
-            //cmd.StandardInput.Close();
-            //cmd.WaitForExit();
-            //Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+                ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
+                startInfo.WindowStyle = ProcessWindowStyle.Normal;
+                startInfo.Arguments = "--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
+                                        
+                Process.Start(startInfo);
+                //System.Diagnostics.Process.Start(dialog.FileName);
+                //telnetClient.connect("127.0.0.1", 5400);
+                //var lines = File.ReadLines(@csvPath);
+
+                //foreach (string line in lines)
+                //{
+                //    string abc = line + "\r\n";
+                //    telnetClient.write(abc);
+                //}
+            }
+
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
