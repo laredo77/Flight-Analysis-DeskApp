@@ -28,6 +28,7 @@ namespace WpfApp1
         {
             model.start();
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {

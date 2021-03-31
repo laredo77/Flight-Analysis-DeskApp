@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WpfApp1
 {
@@ -13,6 +14,9 @@ namespace WpfApp1
         ITelnetClient telnetClient;
         volatile Boolean stop;
         private float speedometer;
+        private float height;
+        private float direction;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public FlightGearModel(ITelnetClient telnetClient)
@@ -39,6 +43,32 @@ namespace WpfApp1
             }
         }
 
+        public float FlightAltitude
+        {
+            get
+            {
+                return height;
+            }
+            set
+            {
+                height = value;
+                NotifyPropertyChanged("FlightAltitude");
+            }
+        }
+
+        public float FlightDirection
+        {
+            get
+            {
+                return direction;
+            }
+            set
+            {
+                direction = value;
+                NotifyPropertyChanged("FlightDirection");
+            }
+        }
+
       public void NotifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
@@ -60,17 +90,20 @@ namespace WpfApp1
         {
             new Thread(delegate ()
             {
-                int i = 20;
                 while (!stop)
                 {
+                    //var lines = File.ReadAllLines(@csvPath);
+                    //var delimitedLine = line.Split(',');
+                    //Speedometer = float.Parse(delimitedLine[14]);
+
                    //telnetClient.write("h");
                     //Speedometer = float.Parse(telnetClient.read());
                     //var lines = File.ReadAllLines(@"C:\\Users\\lared\\Desktop\\reg_flight.csv");
                     //var delimitedLine = line.Split(',');
                     //var value = delimitedLine[14];
                     //int i = 20;
-                    Speedometer = i + 10;
-                    i++;
+                    //Speedometer = i + 10;
+                    //i++;
 
                     //Speedometer = float.Parse(value);
                     //foreach (string line in lines)

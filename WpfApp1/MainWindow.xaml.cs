@@ -2,6 +2,7 @@
 using System.Threading;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace WpfApp1
 {
@@ -57,7 +58,10 @@ namespace WpfApp1
         }
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
-        {
+        { 
+            string first_command = "--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small";
+            string second_command = "--fdm=null";
+
             var fileContent = string.Empty;
             var filePath = string.Empty;
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
@@ -67,8 +71,28 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
+                //Process cmd = new Process();
                 System.Diagnostics.Process.Start(dialog.FileName);
+                //cmd.Start(dialog.FileName);
+                System.Diagnostics.Process.StandardInput.WriteLine("--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small");
+                System.Diagnostics.Process.StandardInput.WriteLine("--fdm=null");
+                //System.Diagnostics.Process.StandardInput.Flush();
+                //System.Diagnostics.Process.StandardInput.Close();
             }
+ 
+            //Process cmd = new Process();
+            //cmd.StartInfo.FileName = "cmd.exe";
+            //cmd.StartInfo.RedirectStandardInput = true;
+            //cmd.StartInfo.RedirectStandardOutput = true;
+            //cmd.StartInfo.CreateNoWindow = true;
+            //cmd.StartInfo.UseShellExecute = false;
+            //cmd.Start();
+
+            //cmd.StandardInput.WriteLine("echo Oscar");
+            //cmd.StandardInput.Flush();
+            //cmd.StandardInput.Close();
+            //cmd.WaitForExit();
+            //Console.WriteLine(cmd.StandardOutput.ReadToEnd());
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
