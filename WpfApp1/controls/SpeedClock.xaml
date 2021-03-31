@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="WpfApp1.controls.SpeedClock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox>
+        <Grid>
+            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="300" Width="600" BorderBrush="#FF97F6ED"
+                BorderThickness="3 3 3 0" CornerRadius="300 300 0 0" Background="#FF262525" />
+            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="290" Width="580" BorderBrush="#FF97F6ED"
+                BorderThickness="0 3 0 0" CornerRadius="300 300 0 0">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FFCFF7F3" BlurRadius="10" ShadowDepth="2"/>
+                </Border.Effect>
+            </Border>
+            <TextBlock x:Name="speedTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="266,0,266,15" FontSize="85" 
+                   FontFamily="Agency FB" Foreground="#FF3BFAFA" Text="{Binding Path=Speed}">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#FFCDF8F8"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <Border Width="7" CornerRadius="120 120 0 0" Background="#FFFF" RenderTransformOrigin="0.5 2" Height="140" Margin="0 0 0 140" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding Path=Angle}"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" ShadowDepth="0" Color="#FFFF"/>
+                </Border.Effect>
+            </Border>
+            <Slider HorizontalAlignment="Left" Margin="428,7,-109,0" VerticalAlignment="Top" Height="144" Width="281" Value="{Binding Path=Speed}" Minimum="0" Maximum="100"/>
+        </Grid>
+    </Viewbox>
+</UserControl>

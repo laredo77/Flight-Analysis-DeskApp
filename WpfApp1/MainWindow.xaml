@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:Controls="clr-namespace:WpfApp1.controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFB4B4B4">
         <Slider x:Name="slider" HorizontalAlignment="Left" Margin="94,378,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
         <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="140,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
@@ -104,5 +105,6 @@
                 </TransformGroup>
             </ProgressBar.RenderTransform>
         </ProgressBar>
+        <Controls:SpeedClock Margin="194,79,435.667,187"/>
     </Grid>
 </Window>
