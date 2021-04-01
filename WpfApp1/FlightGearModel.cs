@@ -15,7 +15,8 @@ namespace WpfApp1
         volatile Boolean stop;
         private float speedometer;
         private float height;
-        private float direction;
+        private float vediotimeline;
+        private int csvLength;
 
         
         public event PropertyChangedEventHandler PropertyChanged;
@@ -56,16 +57,16 @@ namespace WpfApp1
             }
         }
 
-        public float FlightDirection
+        public float VedioTimeline
         {
             get
             {
-                return direction;
+                return vediotimeline;
             }
             set
             {
-                direction = value;
-                NotifyPropertyChanged("FlightDirection");
+                vediotimeline = value;
+                NotifyPropertyChanged("VedioTimeline");
             }
         }
 
@@ -119,6 +120,18 @@ namespace WpfApp1
 
                 }
             }).Start();
+        }
+
+        public int getCsvLength()
+        {
+            return this.csvLength;
+        }
+
+        public void setCsvLength(string csvPath)
+        {
+            var lines = File.ReadAllLines(csvPath);
+            var count = lines.Length;
+            this.csvLength = count;
         }
     }
 }

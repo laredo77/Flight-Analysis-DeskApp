@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFB4B4B4">
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="66,572,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
-        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="112,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="94,378,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
+        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="140,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\doublePrevious.jpg"/>
             </Button.Background>
@@ -82,6 +82,87 @@
                     <RotateTransform Angle="90"/>
                     <TranslateTransform/>
                 </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <ProgressBar Value ="{Binding VM_Speedometer, Mode=OneWay}" HorizontalAlignment="Left" Margin="682,247,0,0" Height="33" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <Controls:SpeedClock Margin="194,79,435.667,187"/>
+        <!--test part1-->
+        <Ellipse x:Name="Cricle" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Canvas.Top="-50" Canvas.Left="-50" Margin="629,17,0,0">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF272121"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse x:Name="KnobBase" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" Canvas.Top="-75" Canvas.Left="-75" Margin="679,67,0,0">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF896868" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+        <!--test part2-->
+        <Rectangle x:Name="RudderRect" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Canvas.Top="-50" Canvas.Left="-50" Margin="629,181,0,0" StrokeThickness="1" Stroke="Black">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF608CDA"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="Rudder" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Canvas.Top="41" Canvas.Left="-74" Margin="694,181,0,0">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" />
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!--test part3-->
+        <Rectangle x:Name="ThrottleRect" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.51,-0.071" Margin="538,95,0,0" StrokeThickness="1" Stroke="Black">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF797F89"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="Throttle" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="592,145,0,0">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" />
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform />
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
             </Slider.RenderTransform>
         </Slider>
         <Image Source="/Pictures/pic1.jpg" HorizontalAlignment="Left" Height="113" Margin="617,28,0,0" VerticalAlignment="Top" Width="117"/>
