@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Clocks;
 
 namespace WpfApp1.controls
 {
@@ -20,10 +21,10 @@ namespace WpfApp1.controls
     /// </summary>
     public partial class SpeedClock : UserControl
     {
+        SpeedClockViewModel speedClockViewModel;
         public SpeedClock()
         {
             InitializeComponent();
-            this.DataContext = new SpeedClockViewModel();
         }
     }
 }

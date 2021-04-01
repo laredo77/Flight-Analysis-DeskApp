@@ -3,56 +3,50 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace WpfApp1
+namespace WpfApp1.Clocks
 {
     class SpeedClockViewModel : INotifyPropertyChanged
     {
+        private SpeedClockModel model;
+        public SpeedClockViewModel(SpeedClockModel model)
+        {
+            this.model = model;
+            model.PropertyChanged += delegate (object sender, PropertyChangedEventArgs e)
+            {
+                NotifyPropertyChanged("VM_" + e.PropertyName);
+            };
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        
-        public SpeedClockViewModel()
+        public string VM_CSV_Path
         {
-            this.Speed = 0;
-            this.Angle = -50;
+            get { return model.csv_Path; }
+            set { model.csv_Path = value; }
         }
-        int angle;
-        public int Angle
+        public int VM_Angle
         {
             get
             {
-                return this.angle;
-            }
-            set
-            {
-                angle = value;
-                NotifyPropertyChanged("Angle");
+                return model.Angle;
             }
         }
-        int speed;
-        public int Speed
+        public int VM_Speed
         {
             get
             {
-                return this.speed;
+                return model.Speed;
             }
-            set
-            {
-                ///////////
-                if (value >= 0 && value <= 100)
-                {
-                    speed = value;
-                    Angle = value - 50;
-                    NotifyPropertyChanged("Speed");
-                }
-
-            }
+        }
+        public void start()
+        {
+            model.start();
         }
     }
-
 }

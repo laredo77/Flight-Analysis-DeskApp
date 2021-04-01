@@ -17,7 +17,7 @@
                 </Border.Effect>
             </Border>
             <TextBlock x:Name="speedTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="266,0,266,15" FontSize="85" 
-                   FontFamily="Agency FB" Foreground="#FF3BFAFA" Text="{Binding Path=Speed}">
+                   FontFamily="Agency FB" Foreground="#FF3BFAFA" Text="{Binding Path=VM_Speed}">
                 <TextBlock.Effect>
                     <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#FFCDF8F8"/>
                 </TextBlock.Effect>
@@ -28,7 +28,7 @@
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="{Binding Path=Angle}"/>
+                        <RotateTransform Angle="{Binding Path=VM_Angle}"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </Border.RenderTransform>
@@ -36,7 +36,6 @@
                     <DropShadowEffect BlurRadius="30" ShadowDepth="0" Color="#FFFF"/>
                 </Border.Effect>
             </Border>
-            <Slider HorizontalAlignment="Left" Margin="428,7,-109,0" VerticalAlignment="Top" Height="144" Width="281" Value="{Binding Path=Speed}" Minimum="0" Maximum="100"/>
         </Grid>
     </Viewbox>
 </UserControl>
