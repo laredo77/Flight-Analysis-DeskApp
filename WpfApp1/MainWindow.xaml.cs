@@ -81,17 +81,9 @@ namespace WpfApp1
                 startInfo.WindowStyle = ProcessWindowStyle.Normal;
                 startInfo.Arguments = $"--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
                 Process.Start(startInfo);
-                //System.Diagnostics.Process.Start(dialog.FileName);
-                //telnetClient.connect("127.0.0.1", 5400);
-                //var lines = File.ReadLines(@csvPath);
-
-                //foreach (string line in lines)
-                //{
-                //    string abc = line + "\r\n";
-                //    telnetClient.write(abc);
-                //}
+                System.Threading.Thread.Sleep(60000);
+                playButton.IsEnabled = true;
             }
-
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)

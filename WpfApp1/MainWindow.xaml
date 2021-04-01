@@ -19,7 +19,7 @@
                 <ImageBrush ImageSource="Pictures\previous.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="playButton" HorizontalAlignment="Left" Margin="260,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="playButton_Click">
+        <Button x:Name="playButton" HorizontalAlignment="Left" Margin="260,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="playButton_Click" IsEnabled="False">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\play.jpg"/>
             </Button.Background>
