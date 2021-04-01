@@ -84,13 +84,14 @@ namespace WpfApp1
                 string filenameOnly = System.IO.Path.GetFileName(dialog.FileName);
                 string command = " --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm = null";
 
-                ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.Arguments = $"--generic =socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
-                Process.Start(startInfo);
-                //System.Diagnostics.Process.Start(dialog.FileName);
-                //telnetClient.connect("127.0.0.1", 5400);
-                //var lines = File.ReadLines(@csvPath);
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "cmd.exe";
+                cmd.StartInfo.RedirectStandardInput = true;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.Start();
+
 
                 cmd.StandardInput.WriteLine("cd " + pathOnly);
                 cmd.StandardInput.Flush();
@@ -98,6 +99,7 @@ namespace WpfApp1
                 cmd.StandardInput.Flush();
                 cmd.StandardInput.Close();
                 cmd.WaitForExit();
+
             }
         }
 

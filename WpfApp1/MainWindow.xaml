@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFB4B4B4">
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="94,378,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
-        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="140,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="74,574,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
+        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="108,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\doublePrevious.jpg"/>
             </Button.Background>
@@ -72,29 +72,6 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-
-        <Slider HorizontalAlignment="Left" Margin="592,167,0,0" VerticalAlignment="Top" Height="67" Width="162" ValueChanged="Slider_ValueChanged"/>
-        <Slider HorizontalAlignment="Left" Margin="502,75,0,0" VerticalAlignment="Top" Height="26" Width="155" RenderTransformOrigin="0.5,0.5">
-            <Slider.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ProgressBar.RenderTransform>
-        </ProgressBar>
-        <ProgressBar Value ="{Binding VM_Speedometer, Mode=OneWay}" HorizontalAlignment="Left" Margin="682,247,0,0" Height="33" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5">
-            <ProgressBar.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ProgressBar.RenderTransform>
-        </ProgressBar>
-        <Controls:SpeedClock Margin="194,79,435.667,187"/>
         <!--test part1-->
         <Ellipse x:Name="Cricle" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Canvas.Top="-50" Canvas.Left="-50" Margin="629,17,0,0">
             <Ellipse.Fill>
@@ -163,9 +140,6 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-            </Slider.RenderTransform>
-        </Slider>
-        <Image Source="/Pictures/pic1.jpg" HorizontalAlignment="Left" Height="113" Margin="617,28,0,0" VerticalAlignment="Top" Width="117"/>
         <Controls:SpeedClock Margin="387,193,261.667,134"/>
         <Controls:HightClock Margin="543,193,105.667,134"/>
     </Grid>
