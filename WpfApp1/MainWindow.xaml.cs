@@ -9,6 +9,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Clocks;
+using System.Windows.Media;
+using System.Windows.Controls.Primitives;
+using System.Windows.Controls;
 
 namespace WpfApp1
 {
@@ -33,9 +36,6 @@ namespace WpfApp1
             this.DataContext = speedClockViewModel;
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-        }
         // browse XML file
         private void openXMLButton_Click(object sender, RoutedEventArgs e)
         {
@@ -69,8 +69,8 @@ namespace WpfApp1
         }
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
-        { 
-
+        {
+            string FG_ROOT = @"C:\Program Files\FlightGear 2020.3.5\data";
             var fileContent = string.Empty;
             var filePath = string.Empty;
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
@@ -80,10 +80,10 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
-
+                
                 ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
                 startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.Arguments = $"--generic =socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
+                startInfo.Arguments = $"--fg-root{FG_ROOT} --generic =socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
                 Process.Start(startInfo);
                 System.Threading.Thread.Sleep(60000);
                 playButton.IsEnabled = true;
@@ -123,7 +123,6 @@ namespace WpfApp1
         }
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
-            
         }
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
@@ -143,5 +142,16 @@ namespace WpfApp1
         private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
         }
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var lines = File.ReadAllLines(csvPath);
+            var count = lines.Length;
+            int i = 0;
+            while(i < count)
+            {
+                
+            }
+        }
+
     }
 }
