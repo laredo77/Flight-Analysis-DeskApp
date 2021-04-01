@@ -8,27 +8,27 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Viewbox>
         <Grid>
-            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="300" Width="600" BorderBrush="#FF97F6ED"
-                BorderThickness="3 3 3 0" CornerRadius="300 300 0 0" Background="#FF262525" />
-            <Border HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="290" Width="580" BorderBrush="#FF97F6ED"
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="600" Width="600" BorderBrush="#FF97F6ED"
+                BorderThickness="3 3 3 0" CornerRadius="300 300 300 300" Background="#FF262525" />
+            <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="570" Width="570" BorderBrush="#FF97F6ED"
                 BorderThickness="0 3 0 0" CornerRadius="300 300 0 0">
                 <Border.Effect>
                     <DropShadowEffect Color="#FFCFF7F3" BlurRadius="10" ShadowDepth="2"/>
                 </Border.Effect>
             </Border>
-            <TextBlock x:Name="speedTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="266,0,266,15" FontSize="85" 
-                   FontFamily="Agency FB" Foreground="#FF3BFAFA" Text="{Binding Path=VM_Speed}">
+            <TextBlock x:Name="speedTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" 
+                   FontFamily="Agency FB" Foreground="#FF3BFAFA" Text="{Binding VM_Speed}">
                 <TextBlock.Effect>
                     <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#FFCDF8F8"/>
                 </TextBlock.Effect>
             </TextBlock>
-            <Border Width="7" CornerRadius="120 120 0 0" Background="#FFFF" RenderTransformOrigin="0.5 2" Height="140" Margin="0 0 0 140" 
-                VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Border Width="10" CornerRadius="120 120 0 0" Background="#FFFF" RenderTransformOrigin="0.5 1.25" Height="210" Margin="0 0 0 300" 
+                VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="{Binding Path=VM_Angle}"/>
+                        <RotateTransform Angle="{Binding VM_Speed}"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </Border.RenderTransform>

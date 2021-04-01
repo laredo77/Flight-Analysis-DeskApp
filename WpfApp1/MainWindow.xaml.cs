@@ -17,25 +17,22 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public string xmlPath;
+               public string xmlPath;
         public string csvPath;
         private Thread t = null;
         ITelnetClient telnetClient;
         FlightGearViewModel vm;
-        SpeedClockViewModel speedClockViewModel;
+        ClockViewModel clockViewModel;
         public MainWindow()
         {
             InitializeComponent();
             vm = new FlightGearViewModel(new FlightGearModel(new TelnetClient()));
             vm.start();
             DataContext = vm;
-            speedClockViewModel = new SpeedClockViewModel(new SpeedClockModel());
-            this.DataContext = speedClockViewModel;
+            clockViewModel = new ClockViewModel(new ClockModel());
+            this.DataContext = clockViewModel;
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-        }
         // browse XML file
         private void openXMLButton_Click(object sender, RoutedEventArgs e)
         {
@@ -63,14 +60,14 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
-                speedClockViewModel.VM_CSV_Path = dialog.FileName;
+                clockViewModel.VM_CSV_Path = dialog.FileName;
                 csvPath = dialog.FileName;
             }
         }
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
-        { 
-
+        {
+            string FG_ROOT = @"C:\Program Files\FlightGear 2020.3.5\data";
             var fileContent = string.Empty;
             var filePath = string.Empty;
             Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
@@ -80,22 +77,26 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
+                string pathOnly = System.IO.Path.GetDirectoryName(dialog.FileName);
+                string filenameOnly = System.IO.Path.GetFileName(dialog.FileName);
+                string command = " --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm = null";
 
-                ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.Arguments = $"--generic =socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
-                Process.Start(startInfo);
-                //System.Diagnostics.Process.Start(dialog.FileName);
-                //telnetClient.connect("127.0.0.1", 5400);
-                //var lines = File.ReadLines(@csvPath);
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "cmd.exe";
+                cmd.StartInfo.RedirectStandardInput = true;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.Start();
 
-                //foreach (string line in lines)
-                //{
-                //    string abc = line + "\r\n";
-                //    telnetClient.write(abc);
-                //}
+
+                cmd.StandardInput.WriteLine("cd " + pathOnly);
+                cmd.StandardInput.Flush();
+                cmd.StandardInput.WriteLine("fgfs --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null");
+                cmd.StandardInput.Flush();
+                cmd.StandardInput.Close();
+                cmd.WaitForExit();
             }
-
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
@@ -113,13 +114,13 @@ namespace WpfApp1
                 Byte[] data = ASCIIEncoding.ASCII.GetBytes(abc);
                 stream.Write(data, 0, data.Length);
                 stream.Flush();
-                Thread.Sleep(250);
+                Thread.Sleep(100);
                 }
                 stream.Close();
                 client.Close();
             });
             t.Start();
-            speedClockViewModel.start();
+            clockViewModel.start();
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
@@ -131,7 +132,6 @@ namespace WpfApp1
         }
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
-            
         }
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
@@ -151,5 +151,17 @@ namespace WpfApp1
         private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
         }
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var lines = File.ReadAllLines(csvPath);
+            var count = lines.Length;
+            int i = 0;
+            while(i < count)
+            {
+                
+            }
+        }
+
     }
-}
+ }
+

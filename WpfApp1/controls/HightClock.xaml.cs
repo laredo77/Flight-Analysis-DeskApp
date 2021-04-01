@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.Clocks;
 
 namespace WpfApp1.controls
 {
     /// <summary>
-    /// Interaction logic for SpeedClock.xaml
+    /// Interaction logic for HightClock.xaml
     /// </summary>
-    public partial class SpeedClock : UserControl
+    public partial class HightClock : UserControl
     {
-        public SpeedClock()
+        public HightClock()
         {
             InitializeComponent();
         }

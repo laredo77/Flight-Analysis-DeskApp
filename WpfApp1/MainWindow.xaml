@@ -6,49 +6,49 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:Controls="clr-namespace:WpfApp1.controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="MainWindow" Height="700" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFB4B4B4">
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="94,378,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
-        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="140,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="66,572,0,0" VerticalAlignment="Top" Height="45" Width="649"/>
+        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="112,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="doublePreviousButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\doublePrevious.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="previousButton" HorizontalAlignment="Left" Margin="200,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="previousButton_Click">
+        <Button x:Name="previousButton" HorizontalAlignment="Left" Margin="172,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="previousButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\previous.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="playButton" HorizontalAlignment="Left" Margin="260,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="playButton_Click">
+        <Button x:Name="playButton" HorizontalAlignment="Left" Margin="232,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="playButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\play.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="pauseButton" HorizontalAlignment="Left" Margin="320,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="pauseButton_Click">
+        <Button x:Name="pauseButton" HorizontalAlignment="Left" Margin="292,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="pauseButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\pause.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="stopButton" HorizontalAlignment="Left" Margin="380,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="stopButton_Click">
+        <Button x:Name="stopButton" HorizontalAlignment="Left" Margin="352,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="stopButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\stop.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="nextButton" HorizontalAlignment="Left" Margin="440,320,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="nextButton_Click">
+        <Button x:Name="nextButton" HorizontalAlignment="Left" Margin="412,514,0,0" VerticalAlignment="Top" Width="45" Height="45" Click="nextButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\next.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="doubleNextButton" HorizontalAlignment="Left" Margin="500,320,0,0" VerticalAlignment="Top" Width="45" Height="45" RenderTransformOrigin="2.227,0.436" Click="doubleNextButton_Click">
+        <Button x:Name="doubleNextButton" HorizontalAlignment="Left" Margin="472,514,0,0" VerticalAlignment="Top" Width="45" Height="45" RenderTransformOrigin="2.227,0.436" Click="doubleNextButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Pictures\doubleNext.jpg"/>
             </Button.Background>
         </Button>
-        <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="569,330,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="playSpeedTextBox" HorizontalAlignment="Left" Height="45" Margin="654,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
-        <Label x:Name="timeLabel" Content="Label" HorizontalAlignment="Left" Margin="740,330,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106"/>
+        <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="541,524,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="playSpeedTextBox" HorizontalAlignment="Left" Height="45" Margin="626,514,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
+        <Label x:Name="timeLabel" Content="Label" HorizontalAlignment="Left" Margin="712,524,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106"/>
 
-        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="220,410,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click">
+        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="192,604,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -56,7 +56,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="openXMLButton" Content="Open XML" HorizontalAlignment="Left" Margin="340,410,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openXMLButton_Click">
+        <Button x:Name="openXMLButton" Content="Open XML" HorizontalAlignment="Left" Margin="312,604,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openXMLButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -64,7 +64,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="460,410,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
+        <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="432,604,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -85,26 +85,7 @@
             </Slider.RenderTransform>
         </Slider>
         <Image Source="/Pictures/pic1.jpg" HorizontalAlignment="Left" Height="113" Margin="617,28,0,0" VerticalAlignment="Top" Width="117"/>
-        <ProgressBar Value ="{Binding VM_Speedometer, Mode=OneWay}" HorizontalAlignment="Left" Margin="562,227,0,0" Height="33" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" Maximum="100" Minimum="0">
-            <ProgressBar.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ProgressBar.RenderTransform>
-        </ProgressBar>
-        <ProgressBar Value ="{Binding VM_Speedometer, Mode=OneWay}" HorizontalAlignment="Left" Margin="612,227,0,0" Height="33" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5">
-            <ProgressBar.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ProgressBar.RenderTransform>
-        </ProgressBar>
-        <Controls:SpeedClock Margin="194,79,435.667,187"/>
+        <Controls:SpeedClock Margin="387,193,261.667,134"/>
+        <Controls:HightClock Margin="543,193,105.667,134"/>
     </Grid>
 </Window>

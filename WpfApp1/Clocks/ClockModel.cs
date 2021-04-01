@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Clocks
 {
-    class SpeedClockModel : INotifyPropertyChanged
+    class ClockModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
@@ -18,22 +18,25 @@ namespace WpfApp1.Clocks
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
-        public SpeedClockModel()
+        public ClockModel()
         {
             this.Speed = 0;
-            this.Angle = -50;
+            this.Height = 0;
         }
-        int angle;
-        public int Angle
+        float height;
+        public float Height
         {
             get
             {
-                return this.angle;
+                return this.height;
             }
             set
             {
-                angle = value;
-                NotifyPropertyChanged("Angle");
+                if (value >= 0 && value <= 999)
+                {
+                    height = value;
+                    NotifyPropertyChanged("Height");
+                }
             }
         }
         int speed;
@@ -49,7 +52,6 @@ namespace WpfApp1.Clocks
                 if (value >= 0 && value <= 100)
                 {
                     speed = value;
-                    Angle = value - 50;
                     NotifyPropertyChanged("Speed");
                 }
 
@@ -71,7 +73,8 @@ namespace WpfApp1.Clocks
                 {
                     currentLine = line.Split(',');
                     Speed = (int)double.Parse(currentLine[21]);
-                    Thread.Sleep(10);
+                    Height = float.Parse(currentLine[16]);
+                    Thread.Sleep(100);
                 }
                 return;
             }).Start();

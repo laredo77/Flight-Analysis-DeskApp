@@ -67,13 +67,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clocks\ClockModel.cs" />
+    <Compile Include="Clocks\ClockViewModel.cs" />
+    <Compile Include="controls\HightClock.xaml.cs">
+      <DependentUpon>HightClock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="controls\SpeedClock.xaml.cs">
       <DependentUpon>SpeedClock.xaml</DependentUpon>
     </Compile>
     <Compile Include="FlightGearViewModel.cs" />
-    <Compile Include="Clocks\SpeedClockModel.cs" />
-    <Compile Include="Clocks\SpeedClockViewModel.cs" />
     <Compile Include="TelnetClient.cs" />
+    <Page Include="controls\HightClock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="controls\SpeedClock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
