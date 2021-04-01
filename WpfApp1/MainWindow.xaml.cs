@@ -80,13 +80,26 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
-                
-                ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
-                startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.Arguments = $"--fg-root{FG_ROOT} --generic =socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
-                Process.Start(startInfo);
-                System.Threading.Thread.Sleep(60000);
-                playButton.IsEnabled = true;
+
+                // System.Diagnostics.Process.Start(dialog.FileName); 
+                string pathOnly = System.IO.Path.GetDirectoryName(dialog.FileName);
+                string filenameOnly = System.IO.Path.GetFileName(dialog.FileName);
+
+                Process cmd = new Process();
+                cmd.StartInfo.FileName = "cmd.exe";
+                cmd.StartInfo.RedirectStandardInput = true;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.CreateNoWindow = true;
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.Start();
+
+
+                cmd.StandardInput.WriteLine("cd " + pathOnly);
+                cmd.StandardInput.Flush();
+                cmd.StandardInput.WriteLine("fgfs --generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null");
+                cmd.StandardInput.Flush();
+                cmd.StandardInput.Close();
+                cmd.WaitForExit();
             }
         }
 
