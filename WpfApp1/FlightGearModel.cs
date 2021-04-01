@@ -17,7 +17,7 @@ namespace WpfApp1
         private float height;
         private float direction;
 
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
         public FlightGearModel(ITelnetClient telnetClient)
         {

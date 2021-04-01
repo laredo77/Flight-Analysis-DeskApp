@@ -18,7 +18,8 @@ namespace WpfApp1
         
         public SpeedClockViewModel()
         {
-
+            this.Speed = 0;
+            this.Angle = -50;
         }
         int angle;
         public int Angle
@@ -43,7 +44,7 @@ namespace WpfApp1
             set
             {
                 ///////////
-                if (value > 0 && value < 100)
+                if (value >= 0 && value <= 100)
                 {
                     speed = value;
                     Angle = value - 50;
