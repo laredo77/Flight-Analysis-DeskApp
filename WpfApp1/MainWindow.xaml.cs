@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-
+using WpfApp1.Clocks;
 
 namespace WpfApp1
 {
@@ -22,12 +22,15 @@ namespace WpfApp1
         private Thread t = null;
         ITelnetClient telnetClient;
         FlightGearViewModel vm;
+        SpeedClockViewModel speedClockViewModel;
         public MainWindow()
         {
             InitializeComponent();
             vm = new FlightGearViewModel(new FlightGearModel(new TelnetClient()));
             vm.start();
-            DataContext = vm;    
+            DataContext = vm;
+            speedClockViewModel = new SpeedClockViewModel(new SpeedClockModel());
+            this.DataContext = speedClockViewModel;
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -60,6 +63,7 @@ namespace WpfApp1
             dialog.RestoreDirectory = true;
             if (dialog.ShowDialog() == true)
             {
+                speedClockViewModel.VM_CSV_Path = dialog.FileName;
                 csvPath = dialog.FileName;
             }
         }
@@ -79,7 +83,7 @@ namespace WpfApp1
 
                 ProcessStartInfo startInfo = new ProcessStartInfo(dialog.FileName);
                 startInfo.WindowStyle = ProcessWindowStyle.Normal;
-                startInfo.Arguments = $"--generic=socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
+                startInfo.Arguments = $"--generic =socket,in,10,127.0.0.1,5400,tcp,playback_small --fdm=null";
                 Process.Start(startInfo);
                 //System.Diagnostics.Process.Start(dialog.FileName);
                 //telnetClient.connect("127.0.0.1", 5400);
@@ -115,6 +119,7 @@ namespace WpfApp1
                 client.Close();
             });
             t.Start();
+            speedClockViewModel.start();
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
