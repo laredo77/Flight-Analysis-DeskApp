@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp1.Helpers;
 
 namespace WpfApp1.Clocks
 {
-    class ClockViewModel : INotifyPropertyChanged
+    public class ClockViewModel : INotifyPropertyChanged
     {
+
         private ClockModel model;
         public ClockViewModel(ClockModel model)
         {
@@ -18,16 +20,12 @@ namespace WpfApp1.Clocks
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
+        // event handler
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
-        public string VM_CSV_Path
-        {
-            get { return model.csv_Path; }
-            set { model.csv_Path = value; }
         }
         public float VM_Height
         {
@@ -43,9 +41,14 @@ namespace WpfApp1.Clocks
                 return model.Speed;
             }
         }
-        public void start()
+
+
+        // get my data by event
+        public void Get_My_Data(object sender, StringEventArgs args)
         {
-            model.start();
+            string[] currentLine = args.Data.Split(',');
+            model.Speed = (int)double.Parse(currentLine[21]);
+            model.Height = float.Parse(currentLine[16]); 
         }
     }
 }

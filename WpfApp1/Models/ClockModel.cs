@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WpfApp1.Clocks
 {
-    class ClockModel : INotifyPropertyChanged
+    public class ClockModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
@@ -23,6 +23,7 @@ namespace WpfApp1.Clocks
             this.Speed = 0;
             this.Height = 0;
         }
+
         float height;
         public float Height
         {
@@ -39,6 +40,7 @@ namespace WpfApp1.Clocks
                 }
             }
         }
+
         int speed;
         public int Speed
         {
@@ -57,28 +59,7 @@ namespace WpfApp1.Clocks
 
             }
         }
-        private string csv_path;
-        public string csv_Path
-        {
-            get { return csv_path; }
-            set { csv_path = value; }
-        }
-        string[] currentLine;
-        public void start()
-        {
-            new Thread(delegate ()
-            {
-                var lines = File.ReadLines(csv_path);
-                foreach (string line in lines)
-                {
-                    currentLine = line.Split(',');
-                    Speed = (int)double.Parse(currentLine[21]);
-                    Height = float.Parse(currentLine[16]);
-                    Thread.Sleep(100);
-                }
-                return;
-            }).Start();
-        }
+
     }
 }
 

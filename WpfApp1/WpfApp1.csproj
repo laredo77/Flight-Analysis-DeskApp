@@ -67,21 +67,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Clocks\ClockModel.cs" />
-    <Compile Include="Clocks\ClockViewModel.cs" />
-    <Compile Include="controls\HightClock.xaml.cs">
+    <Compile Include="Models\ClockModel.cs" />
+    <Compile Include="Models\JoystickBarsModel.cs" />
+    <Compile Include="Models\MediaPlayerModel.cs" />
+    <Compile Include="ViewModels\ClockVM.cs" />
+    <Compile Include="Controls\BrowseControl.xaml.cs">
+      <DependentUpon>BrowseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\HightClock.xaml.cs">
       <DependentUpon>HightClock.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\SpeedClock.xaml.cs">
+    <Compile Include="Controls\JoystickBars.xaml.cs">
+      <DependentUpon>JoystickBars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MediaPlayer.xaml.cs">
+      <DependentUpon>MediaPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpeedClock.xaml.cs">
       <DependentUpon>SpeedClock.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FlightGearViewModel.cs" />
-    <Compile Include="TelnetClient.cs" />
-    <Page Include="controls\HightClock.xaml">
+    <Compile Include="Client.cs" />
+    <Compile Include="ViewModels\MediaPlayerVM.cs" />
+    <Compile Include="ViewModels\JoystickBarsVM.cs" />
+    <Page Include="Controls\BrowseControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\SpeedClock.xaml">
+    <Page Include="Controls\HightClock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\JoystickBars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MediaPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SpeedClock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,9 +117,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FlightGearModel.cs" />
-    <Compile Include="IFlightGearModel.cs" />
-    <Compile Include="ITelnetClient.cs" />
+    <Compile Include="Helpers\StringEventArgs.cs" />
+    <Compile Include="IClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

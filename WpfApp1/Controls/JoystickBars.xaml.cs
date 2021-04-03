@@ -12,21 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.Clocks;
 
 namespace WpfApp1.Controls
 {
     /// <summary>
-    /// Interaction logic for SpeedClock.xaml
+    /// Interaction logic for JoystickBars.xaml
     /// </summary>
-    public partial class SpeedClock : UserControl
+    public partial class JoystickBars : UserControl
     {
-        public ClockViewModel vm;
-        public SpeedClock()
+        public JoystickBars()
         {
             InitializeComponent();
-            vm = new ClockViewModel(new ClockModel());
-            DataContext = vm;
         }
     }
 }

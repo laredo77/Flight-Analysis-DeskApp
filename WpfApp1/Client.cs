@@ -8,11 +8,22 @@ using System.Threading.Tasks;
 
 namespace WpfApp1
 {
-    class TelnetClient : ITelnetClient
+    public class Client : IClient
     {
         TcpClient client;
         NetworkStream stream;
 
+
+        public Client()
+        {
+            client = new TcpClient();
+        }
+        public Client(string ip, int port)
+        {
+            client = new TcpClient(ip, port);
+            stream = client.GetStream();
+            stream.Flush();
+        }
         public void connect(string ip, int port)
         {
             client = new TcpClient(ip, port);
@@ -20,7 +31,6 @@ namespace WpfApp1
             stream = client.GetStream();
 
         }
-
         public void disconnect()
         {
             // Close everything.
@@ -46,28 +56,9 @@ namespace WpfApp1
 
         public void write(string command)
         {
-            stream.Flush();
-            // Translate the passed message into ASCII and store it as a Byte array.
-            Byte[] data = System.Text.Encoding.ASCII.GetBytes(command);
-            // Send the message to the connected TcpServer.
+            Byte[] data = ASCIIEncoding.ASCII.GetBytes(command + "\r\n");
             stream.Write(data, 0, data.Length);
-        }
-
-        public void writeCsv(string csvFile)
-        {
-                stream.Flush();
-                var lines = File.ReadLines(@csvFile);
-                foreach (string line in lines)
-                {
-                    string abc = line + "\r\n";
-                    // Translate the passed message into ASCII and store it as a Byte array.
-                    Byte[] data = ASCIIEncoding.ASCII.GetBytes(abc);
-                    //Console.WriteLine(line);
-                    //Console.WriteLine("\n");
-                    // Send the message to the connected TcpServer.
-                    stream.Write(data, 0, data.Length);
-                    stream.Flush();
-                }
+            stream.Flush();
         }
     }
 }
