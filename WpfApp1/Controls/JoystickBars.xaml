@@ -25,7 +25,7 @@
             </Ellipse.Fill>
             <Ellipse.RenderTransform>
                 <TransformGroup>
-                    <TranslateTransform />
+                    <TranslateTransform  X="{Binding VM_Aileron}" Y="{Binding VM_Elevator}" />
                 </TransformGroup>
             </Ellipse.RenderTransform>
         </Ellipse>
@@ -65,7 +65,7 @@
                 </RadialGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="Throttle" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="10,132,0,0">
+        <Rectangle x:Name="Throttle" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="10,129,0,0">
             <Rectangle.Fill>
                 <RadialGradientBrush>
                     <GradientStop Color="Black" />
@@ -73,7 +73,7 @@
             </Rectangle.Fill>
             <Rectangle.RenderTransform>
                 <TransformGroup>
-                    <TranslateTransform />
+                    <TranslateTransform Y="{Binding VM_Throttle}" />
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>

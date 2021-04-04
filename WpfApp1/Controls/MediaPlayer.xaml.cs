@@ -32,17 +32,12 @@ namespace WpfApp1.Controls
         {
             InitializeComponent();
             vm = new MediaPlayerVM(new MediaPlayerModel(new Client()));
-            DataContext = vm;
+            this.DataContext = vm;
         }
         // use events to get csv path
         public void Get_My_Paths(object sender, StringEventArgs args)
         {
-            if (string.Equals("exe", args.ID))
-            {
-                // write code that check
-                playButton.IsEnabled = true;
-            }
-            else if (string.Equals("csv", args.ID))
+            if (string.Equals("csv", args.ID))
             {
                 vm.add_CSV_Path(args.Data);
             }
@@ -53,6 +48,36 @@ namespace WpfApp1.Controls
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
             vm.play();
+        }
+
+        private void stopButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.stop();
+        }
+
+        private void previousButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.playback();
+        }
+
+        private void doublePreviousButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.playbackfaster();
+        }
+
+        private void doubleNextButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.playfaster();
+        }
+
+        private void pauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.pause();
         }
     }
 }
