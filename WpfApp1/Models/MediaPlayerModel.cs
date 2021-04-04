@@ -41,7 +41,7 @@ namespace WpfApp1.Models
         private int numberOfLines;
         public int Num_Lines
         {
-            get { return numberOfLines; }
+            get { return numberOfLines - 1; }
             set
             {
                 numberOfLines = value;
