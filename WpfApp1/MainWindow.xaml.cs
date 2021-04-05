@@ -27,6 +27,8 @@ namespace WpfApp1
             BrowseControl.Updated += MediaPlayer.Get_My_Paths;
             MediaPlayer.vm.Shared += SpeedClock.vm.Get_My_Data;
             MediaPlayer.vm.Shared += HightClock.vm.Get_My_Data;
+            MediaPlayer.vm.Shared += JoystickBars.vm.Get_My_Data;
+            MediaPlayer.vm.Shared += HightClock.vm.Get_My_Data;
             MediaPlayer.vm.Shared += Compass.vm.Get_My_Data;
 
             MediaPlayer.vm.Shared += ProgressBars.vm.Get_My_Data;

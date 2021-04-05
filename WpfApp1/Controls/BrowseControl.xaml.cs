@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Helpers;
 
-
 namespace WpfApp1.Controls
 {
     /// <summary>
@@ -31,7 +30,6 @@ namespace WpfApp1.Controls
         public BrowseControl()
         {
             InitializeComponent();
-            
         }
 
         // browse CSV file

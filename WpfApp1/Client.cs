@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace WpfApp1
 {
@@ -29,7 +30,6 @@ namespace WpfApp1
             client = new TcpClient(ip, port);
             // Get a client stream for reading and writing.
             stream = client.GetStream();
-
         }
         public void disconnect()
         {
