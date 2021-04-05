@@ -15,7 +15,6 @@ namespace WpfApp1.Models
         public delegate void MediaPlayerModelEventHandler(object sender, StringEventArgs args);
         public event MediaPlayerModelEventHandler Shared;
 
-
         private Client client;
         private string csv_path;
         public string CSV_Path
@@ -23,7 +22,6 @@ namespace WpfApp1.Models
             get { return csv_path; }
             set { csv_path = value; }
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)

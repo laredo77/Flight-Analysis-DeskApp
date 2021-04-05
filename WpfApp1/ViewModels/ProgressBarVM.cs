@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Helpers;
+using WpfApp1.Models;
 
-namespace WpfApp1.Clocks
+namespace WpfApp1.ViewModels
 {
-    public class ClockVM : INotifyPropertyChanged
+    public class ProgressBarVM : INotifyPropertyChanged
     {
-
-        private ClockModel model;
-        public ClockVM(ClockModel model)
+        private ProgressBarModel model;
+        public ProgressBarVM(ProgressBarModel model)
         {
             this.model = model;
             model.PropertyChanged += delegate (object sender, PropertyChangedEventArgs e)
@@ -27,25 +27,25 @@ namespace WpfApp1.Clocks
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        public float VM_Height
+        public float VM_Pitch
         {
             get
             {
-                return model.Height;
+                return model.Pitch;
             }
         }
-        public int VM_Speed
+        public float VM_Roll
         {
             get
             {
-                return model.Speed;
+                return model.Roll;
             }
         }
-        public float VM_CompassAngle
+        public float VM_Yaw
         {
             get
             {
-                return model.CompassAngle;
+                return model.Yaw;
             }
         }
 
@@ -53,10 +53,10 @@ namespace WpfApp1.Clocks
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             string[] currentLine = args.Data.Split(',');
-            model.Speed = (int)double.Parse(currentLine[21]);
-            model.Height = float.Parse(currentLine[16]);
-            ///////????????????????????????????????
-            model.CompassAngle = float.Parse(currentLine[19]);
+           /////????????
+            model. Pitch= float.Parse(currentLine[18]);
+            model.Roll = float.Parse(currentLine[17]);
+            model.Yaw = float.Parse(currentLine[20]);
         }
     }
 }

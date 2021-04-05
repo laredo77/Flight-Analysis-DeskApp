@@ -17,12 +17,12 @@ using WpfApp1.Clocks;
 namespace WpfApp1.Controls
 {
     /// <summary>
-    /// Interaction logic for SpeedClock.xaml
+    /// Interaction logic for compass.xaml
     /// </summary>
-    public partial class SpeedClock : UserControl
+    public partial class compass : UserControl
     {
         public ClockVM vm;
-        public SpeedClock()
+        public compass()
         {
             InitializeComponent();
             vm = new ClockVM(new ClockModel());

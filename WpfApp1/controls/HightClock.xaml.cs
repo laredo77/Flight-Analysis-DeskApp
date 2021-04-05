@@ -21,11 +21,11 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class HightClock : UserControl
     {
-        public ClockViewModel vm;
+        public ClockVM vm;
         public HightClock()
         {
             InitializeComponent();
-            vm = new ClockViewModel(new ClockModel());
+            vm = new ClockVM(new ClockModel());
             DataContext = vm;
         }
     }

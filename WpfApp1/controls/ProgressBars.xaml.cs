@@ -12,20 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfApp1.Clocks;
+using WpfApp1.Models;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1.Controls
 {
     /// <summary>
-    /// Interaction logic for SpeedClock.xaml
+    /// Interaction logic for ProgressBars.xaml
     /// </summary>
-    public partial class SpeedClock : UserControl
+    public partial class ProgressBars : UserControl
     {
-        public ClockVM vm;
-        public SpeedClock()
+        public ProgressBarVM vm;
+        public ProgressBars()
         {
             InitializeComponent();
-            vm = new ClockVM(new ClockModel());
+            vm = new ProgressBarVM(new ProgressBarModel());
             DataContext = vm;
         }
     }

@@ -9,16 +9,16 @@
     <Grid>
         <Viewbox>
             <Grid>
-                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="600" Width="600" BorderBrush="#FF2833FC"
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="600" Width="600" BorderBrush="#FFFF"
                 BorderThickness="3 3 3 0" CornerRadius="300 300 300 300" Background="#FF262525" />
-                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="570" Width="570" BorderBrush="#FF2833FC"
+                <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="570" Width="570" BorderBrush="#FFFF"
                 BorderThickness="0 3 0 0" CornerRadius="300 300 0 0">
                     <Border.Effect>
-                        <DropShadowEffect Color="#FF7E85FE" BlurRadius="10" ShadowDepth="2"/>
+                        <DropShadowEffect Color="#FFFF" BlurRadius="10" ShadowDepth="2"/>
                     </Border.Effect>
                 </Border>
                 <TextBlock x:Name="speedTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" 
-                   FontFamily="Agency FB" Foreground="#FF393FA4" Text="{Binding Path=VM_Height}">
+                   FontFamily="Agency FB" Foreground="#FFFF" Text="{Binding Path=VM_Height}">
                     <TextBlock.Effect>
                         <DropShadowEffect BlurRadius="20" ShadowDepth="0" Color="#FFB2B4C6"/>
                     </TextBlock.Effect>

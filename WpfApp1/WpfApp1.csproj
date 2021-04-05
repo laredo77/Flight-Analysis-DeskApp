@@ -67,9 +67,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\compass.xaml.cs">
+      <DependentUpon>compass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressBars.xaml.cs">
+      <DependentUpon>ProgressBars.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\ClockModel.cs" />
     <Compile Include="Models\JoystickBarsModel.cs" />
     <Compile Include="Models\MediaPlayerModel.cs" />
+    <Compile Include="Models\ProgressBarModel.cs" />
     <Compile Include="ViewModels\ClockVM.cs" />
     <Compile Include="Controls\BrowseControl.xaml.cs">
       <DependentUpon>BrowseControl.xaml</DependentUpon>
@@ -89,7 +96,12 @@
     <Compile Include="Client.cs" />
     <Compile Include="ViewModels\MediaPlayerVM.cs" />
     <Compile Include="ViewModels\JoystickBarsVM.cs" />
+    <Compile Include="ViewModels\ProgressBarVM.cs" />
     <Page Include="Controls\BrowseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\compass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\MediaPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProgressBars.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +179,8 @@
     <Resource Include="Pictures\previous.jpg" />
     <Resource Include="Pictures\stop.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Controls\compassPic.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

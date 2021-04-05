@@ -13,7 +13,6 @@ namespace WpfApp1.ViewModels
     {
         private MediaPlayerModel model;
 
-
         public MediaPlayerVM(MediaPlayerModel model)
         {
             this.model = model; //model.PropertyChanged+=...}

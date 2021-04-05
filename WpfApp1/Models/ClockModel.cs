@@ -22,8 +22,23 @@ namespace WpfApp1.Clocks
         {
             this.Speed = 0;
             this.Height = 0;
+            
         }
-
+        float compassAngle;
+        public float CompassAngle
+        {
+            get
+            {
+                return this.compassAngle;
+            }
+            set
+            {
+               
+                    compassAngle = value;
+                    NotifyPropertyChanged("CompassAngle");
+                
+            }
+        }
         float height;
         public float Height
         {
