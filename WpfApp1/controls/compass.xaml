@@ -14,7 +14,7 @@
             <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="600" Width="600" BorderBrush="#FFFF"
                 BorderThickness="3 3 3 0" CornerRadius="300 300 300 300" >
                 <Border.Background>
-                    <ImageBrush ImageSource="compassPic.jpg"/>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\compassPic.jpg"/>
                 </Border.Background>
             </Border>
             <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="570" Width="570" BorderBrush="#FFFF"

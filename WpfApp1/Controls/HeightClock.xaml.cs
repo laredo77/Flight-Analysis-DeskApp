@@ -19,10 +19,10 @@ namespace WpfApp1.Controls
     /// <summary>
     /// Interaction logic for HightClock.xaml
     /// </summary>
-    public partial class HightClock : UserControl
+    public partial class HeightClock : UserControl
     {
         public ClockVM vm;
-        public HightClock()
+        public HeightClock()
         {
             InitializeComponent();
             vm = new ClockVM(new ClockModel());

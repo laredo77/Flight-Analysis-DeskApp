@@ -69,9 +69,6 @@
     <Compile Include="Controls\ProgressBars.xaml.cs">
       <DependentUpon>ProgressBars.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\GraphPlotter.xaml.cs">
-      <DependentUpon>GraphPlotter.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\ClockModel.cs" />
     <Compile Include="Models\JoystickBarsModel.cs" />
     <Compile Include="Models\MediaPlayerModel.cs" />
@@ -80,8 +77,8 @@
     <Compile Include="Controls\BrowseControl.xaml.cs">
       <DependentUpon>BrowseControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\HightClock.xaml.cs">
-      <DependentUpon>HightClock.xaml</DependentUpon>
+    <Compile Include="Controls\HeightClock.xaml.cs">
+      <DependentUpon>HeightClock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\JoystickBars.xaml.cs">
       <DependentUpon>JoystickBars.xaml</DependentUpon>
@@ -104,11 +101,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\GraphPlotter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\HightClock.xaml">
+    <Page Include="Controls\HeightClock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,7 +176,7 @@
     <Resource Include="Pictures\stop.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Controls\compassPic.jpg" />
+    <Resource Include="Pictures\compassPic.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

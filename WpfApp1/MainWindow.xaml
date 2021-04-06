@@ -11,9 +11,9 @@
         <Controls:BrowseControl x:Name="BrowseControl" Margin="143,587,188,14" />
         <Controls:MediaPlayer x:Name="MediaPlayer" Margin="60,467,10,89"/>
         <Controls:JoystickBars x:Name="JoystickBars" Margin="576,10,10,456" />
-        <Controls:SpeedClock x:Name="SpeedClock" Margin="626,240,22.667,271" RenderTransformOrigin="0.5,0.5" />
-        <Controls:HightClock x:Name="HightClock" Margin="477,240,172.667,271"/>
-        <Controls:compass x:Name="Compass"  Margin="316,246,328.667,271"/>
-        <Controls:ProgressBars x:Name="ProgressBars" Margin="90,264,495.667,256"/>
+        <Controls:SpeedClock x:Name="SpeedClock" Margin="452,126,227,421" RenderTransformOrigin="0.5,0.5" />
+        <Controls:HeightClock x:Name="HeightClock" Margin="455,0,227,551"/>
+        <Controls:compass x:Name="Compass"  Margin="208,10,342,422"/>
+        <Controls:ProgressBars x:Name="ProgressBars" Margin="0,42,586,478"/>
     </Grid>
 </Window>
