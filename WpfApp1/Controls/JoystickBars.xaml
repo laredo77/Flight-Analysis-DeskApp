@@ -4,78 +4,77 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Controls"
-             mc:Ignorable="d" Height="205" Width="207.5">
-    <Grid Margin="0,0,0,10">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <!--test part1-->
-        <Ellipse x:Name="Cricle" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Margin="46,4,0,0">
-            <Ellipse.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF262525"/>
-                </RadialGradientBrush>
-            </Ellipse.Fill>
-        </Ellipse>
-        <Ellipse x:Name="KnobBase" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" Margin="96,54,0,0">
-            <Ellipse.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FFE6D5AE" />
-                </RadialGradientBrush>
-            </Ellipse.Fill>
-            <Ellipse.RenderTransform>
-                <TransformGroup>
-                    <TranslateTransform  X="{Binding VM_Aileron}" Y="{Binding VM_Elevator}" />
-                </TransformGroup>
-            </Ellipse.RenderTransform>
-        </Ellipse>
-        <!--test part2-->
-        <Rectangle x:Name="RudderRect" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Margin="46,168,0,0" StrokeThickness="1" Stroke="Black">
-            <Rectangle.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF608CDA"/>
-                </RadialGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="Rudder" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="112,168,0,0">
-            <Rectangle.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="Black" />
-                </RadialGradientBrush>
-            </Rectangle.Fill>
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <TranslateTransform />
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <!--test part3-->
-        <Rectangle x:Name="ThrottleRect" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.51,-0.071" Margin="-44,80,0,0" StrokeThickness="1" Stroke="Black">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform />
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-            <Rectangle.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="#FF797F89"/>
-                </RadialGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="Throttle" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="10,129,0,0">
-            <Rectangle.Fill>
-                <RadialGradientBrush>
-                    <GradientStop Color="Black" />
-                </RadialGradientBrush>
-            </Rectangle.Fill>
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <TranslateTransform Y="{Binding VM_Throttle}" />
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-    </Grid>
+             mc:Ignorable="d" Height="284" Width="254.5">
+    <!--test part1-->
+    <Viewbox Margin="10">
+        <Grid Width="230">
+            <Ellipse x:Name="Cricle" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Margin="46,4,0,0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF262525"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="KnobBase" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" Margin="96,54,0,0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFE6D5AE" />
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform  X="{Binding VM_Aileron}" Y="{Binding VM_Elevator}" />
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <!--test part2-->
+            <Rectangle x:Name="RudderRect" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Margin="46,168,0,0" StrokeThickness="1" Stroke="Black">
+                <Rectangle.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF608CDA"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="Rudder" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="112,168,0,0">
+                <Rectangle.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" />
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <!--test part3-->
+            <Rectangle x:Name="ThrottleRect" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.51,-0.071" Margin="-44,80,0,0" StrokeThickness="1" Stroke="Black">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF797F89"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="Throttle" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.5,0.5" Margin="10,129,0,0">
+                <Rectangle.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" />
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform Y="{Binding VM_Throttle}" />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Grid>
+    </Viewbox>
 </UserControl>

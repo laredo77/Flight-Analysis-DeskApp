@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace WpfApp1.Clocks
+namespace WpfApp1.Models
 {
     public class ClockModel : INotifyPropertyChanged
     {

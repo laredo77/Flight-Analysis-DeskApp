@@ -3,17 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:WpfApp1" 
         xmlns:Controls="clr-namespace:WpfApp1.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Background="#FFB4B4B4">
-        <Controls:BrowseControl x:Name="BrowseControl" Margin="143,587,188,14" />
-        <Controls:MediaPlayer x:Name="MediaPlayer" Margin="60,467,10,89"/>
-        <Controls:JoystickBars x:Name="JoystickBars" Margin="576,10,10,456" />
-        <Controls:SpeedClock x:Name="SpeedClock" Margin="452,126,227,421" RenderTransformOrigin="0.5,0.5" />
-        <Controls:HeightClock x:Name="HeightClock" Margin="455,0,227,551"/>
-        <Controls:compass x:Name="Compass"  Margin="208,10,342,422"/>
-        <Controls:ProgressBars x:Name="ProgressBars" Margin="0,42,586,478"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="197*"/>
+            <RowDefinition Height="27*"/>
+        </Grid.RowDefinitions>
+        <Controls:BrowseControl x:Name="BrowseControl" Margin="143,11,187,0" Grid.Row="1" />
+        <Controls:MediaPlayer x:Name="MediaPlayer" Margin="0,490,0,66" Grid.RowSpan="2"/>
+        <Controls:JoystickBars x:Name="JoystickBars" Margin="594,-52,-24,358" Width="Auto" />
+        <Controls:SpeedClock x:Name="SpeedClock" Margin="470,10,187,451" RenderTransformOrigin="0.507,0.516" />
+        <Controls:HeightClock x:Name="HeightClock" Margin="483,144,205,320" RenderTransformOrigin="0.5,0.5"/>
+        <Controls:compass x:Name="Compass"  Margin="589,192,2,168"/>
+        <Controls:ProgressBars x:Name="ProgressBars" Margin="467,302,210,207"/>
+        <Controls:GraphPlotter x:Name="GraphPlotter" Margin="-48,10,272,117" />
     </Grid>
 </Window>

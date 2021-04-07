@@ -38,6 +38,9 @@
     <Reference Include="OxyPlot, Version=2.0.0.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
       <HintPath>..\packages\OxyPlot.Core.2.0.0\lib\net45\OxyPlot.dll</HintPath>
     </Reference>
+    <Reference Include="OxyPlot.Wpf, Version=2.0.0.0, Culture=neutral, PublicKeyToken=75e952ba404cdbb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Wpf.2.0.0\lib\net45\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="Syncfusion.Licensing, Version=19.1460.0.54, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Licensing.19.1.0.54\lib\net46\Syncfusion.Licensing.dll</HintPath>
@@ -66,13 +69,18 @@
     <Compile Include="Controls\compass.xaml.cs">
       <DependentUpon>compass.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\GraphPlotter.xaml.cs">
+      <DependentUpon>GraphPlotter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ProgressBars.xaml.cs">
       <DependentUpon>ProgressBars.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ClockModel.cs" />
+    <Compile Include="Models\GraphModel.cs" />
     <Compile Include="Models\JoystickBarsModel.cs" />
     <Compile Include="Models\MediaPlayerModel.cs" />
     <Compile Include="Models\ProgressBarModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ClockVM.cs" />
     <Compile Include="Controls\BrowseControl.xaml.cs">
       <DependentUpon>BrowseControl.xaml</DependentUpon>
@@ -90,6 +98,7 @@
       <DependentUpon>SpeedClock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="ViewModels\GraphVM.cs" />
     <Compile Include="ViewModels\MediaPlayerVM.cs" />
     <Compile Include="ViewModels\JoystickBarsVM.cs" />
     <Compile Include="ViewModels\ProgressBarVM.cs" />
@@ -98,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\compass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GraphPlotter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,6 +190,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\compassPic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Helpers\playback_small.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

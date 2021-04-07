@@ -9,6 +9,7 @@ namespace WpfApp1.Models
 {
     public class JoystickBarsModel : INotifyPropertyChanged
     {
+        // properties
         private double rudder;
         public double Rudder
         {
@@ -55,8 +56,11 @@ namespace WpfApp1.Models
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
         public event PropertyChangedEventHandler PropertyChanged;
+
+        //
         public JoystickBarsModel()
         {
+            this.rudder = 0;
             this.aileron = 0;
             this.elevator = 0;
             this.throttle = 0;

@@ -9,7 +9,7 @@ using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
 {
-    public class JoystickBarsVM : INotifyPropertyChanged
+    public class JoystickBarsVM : ViewModelBase
     {
         private JoystickBarsModel model;
         public JoystickBarsVM(JoystickBarsModel model)
@@ -20,25 +20,9 @@ namespace WpfApp1.ViewModels
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null) this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
-
-        public double VM_Aileron
-        {
-            get { return model.Aileron; }
-        }
-        public double VM_Elevator
-        {
-            get { return model.Elevator; }
-        }
-        public double VM_Throttle
-        {
-            get { return model.Throttle; }
-        }
+        public double VM_Aileron { get { return model.Aileron; } }
+        public double VM_Elevator { get { return model.Elevator; } }
+        public double VM_Throttle { get { return model.Throttle; } }
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             string[] currentLine = args.Data.Split(',');

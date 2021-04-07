@@ -9,7 +9,7 @@ using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
 {
-    public class ProgressBarVM : INotifyPropertyChanged
+    public class ProgressBarVM : ViewModelBase
     {
         private ProgressBarModel model;
         public ProgressBarVM(ProgressBarModel model)
@@ -20,41 +20,18 @@ namespace WpfApp1.ViewModels
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
-        // event handler
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
         public float VM_Pitch
-        {
-            get
-            {
-                return model.Pitch;
-            }
-        }
+        { get { return model.Pitch; } }
         public float VM_Roll
-        {
-            get
-            {
-                return model.Roll;
-            }
-        }
-        public float VM_Yaw
-        {
-            get
-            {
-                return model.Yaw;
-            }
-        }
+        { get { return model.Roll; } }
+        public float VM_Yaw { get { return model.Yaw; } }
 
         // get my data by event
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             string[] currentLine = args.Data.Split(',');
-           /////????????
-            model. Pitch= float.Parse(currentLine[18]);
+            /////????????
+            model.Pitch = float.Parse(currentLine[18]);
             model.Roll = float.Parse(currentLine[17]);
             model.Yaw = float.Parse(currentLine[20]);
         }

@@ -9,7 +9,7 @@ using WpfApp1.Models;
 
 namespace WpfApp1.ViewModels
 {
-    public class MediaPlayerVM : INotifyPropertyChanged
+    public class MediaPlayerVM : ViewModelBase
     {
         private MediaPlayerModel model;
 
@@ -20,22 +20,15 @@ namespace WpfApp1.ViewModels
             {
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
-            // event 2th
+            // event 
             model.Shared += delegate (object sender, StringEventArgs e)
             {
                 Shared?.Invoke(this, new StringEventArgs { Data = e.Data, ID = e.ID });
             };
         }
-        // event handler 2th
+        // event handler
         public delegate void MediaPlayerModelEventHandler(object sender, StringEventArgs args);
         public event MediaPlayerModelEventHandler Shared;
-
-        // event handler 1th
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null) this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
 
         //methods
         public void play() => this.model.playforward();
@@ -44,9 +37,7 @@ namespace WpfApp1.ViewModels
         public void playbackfaster() => this.model.playbackwardfaster();
         public void pause() => this.model.pause();
         public void stop() => this.model.stop();
-
         public void add_CSV_Path(string path) => model.CSV_Path = path;
-
 
 
         // Properties

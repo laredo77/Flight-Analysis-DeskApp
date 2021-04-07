@@ -4,11 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp1.Models;
 using WpfApp1.Helpers;
 
-namespace WpfApp1.Clocks
+namespace WpfApp1.ViewModels
 {
-    public class ClockVM : INotifyPropertyChanged
+    public class ClockVM : ViewModelBase
     {
 
         private ClockModel model;
@@ -20,34 +21,9 @@ namespace WpfApp1.Clocks
                 NotifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
-        // event handler
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
-        public float VM_Height
-        {
-            get
-            {
-                return model.Height;
-            }
-        }
-        public int VM_Speed
-        {
-            get
-            {
-                return model.Speed;
-            }
-        }
-        public float VM_CompassAngle
-        {
-            get
-            {
-                return model.CompassAngle;
-            }
-        }
+        public float VM_Height { get { return model.Height; } }
+        public int VM_Speed { get { return model.Speed; } }
+        public float VM_CompassAngle { get { return model.CompassAngle; } }
 
         // get my data by event
         public void Get_My_Data(object sender, StringEventArgs args)

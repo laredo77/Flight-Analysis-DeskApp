@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Controls" xmlns:models="clr-namespace:WpfApp1.Models"  xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" 
              mc:Ignorable="d" Height="115" Width="664.5">
-
-    <Grid Height="115" VerticalAlignment="Top" HorizontalAlignment="Left" Width="664">
+    <Viewbox>
+        <Grid Height="115" VerticalAlignment="Top" HorizontalAlignment="Left" Width="664">
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>
         <Slider x:Name="slider" Maximum="{Binding VM_Num_Lines, Mode=OneWay}" Value="{Binding VM_Curr_Line,Mode=TwoWay}"  HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="49" Width="644"/>
@@ -40,13 +40,13 @@
                 <ImageBrush ImageSource="/WpfApp1;component/Pictures\next.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="doubleNextButton" HorizontalAlignment="Left" Margin="376,15,0,0" VerticalAlignment="Top" Width="40" Height="46" RenderTransformOrigin="2.227,0.436" >
+        <Button IsEnabled="False" x:Name="doubleNextButton" HorizontalAlignment="Left" Margin="376,15,0,0" VerticalAlignment="Top" Width="40" Height="46" RenderTransformOrigin="2.227,0.436" >
             <Button.Background>
                 <ImageBrush ImageSource="/WpfApp1;component/Pictures\doubleNext.jpg"/>
             </Button.Background>
         </Button>
         <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="427,27,0,0" VerticalAlignment="Top" Height="26" Width="79"/>
-        <TextBox x:Name="playSpeedTextBox" HorizontalAlignment="Left" Height="26" Margin="511,27,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="56"/>
         <Label x:Name="timeLabel" Content="{Binding VM_Time, Mode=OneWay}" HorizontalAlignment="Left" Margin="577,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106" Height="26" Width="77"/>
     </Grid>
+    </Viewbox>
 </UserControl>
