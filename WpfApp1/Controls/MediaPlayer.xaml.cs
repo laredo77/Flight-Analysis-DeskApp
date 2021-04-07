@@ -37,12 +37,7 @@ namespace WpfApp1.Controls
         // use events to get csv path
         public void Get_My_Paths(object sender, StringEventArgs args)
         {
-            if (string.Equals("csv", args.ID))
-            {
-                vm.add_CSV_Path(args.Data);
-            }
-            else return;
-   
+            vm.add_CSV_Path(args.Data);
         }
 
         private void playButton_Click(object sender, RoutedEventArgs e)
@@ -67,7 +62,7 @@ namespace WpfApp1.Controls
 
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)

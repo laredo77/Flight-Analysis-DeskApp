@@ -147,7 +147,7 @@ namespace WpfApp1.Models
             {
                 string line = arrayOfLines[currIndex];
                 client.write(line);
-                Shared?.Invoke(this, new StringEventArgs { Data = line });
+                Shared?.Invoke(this, new StringEventArgs { Data = line , ID = currIndex });
                 Time = TimeSpan.FromSeconds(currIndex * 0.1).ToString("hh':'mm':'ss");
                 Thread.Sleep(sleep);
             }

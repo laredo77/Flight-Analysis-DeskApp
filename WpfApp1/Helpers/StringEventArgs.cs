@@ -10,6 +10,6 @@ namespace WpfApp1.Helpers
     {
         public string Data { get; set; }
 
-        public string ID { get; set; }
+        public int ID { get; set; }
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WpfApp1.Models;
 using WpfApp1.Helpers;
+using OxyPlot;
+using System.ComponentModel;
 
 namespace WpfApp1.ViewModels
 {
@@ -19,7 +21,27 @@ namespace WpfApp1.ViewModels
         public GraphVM(GraphModel model) 
         {
             this.model = model;
+            model.PropertyChanged += delegate (object sender, PropertyChangedEventArgs e)
+            {
+                NotifyPropertyChanged("VM_" + e.PropertyName);
+            };
+
         }
         public void add_CSV_Path(string path) => model.CSV_Path = path;
+        public List<DataPoint> VM_Points { get { return model.Points; }  }
+        public void Get_My_Data(object sender, StringEventArgs args)
+        {
+            // time of model 
+            model.Time = 0.1 * args.ID;
+            // update the graph
+            model.update();
+        }
+        public void Switch(string parameter)
+        {
+            // time of model 
+            model.Param_Index = Dict_Params[parameter];
+            // update the graph
+            model.update();
+        }
     }
 }

@@ -35,17 +35,13 @@ namespace WpfApp1.Controls
         // select items
         public void Get_My_Paths(object sender, StringEventArgs args)
         {
-            if (string.Equals("csv", args.ID))
-            {
-                
-            }
-            else return;
+            vm.add_CSV_Path(args.Data);
 
         }
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
             ListBoxItem lbi = sender as ListBoxItem;
-            Console.WriteLine(lbi.Content.ToString());
+            vm.Switch(lbi.Content.ToString());
         }
     }
 }

@@ -9,7 +9,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="229,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click" RenderTransformOrigin="-0.046,0.163" >
+        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="152,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click" RenderTransformOrigin="-0.046,0.163" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -17,7 +17,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="openXMLButton" Content="Open XML" HorizontalAlignment="Left" Margin="124,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openXMLButton_Click" >
+        <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="257,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -25,15 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="334,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
-                    <GradientStop Color="#FF6D6D6D" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="runFlightGear" Content="Run FlightGear" HorizontalAlignment="Left" Margin="19,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="runFlightGear_Click" RenderTransformOrigin="-0.046,0.163" IsEnabled="False">
+        <Button x:Name="runFlightGear" Content="Run FlightGear" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="runFlightGear_Click" RenderTransformOrigin="-0.046,0.163" IsEnabled="False">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>

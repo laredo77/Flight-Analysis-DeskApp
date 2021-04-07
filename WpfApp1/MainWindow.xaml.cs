@@ -26,13 +26,16 @@ namespace WpfApp1
         {
             InitializeComponent();
             Load_Names();
+            // get csv file
             BrowseControl.Updated += MediaPlayer.Get_My_Paths;
             BrowseControl.Updated += GraphPlotter.Get_My_Paths;
+            // sharing from mediaplayer
             MediaPlayer.vm.Shared += SpeedClock.vm.Get_My_Data;
             MediaPlayer.vm.Shared += HeightClock.vm.Get_My_Data;
             MediaPlayer.vm.Shared += JoystickBars.vm.Get_My_Data;
             MediaPlayer.vm.Shared += Compass.vm.Get_My_Data;
             MediaPlayer.vm.Shared += ProgressBars.vm.Get_My_Data;
+            MediaPlayer.vm.Shared += GraphPlotter.vm.Get_My_Data;
         }
 
         // loading names from here because of technical problems
@@ -52,6 +55,7 @@ namespace WpfApp1
                 no_repeat = read_params;
                 Dict_params.Add(read_params, i);
             };
+            // update list and dict of vm
             GraphPlotter.vm.Dict_Params = Dict_params;
             GraphPlotter.vm.Parameters = Dict_params.Keys.ToList();
         }

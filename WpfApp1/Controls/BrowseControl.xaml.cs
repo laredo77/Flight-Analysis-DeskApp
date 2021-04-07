@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -20,13 +21,13 @@ namespace WpfApp1.Controls
     /// Interaction logic for BrowseControl.xaml
     /// </summary>
     /// 
-    
+
     public partial class BrowseControl : UserControl
     {
         public delegate void BrowseControlEventHandler(BrowseControl sender, StringEventArgs args);
         public event BrowseControlEventHandler Updated;
         private string exePath;
-        bool csvFlag, exeFlag, xmlFlag;
+        bool csvFlag, exeFlag;
         public BrowseControl()
         {
             InitializeComponent();
@@ -43,27 +44,12 @@ namespace WpfApp1.Controls
             if (dialog.ShowDialog() == true)
             {
                 csvFlag = true;
-                // invoke to mediaplayer
-                Updated?.Invoke(this, new StringEventArgs { Data = dialog.FileName, ID = "csv" });
-                runFlightGear.IsEnabled = csvFlag && exeFlag && xmlFlag;
+                // invoke to mediaplayer and graph
+                Updated?.Invoke(this, new StringEventArgs { Data = dialog.FileName });
+                runFlightGear.IsEnabled = csvFlag && exeFlag;
             }
         }
-        // browse XML file
-        private void openXMLButton_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.InitialDirectory = "c:\\";
-            dialog.Filter = "XML Files|*.xml";
-            dialog.FilterIndex = 2;
-            dialog.RestoreDirectory = true;
-            if (dialog.ShowDialog() == true)
-            {
-                xmlFlag = true;
-                // need to write here code that copy xml file to exe path
-                runFlightGear.IsEnabled = csvFlag && exeFlag && xmlFlag;
 
-            }
-        }
         // open FlightGear app
         private void openFlightGear_Click(object sender, RoutedEventArgs e)
         {
@@ -72,11 +58,14 @@ namespace WpfApp1.Controls
             dialog.Filter = "EXE Files(*.exe)| *.exe";
             dialog.FilterIndex = 2;
             dialog.RestoreDirectory = true;
-            if (dialog.ShowDialog() == true)
+            if (dialog.ShowDialog() == true && System.IO.Path.GetFileName(dialog.FileName).Equals("fgfs.exe"))
             {
                 exeFlag = true;
                 exePath = dialog.FileName;
-                runFlightGear.IsEnabled = csvFlag && exeFlag && xmlFlag;
+                runFlightGear.IsEnabled = csvFlag && exeFlag;
+                // copy xml to dst
+                string xmlPath = exePath.Substring(0, exePath.Length - 12) + @"data\Protocol\playback_small.xml";
+                File.Copy(@"../../Helpers/playback_small.xml", xmlPath, true);
             }
         }
 
@@ -104,9 +93,9 @@ namespace WpfApp1.Controls
 
                 // write code that wait for this goddamned app
                 // end 
-                
+
                 cmd.WaitForExit();
-                Updated?.Invoke(this, new Helpers.StringEventArgs { Data = null, ID = "exe" });
+               
             }
         }
     }
