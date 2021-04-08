@@ -31,16 +31,19 @@ namespace WpfApp1.ViewModels
         public List<DataPoint> VM_Points { get { return model.Points; }  }
         public void Get_My_Data(object sender, StringEventArgs args)
         {
-            // time of model 
-            model.Time = 0.1 * args.ID;
             // update the graph
-            model.update();
+            model.update2(args.ID);
+            
         }
         public void Switch(string parameter)
         {
             // time of model 
             model.Param_Index = Dict_Params[parameter];
             // update the graph
+            model.Points.Clear();
+            model.Param_Index = Dict_Params[parameter];
+            model.update();
+            model.Points.Clear();
             model.update();
         }
     }

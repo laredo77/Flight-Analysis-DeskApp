@@ -61,10 +61,9 @@ namespace WpfApp1.Models
             set
             {
                 csv_path = value;
-                var lines = File.ReadLines(csv_path);
-                arrayOfLines = lines.ToArray();
+                arrayOfLines = File.ReadAllLines(csv_path);
                 Num_Lines = arrayOfLines.Length;
-                currIndex = 0;
+                currIndex = 1;
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -86,7 +85,7 @@ namespace WpfApp1.Models
                 try { client.connect("127.0.0.1", 5400); }
                 catch (Exception e) { MessageBox.Show(e.Message); return; };
                 // loop of sending
-                while (Curr_Line < Num_Lines || 0 <= Curr_Line)
+                while (Curr_Line < Num_Lines || 0 < Curr_Line)
                 {
                     for(; isBackward == 0 && Curr_Line < Num_Lines - 1; Curr_Line++) send();
                     for(; isBackward == 1 && 0 < Curr_Line; Curr_Line--) send();
