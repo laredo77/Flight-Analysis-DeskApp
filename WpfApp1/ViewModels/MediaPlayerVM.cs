@@ -45,5 +45,6 @@ namespace WpfApp1.ViewModels
         public string VM_Time { get { return model.Time; }  }
         public int VM_Curr_Line { get { return model.Curr_Line; } set { model.Curr_Line = value; } }
         public int VM_Num_Lines { get { return model.Num_Lines; } }
+        public double VM_CurrentSpeed { get { return model.CurrentSpeed; } }
     }
 }
