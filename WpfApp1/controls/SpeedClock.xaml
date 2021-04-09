@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Viewbox>
         <Grid>
+            <Label Content="Speed:" FontSize="60" Foreground="Black" Margin="-86,-9,0,0" />
             <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="600" Width="600" BorderBrush="#FFFF"
                 BorderThickness="3 3 3 0" CornerRadius="300 300 300 300" Background="#FF262525" />
             <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="570" Width="570" BorderBrush="#FFFF"

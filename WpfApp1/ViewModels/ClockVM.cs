@@ -22,7 +22,7 @@ namespace WpfApp1.ViewModels
             };
         }
         public float VM_Height { get { return model.Height; } }
-        public int VM_Speed { get { return model.Speed; } }
+        public float VM_Speed { get { return model.Speed; } }
         public float VM_CompassAngle { get { return model.CompassAngle; } }
 
         // get my data by event

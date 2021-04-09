@@ -34,7 +34,8 @@ namespace WpfApp1.ViewModels
         public void play() => this.model.playforward();
         public void playfaster() => this.model.playforwardfaster();
         public void playback() => this.model.playbackward();
-        public void playbackfaster() => this.model.playbackwardfaster();
+        public void playbackfaster() => this.model.playbackwardfaster(); 
+        public void playfarwardfaster() => this.model.playforwardfaster();
         public void pause() => this.model.pause();
         public void stop() => this.model.stop();
         public void add_CSV_Path(string path) => model.CSV_Path = path;

@@ -42,9 +42,6 @@
       <HintPath>..\packages\OxyPlot.Wpf.2.0.0\lib\net45\OxyPlot.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="ReachFramework" />
-    <Reference Include="Syncfusion.Licensing, Version=19.1460.0.54, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.19.1.0.54\lib\net46\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Printing" />

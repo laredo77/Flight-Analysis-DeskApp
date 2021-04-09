@@ -16,7 +16,7 @@ namespace WpfApp1.Models
         // send data event to other models
         public delegate void MediaPlayerModelEventHandler(object sender, StringEventArgs args);
         public event MediaPlayerModelEventHandler Shared;
-
+        
         // properties
         private string time;
         public string Time

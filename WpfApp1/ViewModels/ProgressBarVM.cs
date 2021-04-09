@@ -24,7 +24,8 @@ namespace WpfApp1.ViewModels
         { get { return model.Pitch; } }
         public float VM_Roll
         { get { return model.Roll; } }
-        public float VM_Yaw { get { return model.Yaw; } }
+        public float VM_Yaw 
+        { get { return model.Yaw; } }
 
         // get my data by event
         public void Get_My_Data(object sender, StringEventArgs args)
