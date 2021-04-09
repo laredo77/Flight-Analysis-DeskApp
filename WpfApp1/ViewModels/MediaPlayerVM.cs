@@ -34,7 +34,8 @@ namespace WpfApp1.ViewModels
         public void play() => this.model.playforward();
         public void playfaster() => this.model.playforwardfaster();
         public void playback() => this.model.playbackward();
-        public void playbackfaster() => this.model.playbackwardfaster();
+        public void playbackfaster() => this.model.playbackwardfaster(); 
+        public void playfarwardfaster() => this.model.playforwardfaster();
         public void pause() => this.model.pause();
         public void stop() => this.model.stop();
         public void add_CSV_Path(string path) => model.CSV_Path = path;
@@ -44,5 +45,6 @@ namespace WpfApp1.ViewModels
         public string VM_Time { get { return model.Time; }  }
         public int VM_Curr_Line { get { return model.Curr_Line; } set { model.Curr_Line = value; } }
         public int VM_Num_Lines { get { return model.Num_Lines; } }
+        public double VM_CurrentSpeed { get { return model.CurrentSpeed; } }
     }
 }

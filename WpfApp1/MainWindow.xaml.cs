@@ -29,6 +29,7 @@ namespace WpfApp1
             // get csv file
             BrowseControl.Updated += MediaPlayer.Get_My_Paths;
             BrowseControl.Updated += GraphPlotter.Get_My_Paths;
+
             // sharing from mediaplayer
             MediaPlayer.vm.Shared += SpeedClock.vm.Get_My_Data;
             MediaPlayer.vm.Shared += HeightClock.vm.Get_My_Data;

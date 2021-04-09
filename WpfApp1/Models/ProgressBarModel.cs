@@ -4,26 +4,32 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp1.Helpers;
 
 namespace WpfApp1.Models
 {
     public class ProgressBarModel : INotifyPropertyChanged
     {
-       
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-
+        //float pitchMax;
+        //float pitchMin;
+        //float rollMax;
+        //float rollMin;
+        //float yawMax;
+        //float yawMin;
         public ProgressBarModel()
         {
             this.Pitch = 0;
             this.Roll = 0;
             this.Yaw = 0;
-
         }
+
         float pitch;
         public float Pitch
         {
@@ -33,10 +39,8 @@ namespace WpfApp1.Models
             }
             set
             {
-
                 pitch = value;
                 NotifyPropertyChanged("Pitch");
-
             }
         }
         float roll;
@@ -48,10 +52,8 @@ namespace WpfApp1.Models
             }
             set
             {
-                
-                    roll = value;
-                    NotifyPropertyChanged("Roll");
-                
+                roll = value;
+                NotifyPropertyChanged("Roll");
             }
         }
 
@@ -64,11 +66,12 @@ namespace WpfApp1.Models
             }
             set
             {
-                    yaw = value;
-                    NotifyPropertyChanged("Yaw");
+                yaw = value;
+                NotifyPropertyChanged("Yaw");
             }
         }
 
+        public Action<object, StringEventArgs> Shared { get; internal set; }
     }
 }
 

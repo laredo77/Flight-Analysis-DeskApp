@@ -40,13 +40,9 @@
                 <ImageBrush ImageSource="/WpfApp1;component/Pictures\next.jpg"/>
             </Button.Background>
         </Button>
-        <Button IsEnabled="False" x:Name="doubleNextButton" HorizontalAlignment="Left" Margin="376,15,0,0" VerticalAlignment="Top" Width="40" Height="46" RenderTransformOrigin="2.227,0.436" >
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\doubleNext.jpg"/>
-            </Button.Background>
-        </Button>
-        <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="427,27,0,0" VerticalAlignment="Top" Height="26" Width="79"/>
+            <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="427,27,0,0" VerticalAlignment="Top" Height="26" Width="79"/>
         <Label x:Name="timeLabel" Content="{Binding VM_Time, Mode=OneWay}" HorizontalAlignment="Left" Margin="577,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106" Height="26" Width="77"/>
-    </Grid>
+            <TextBox HorizontalAlignment="Left" Height="46" Margin="526,17,0,0" TextWrapping="Wrap" Text="{Binding Path=VM_CurrentSpeed, Mode=OneWay}" TextAlignment="Center"  VerticalAlignment="Top" Width="40"/>
+        </Grid>
     </Viewbox>
 </UserControl>

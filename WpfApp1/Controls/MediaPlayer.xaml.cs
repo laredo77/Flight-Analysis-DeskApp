@@ -39,7 +39,7 @@ namespace WpfApp1.Controls
         {
             vm.add_CSV_Path(args.Data);
         }
-
+     
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
             vm.play();
@@ -73,6 +73,11 @@ namespace WpfApp1.Controls
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
             vm.pause();
+        }
+
+        private void doubleNextButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            vm.playfarwardfaster();
         }
     }
 }

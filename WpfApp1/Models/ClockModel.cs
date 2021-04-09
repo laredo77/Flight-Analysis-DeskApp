@@ -56,8 +56,8 @@ namespace WpfApp1.Models
             }
         }
 
-        int speed;
-        public int Speed
+        float speed;
+        public float Speed
         {
             get
             {

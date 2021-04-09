@@ -16,7 +16,7 @@ namespace WpfApp1.Models
         // send data event to other models
         public delegate void MediaPlayerModelEventHandler(object sender, StringEventArgs args);
         public event MediaPlayerModelEventHandler Shared;
-
+        
         // properties
         private string time;
         public string Time
@@ -26,6 +26,16 @@ namespace WpfApp1.Models
             {
                 time = value;
                 NotifyPropertyChanged("Time");
+            }
+        }
+        private double currentSpeed;
+        public double CurrentSpeed
+        {
+            get { return currentSpeed; }
+            set
+            {
+                currentSpeed = value;
+                NotifyPropertyChanged("CurrentSpeed");
             }
         }
         private int currIndex;
@@ -95,11 +105,13 @@ namespace WpfApp1.Models
                 client.disconnect();
             });
             this.sleep = 100;
+            this.CurrentSpeed = 0;
         }
 
         // methods
         public void playforward()
         {
+            CurrentSpeed = 1;
             if (player != null && player.IsAlive)
             {
                 isBackward = 0;
@@ -107,6 +119,7 @@ namespace WpfApp1.Models
                 return;
             }
             else player.Start();
+           
 
         }
 
@@ -114,29 +127,34 @@ namespace WpfApp1.Models
         {
             isBackward = 1;
             sleep = 100;
+            CurrentSpeed = 1;
         }
 
         public void pause()
         {
             isBackward = -1;
+            CurrentSpeed = 0;
         }
 
         public void stop()
         {
             isBackward = -1;
             currIndex = 0;
+            CurrentSpeed = 0;
         }
 
         public void playforwardfaster()
         {
             isBackward = 0;
             sleep = 50;
+            CurrentSpeed = 2;
         }
 
         public void playbackwardfaster()
         {
             isBackward = 1;
             sleep = 50;
+            CurrentSpeed = 2;
         }
 
         // helper methods
