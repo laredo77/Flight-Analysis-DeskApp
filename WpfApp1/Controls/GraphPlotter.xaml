@@ -9,7 +9,7 @@
              d:DesignHeight="500" d:DesignWidth="500">
     <Viewbox>
         <Grid Height="500" Width="500">
-            <ListBox ItemsSource = "{Binding Path = Parameters}" HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="175" >
+            <ListBox ItemsSource = "{Binding Path = Parameters}" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="250" Margin="0,250,0,0" >
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="ListBoxItem">
                         <EventSetter Event="Selected" Handler="ListBoxItem_Selected"/>
@@ -23,17 +23,20 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <oxy:Plot x:Name="TimeChart" Title="TimeChart" FontFamily="Bosch Sans Medium" Foreground="#FF0C6596" FontSize="12"  Background="AliceBlue" Margin="175,0,0,250">
+            <oxy:Plot x:Name="TimeChart" Title="TimeChart" FontFamily="Bosch Sans Medium" Foreground="#FF0C6596" FontSize="12"  Background="AliceBlue" Margin="0,0,250,250" >
                 <oxy:Plot.Series>
-                    <oxy:LineSeries x:Name="ls" Background="White" ItemsSource="{Binding VM_Points}" LineStyle="Solid" Color="ForestGreen" MarkerType="None" MarkerSize="5" MarkerFill="Black">
+                    <oxy:LineSeries x:Name="ls" Background="White" ItemsSource="{Binding VM_Points, Mode=OneWay}" LineStyle="Solid" Color="ForestGreen" MarkerType="None" MarkerSize="5" MarkerFill="Black">
                     </oxy:LineSeries>
                 </oxy:Plot.Series>
             </oxy:Plot>
-            <oxy:Plot x:Name="RegLinear" Title="RegLinear" Foreground="#FF0C6596" Margin="175,250,0,0" FontSize="12"  Background="AliceBlue">
+            <oxy:Plot x:Name="RegLinear" Title="RegLinear" Foreground="#FF0C6596" Margin="250,250,0,0" FontSize="12"  Background="AliceBlue">
                 <oxy:Plot.Series>
-                    <oxy:LineSeries x:Name="ls2" Background="White" ItemsSource="{Binding}" LineStyle="Solid" Color="OrangeRed" MarkerType="None" MarkerSize="5" MarkerFill="Black">
-                    </oxy:LineSeries>
+                    <oxy:LineSeries x:Name="ls2" Background="White" ItemsSource="{Binding}" LineStyle="Solid" Color="OrangeRed" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
+                    <oxy:ScatterSeries x:Name="points" Background="White" ItemsSource="{Binding}" Color="Gray" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
                 </oxy:Plot.Series>
+            </oxy:Plot>
+            <oxy:Plot x:Name="TimeCorrChart" Title="TimeCorrChart" FontFamily="Bosch Sans Medium" Foreground="#FF0C6596" FontSize="12"  Background="AliceBlue" Margin="250,0,0,250">
+                <oxy:LineSeries x:Name="corrline" Background="White" ItemsSource="{Binding VM_Corr_Points}" Title="hello" LineStyle="Solid" Color="BlueViolet" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
             </oxy:Plot>
         </Grid>
     </Viewbox>

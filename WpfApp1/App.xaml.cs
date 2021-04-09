@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp1.Controls;
 
 namespace WpfApp1
 {
@@ -13,7 +14,9 @@ namespace WpfApp1
     /// </summary>
     public partial class App : Application
     {
-       
-        //Console.WriteLine("Hello");
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            
+        }  
     }
 }

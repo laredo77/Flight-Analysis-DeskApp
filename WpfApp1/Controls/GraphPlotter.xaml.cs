@@ -27,7 +27,10 @@ namespace WpfApp1.Controls
         public GraphPlotter()
         {
             InitializeComponent();
-            vm = new GraphVM(new GraphModel(TimeChart.ActualModel));
+            vm = new GraphVM(new GraphModel());
+            vm.addGraph(TimeChart.ActualModel);
+            vm.addGraph(TimeCorrChart.ActualModel);
+            // vm.addGraph(TimeChart.ActualModel);
             DataContext = vm;
         }
 
