@@ -49,8 +49,9 @@ namespace WpfApp1.Models
 
             }
         }
+        // 2d array of parameters
         private List<double>[] set_values;
-        // 2d array of points
+        // 2d array of points time,parameter
         private List<DataPoint>[] set_points;
         // binding these points
         private List<DataPoint> points;
@@ -59,12 +60,24 @@ namespace WpfApp1.Models
             get { return points; }
             set{  points = value; }
         }
-
+        // binding these corr_Points
         private List<DataPoint> corr_points;
         public List<DataPoint> Corr_Points
         {
             get { return corr_points;  }
             set { corr_points = value; }
+        }
+        private List<DataPoint> scatter_points;
+        public List<DataPoint> Scatter_Points
+        {
+            get { return corr_points; }
+            set { corr_points = value;  }
+        }
+        private List<DataPoint> line;
+        public List<DataPoint> Line
+        {
+            get { return line; }
+            set { line = value; NotifyPropertyChanged("Line"); }
         }
         // param index for switching
         private int param_index;
@@ -89,15 +102,23 @@ namespace WpfApp1.Models
             Corr_Points = new List<DataPoint>();
             corrIndexs = new Dictionary<int, int>();
         }
-        // update 1
+        // reset 1
         public void reset() => curr_line = 0;
         // update 2
         public void update(int i_line)
         {
-            // index of line 
+            // update line
+            Line = linear_reg(set_values[param_index], set_values[corrIndexs[param_index]]);
+
+            // scatter points
+            
+
+            // index of second parameter 
             int param2 = corrIndexs[param_index];
+
             if (curr_line < i_line)
             {
+                // update graphs
                 Points.AddRange(set_points[param_index].GetRange(curr_line, i_line - curr_line));
                 Corr_Points.AddRange(set_points[param2].GetRange(curr_line, i_line - curr_line));
             }
@@ -106,12 +127,19 @@ namespace WpfApp1.Models
                 Points.RemoveRange(i_line, curr_line - i_line);
                 Corr_Points.RemoveRange(i_line, curr_line - i_line);
             }
+            // notify after the update
             NotifyPropertyChanged("Points");
             NotifyPropertyChanged("Corr_Points");
+            NotifyPropertyChanged("Scatter_Points");
             curr_line = i_line;
         }
 
-        // test
+        public int param2() {
+            if (corrIndexs.Count != 0) return corrIndexs[param_index];
+            else return 0;
+        }
+
+        // calculations
 
         // E(W) Avg it can be everything
         private double Avg(List<double> list)
@@ -155,10 +183,11 @@ namespace WpfApp1.Models
             return test;
         }
 
+        // corr indexes
         private Dictionary<int, int> corrIndexs;
-
         private void corrlection()
         {
+            if (corrIndexs.Count > 0) corrIndexs.Clear(); 
             int k;
             double max_pearson , test = 0;
             for (int i = 0; i < set_values.Length; i++)

@@ -16,6 +16,7 @@ namespace WpfApp1.ViewModels
 {
     public class GraphVM : ViewModelBase
     {
+        public Dictionary<int, string> Reverse_Dict_Params { get; set; }
         public Dictionary<string, int> Dict_Params { get; set; }
         public List<string> Parameters { get; set; }
         private GraphModel model;
@@ -29,10 +30,19 @@ namespace WpfApp1.ViewModels
             };
             graphs = new List<PlotModel>();
         }
+        // add graphs
         public void addGraph(PlotModel model) => graphs.Add(model);
+        // add csv for model
         public void add_CSV_Path(string path) => model.CSV_Path = path;
+        // points
         public List<DataPoint> VM_Points { get { return model.Points; }  }
+        // points of corr
         public List<DataPoint> VM_Corr_Points { get { return model.Corr_Points; } }
+        // create scatter points
+        public List<DataPoint> VM_Scatter_Points { get { return model.Scatter_Points; } }
+        // create line
+        public List<DataPoint> VM_Line { get { return model.Line; } }
+        // get data from mediaplayer
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             // update the graph
@@ -41,10 +51,14 @@ namespace WpfApp1.ViewModels
                 foreach (PlotModel graph in graphs) graph.InvalidatePlot(true);
             });
         }
+        // corr_param
+        public string Corr_Param { get { return Reverse_Dict_Params[model.param2()]; } }
         public void Switch(string parameter)
         {
             // time of model 
             model.Param_Index = Dict_Params[parameter];
+            // update name of corr graph
+            NotifyPropertyChanged("Corr_Param");
             // update the graph
             model.Points.Clear();
             model.Corr_Points.Clear();

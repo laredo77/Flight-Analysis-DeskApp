@@ -31,12 +31,12 @@
             </oxy:Plot>
             <oxy:Plot x:Name="RegLinear" Title="RegLinear" Foreground="#FF0C6596" Margin="250,250,0,0" FontSize="12"  Background="AliceBlue">
                 <oxy:Plot.Series>
-                    <oxy:LineSeries x:Name="ls2" Background="White" ItemsSource="{Binding}" LineStyle="Solid" Color="OrangeRed" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
-                    <oxy:ScatterSeries x:Name="points" Background="White" ItemsSource="{Binding}" Color="Gray" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
+                    <oxy:LineSeries x:Name="RegLine" Background="White" ItemsSource="{Binding VM_Line}" LineStyle="Solid" Color="OrangeRed" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
+                    <oxy:ScatterSeries x:Name="scattman" Background="White" ItemsSource="{Binding VM_Scatter_Points}" Color="Gray" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
                 </oxy:Plot.Series>
             </oxy:Plot>
             <oxy:Plot x:Name="TimeCorrChart" Title="TimeCorrChart" FontFamily="Bosch Sans Medium" Foreground="#FF0C6596" FontSize="12"  Background="AliceBlue" Margin="250,0,0,250">
-                <oxy:LineSeries x:Name="corrline" Background="White" ItemsSource="{Binding VM_Corr_Points}" Title="hello" LineStyle="Solid" Color="BlueViolet" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
+                <oxy:LineSeries x:Name="corrline" Background="White" ItemsSource="{Binding VM_Corr_Points, Mode=OneWay}" Title="{Binding Corr_Param}" LineStyle="Solid" Color="BlueViolet" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
             </oxy:Plot>
         </Grid>
     </Viewbox>
