@@ -23,6 +23,5 @@
         <Controls:compass x:Name="Compass"  Margin="616,169,5.667,214.667"/>
         <Controls:ProgressBars x:Name="ProgressBar" Margin="403,362,-75.333,112.667" RenderTransformOrigin="0.54,0.529"/>
         <Controls:GraphPlotter x:Name="Graph" Margin="-48,10,272,117" />
-        
     </Grid>
 </Window>

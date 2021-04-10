@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,6 @@ namespace WpfApp1.Models
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        //float pitchMax;
-        //float pitchMin;
-        //float rollMax;
-        //float rollMin;
-        //float yawMax;
-        //float yawMin;
         public ProgressBarModel()
         {
             this.Pitch = 0;
@@ -70,7 +65,85 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("Yaw");
             }
         }
-
+ 
+        float pitchMax;
+        public float PitchMax
+        {
+            get
+            {
+                return this.pitchMax;
+            }
+            set
+            {
+                pitchMax = value;
+                NotifyPropertyChanged("PitchMax");
+            }
+        }
+        float pitchMin;
+        public float PitchMin
+        {
+            get
+            {
+                return this.pitchMin;
+            }
+            set
+            {
+                pitchMin = value;
+                NotifyPropertyChanged("PitchMin");
+            }
+        }
+        float rollMax;
+        public float RollMax
+        {
+            get
+            {
+                return this.rollMax;
+            }
+            set
+            {
+                rollMax = value;
+                NotifyPropertyChanged("RollMax");
+            }
+        }
+        float rollMin;
+        public float RollMin
+        {
+            get
+            {
+                return this.rollMin;
+            }
+            set
+            {
+                rollMin = value;
+                NotifyPropertyChanged("RollMin");
+            }
+        }
+        float yawMax;
+        public float YawMax
+        {
+            get
+            {
+                return this.yawMax;
+            }
+            set
+            {
+                yawMax = value;
+                NotifyPropertyChanged("YawMax");
+            }
+        }
+        float yawMin;
+        public float YawMin
+        {
+            get
+            {
+                return this.yawMin;
+            }
+            set
+            {
+                yawMin = value;
+                NotifyPropertyChanged("YawMin");
+            }
+        }
         public Action<object, StringEventArgs> Shared { get; internal set; }
     }
 }

@@ -26,6 +26,19 @@ namespace WpfApp1.ViewModels
         { get { return model.Roll; } }
         public float VM_Yaw 
         { get { return model.Yaw; } }
+        public float VM_PitchMax
+        { get { return model.PitchMax; } }
+        public float VM_PitchMin
+        { get { return model.PitchMin; } }
+        public float VM_RollMax
+        { get { return model.RollMax; } }
+        public float VM_RollMin
+        { get { return model.RollMin; } }
+        public float VM_YawMax
+        { get { return model.YawMax; } }
+        public float VM_YawMin
+        { get { return model.YawMin; } }
+        //public void add_CSV_Path(string path) => model.CSV_Path = path;
 
         // get my data by event
         public void Get_My_Data(object sender, StringEventArgs args)

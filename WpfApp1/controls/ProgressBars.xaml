@@ -12,17 +12,14 @@
 
 
                 <ProgressBar  x:Name="progressBar1" HorizontalAlignment="Left" Height="20" Margin="0,20,0,0" 
-                              VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Pitch,  Mode=OneWay}" Minimum="-20" Maximum="20"/>
+                              VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Pitch,  Mode=OneWay}" Minimum="{Binding Path=VM_PitchMin, Mode=OneWay}" Maximum="{Binding Path=VM_PitchMax, Mode=OneWay}"/>
                 <ProgressBar  x:Name="progressBar2" HorizontalAlignment="Left" Height="20" Margin="0,60,0,0" 
-                              VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Roll, Mode=OneWay}"  Minimum="-40" Maximum="40"/>
+                              VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Roll, Mode=OneWay}"  Minimum="{Binding Path=VM_RollMin, Mode=OneWay}" Maximum="{Binding Path=VM_RollMax, Mode=OneWay}"/>
                 <ProgressBar x:Name="progressBar3" HorizontalAlignment="Left" Height="20" Margin="0,100,0,0" 
-                             VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Yaw, Mode=OneWay}"  Minimum="-100" Maximum="100"/>
+                             VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Yaw, Mode=OneWay}"  Minimum="{Binding Path=VM_YawMin, Mode=OneWay}" Maximum="{Binding Path=VM_YawMax, Mode=OneWay}"/>
                 <Label Content="Pitch:" FontSize="15" Foreground="Black" Margin="0,-5,0,0" />
                 <Label Content="Roll:" FontSize="15" Foreground="Black" Margin="0,35,0,0" />
                 <Label Content="Yaw:" FontSize="15" Foreground="Black" Margin="0,75,0,0" />
-                <Label Content="0" FontSize="15" Foreground="Black" Margin="140,-5,-140,0" />
-                <Label Content="0" FontSize="15" Foreground="Black" Margin="140,35,-140,0" />
-                <Label Content="0" FontSize="15" Foreground="Black" Margin="140,75,-140,0" />
                 <TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="{Binding Path=VM_Pitch, Mode=OneWay}" VerticalAlignment="Top" Width="39" Margin="310,20,0,0"/>
                 <TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="{Binding Path=VM_Roll, Mode=OneWay}" VerticalAlignment="Top" Width="39" Margin="310,60,0,0"/>
                 <TextBox HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="{Binding Path=VM_Yaw, Mode=OneWay}" VerticalAlignment="Top" Width="39" Margin="310,100,0,0"/>
