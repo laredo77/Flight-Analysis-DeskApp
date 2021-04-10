@@ -27,37 +27,37 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class MediaPlayer : UserControl
     {
-        public MediaPlayerVM vm;
+        private MediaPlayerVM VM;
         public MediaPlayer()
         {
             InitializeComponent();
-            vm = new MediaPlayerVM(new MediaPlayerModel(new Client()));
-            this.DataContext = vm;
+            VM = (Application.Current as App).MediaPlayer_VM;
+            this.DataContext = VM;
         }
         // use events to get csv path
         public void Get_My_Paths(object sender, StringEventArgs args)
         {
-            vm.add_CSV_Path(args.Data);
+            VM.add_CSV_Path(args.Data);
         }
      
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.play();
+            VM.play();
         }
 
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.stop();
+            VM.stop();
         }
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.playback();
+            VM.playback();
         }
 
         private void doublePreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.playbackfaster();
+            VM.playbackfaster();
         }
 
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
@@ -67,17 +67,17 @@ namespace WpfApp1.Controls
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.playfaster();
+            VM.playfaster();
         }
 
         private void pauseButton_Click(object sender, RoutedEventArgs e)
         {
-            vm.pause();
+            VM.pause();
         }
 
         private void doubleNextButton_Click_1(object sender, RoutedEventArgs e)
         {
-            vm.playfarwardfaster();
+            VM.playfarwardfaster();
         }
     }
 }

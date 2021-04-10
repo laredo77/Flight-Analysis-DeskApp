@@ -53,6 +53,7 @@ namespace WpfApp1.ViewModels
         }
         // corr_param
         public string Corr_Param { get { return Reverse_Dict_Params[model.param2()]; } }
+        // switch between params
         public void Switch(string parameter)
         {
             // time of model 

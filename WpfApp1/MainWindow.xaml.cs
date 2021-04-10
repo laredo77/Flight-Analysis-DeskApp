@@ -14,6 +14,8 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Controls;
 
 
+
+
 namespace WpfApp1
 {
     /// <summary>
@@ -25,45 +27,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            Load_Names();
-            // get csv file
-            BrowseControl.Updated += MediaPlayer.Get_My_Paths;
-            BrowseControl.Updated += GraphPlotter.Get_My_Paths;
-
-            // sharing from mediaplayer
-            MediaPlayer.vm.Shared += SpeedClock.vm.Get_My_Data;
-            MediaPlayer.vm.Shared += HeightClock.vm.Get_My_Data;
-            MediaPlayer.vm.Shared += JoystickBars.vm.Get_My_Data;
-            MediaPlayer.vm.Shared += Compass.vm.Get_My_Data;
-            MediaPlayer.vm.Shared += ProgressBars.vm.Get_My_Data;
-            MediaPlayer.vm.Shared += GraphPlotter.vm.Get_My_Data;
         }
-
-        // loading names from here because of technical problems
-        private void Load_Names()
-        {
-            // find file path
-            string[] lines = File.ReadAllLines(@"../../Helpers/playback_small.xml");
-            string[] info = lines.Where(s => s.StartsWith("    <name>")).ToArray();
-            // change different params with same name
-            string no_repeat = "test";
-            // xml
-            Dictionary<string, int> Dict_params = new Dictionary<string, int>();
-            Dictionary<int, string> Reverse_Dict_Params = new Dictionary<int, string>();
-            for (int i = 0; i < 42; i++)
-            {
-                string read_params = info[i].Substring(10, info[i].Length - 17);
-                if (no_repeat.Equals(read_params)) read_params = read_params + " 2";
-                no_repeat = read_params;
-                Dict_params.Add(read_params, i);
-                Reverse_Dict_Params.Add(i, read_params);
-            };
-            // update list and dict of vm
-            GraphPlotter.vm.Dict_Params = Dict_params;
-            GraphPlotter.vm.Reverse_Dict_Params = Reverse_Dict_Params;
-            GraphPlotter.vm.Parameters = Dict_params.Keys.ToList();
-        }
-
     }
 }
 

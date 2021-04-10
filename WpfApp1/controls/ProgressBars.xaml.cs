@@ -22,12 +22,10 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class ProgressBars : UserControl
     {
-        public ProgressBarVM vm;
         public ProgressBars()
         {
             InitializeComponent();
-            vm = new ProgressBarVM(new ProgressBarModel());
-            DataContext = vm;
+            DataContext = (Application.Current as App).ProgressBar_VM;
         }
     }
 }

@@ -24,8 +24,6 @@ namespace WpfApp1.Controls
 
     public partial class BrowseControl : UserControl
     {
-        public delegate void BrowseControlEventHandler(BrowseControl sender, StringEventArgs args);
-        public event BrowseControlEventHandler Updated;
         private string exePath;
         bool csvFlag, exeFlag;
         public BrowseControl()
@@ -45,7 +43,8 @@ namespace WpfApp1.Controls
             {
                 csvFlag = true;
                 // invoke to mediaplayer and graph
-                Updated?.Invoke(this, new StringEventArgs { Data = dialog.FileName });
+                (Application.Current as App).MediaPlayer_VM.add_CSV_Path(dialog.FileName);
+                (Application.Current as App).Graph_VM.add_CSV_Path(dialog.FileName);
                 runFlightGear.IsEnabled = csvFlag && exeFlag;
             }
         }

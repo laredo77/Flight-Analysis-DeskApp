@@ -83,27 +83,31 @@ namespace WpfApp1.Models
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
+        private void runner()
+        {
+            // csv path
+            if (csv_path == null) return;
+            // connect
+            try { client.connect("127.0.0.1", 5400); }
+            catch (Exception e) { MessageBox.Show(e.Message); return; };
+            // loop of sending
+            while (Curr_Line < Num_Lines || 0 < Curr_Line)
+            {
+                for (; isBackward == 0 && Curr_Line < Num_Lines - 1; Curr_Line++) send();
+                for (; isBackward == 1 && 0 < Curr_Line; Curr_Line--) send();
+                if (isBackward == -1) send();
+            }
+            // disconnect
+            client.disconnect();
+        }
+
+
         // constructor
         public MediaPlayerModel(Client client)
         {
             this.client = client;
-            this.player = new Thread(delegate ()
-            {
-                // csv path
-                if (csv_path == null) return;
-                // connect
-                try { client.connect("127.0.0.1", 5400); }
-                catch (Exception e) { MessageBox.Show(e.Message); return; };
-                // loop of sending
-                while (Curr_Line < Num_Lines || 0 < Curr_Line)
-                {
-                    for(; isBackward == 0 && Curr_Line < Num_Lines - 1; Curr_Line++) send();
-                    for(; isBackward == 1 && 0 < Curr_Line; Curr_Line--) send();
-                    if(isBackward == -1) send();
-                }
-                // disconnect
-                client.disconnect();
-            });
+            this.player = new Thread(runner);
+            player.IsBackground = true;
             this.sleep = 100;
             this.CurrentSpeed = 0;
         }
@@ -118,9 +122,19 @@ namespace WpfApp1.Models
                 sleep = 100;
                 return;
             }
-            else player.Start();
-           
-
+            else
+            {
+                try
+                {
+                    player.Start(); 
+                }
+                catch (System.Threading.ThreadStateException e)
+                {
+                    client.disconnect();
+                    player = new Thread(runner);
+                    player.Start();
+                }
+            }     
         }
 
         public void playbackward()
@@ -168,7 +182,7 @@ namespace WpfApp1.Models
                 Time = TimeSpan.FromSeconds(currIndex * 0.1).ToString("hh':'mm':'ss");
                 Thread.Sleep(sleep);
             }
-            catch (Exception e) { isBackward = -10; MessageBox.Show(e.Message); return; };
+            catch (Exception e) { isBackward = -10; MessageBox.Show(e.Message); player.Abort(); };
         }
 
     }

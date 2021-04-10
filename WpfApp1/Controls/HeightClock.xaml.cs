@@ -22,12 +22,10 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class HeightClock : UserControl
     {
-        public ClockVM vm;
         public HeightClock()
         {
             InitializeComponent();
-            vm = new ClockVM(new ClockModel());
-            DataContext = vm;
+            DataContext = (Application.Current as App).Clock_VM;
         }
     }
 }

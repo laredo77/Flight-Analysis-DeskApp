@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text; 
+using System.Text;
 using System.Threading.Tasks;
 
 namespace WpfApp1.Models
@@ -58,33 +58,43 @@ namespace WpfApp1.Models
         public List<DataPoint> Points
         {
             get { return points; }
-            set{  points = value; }
+            set { points = value; }
         }
         // binding these corr_Points
         private List<DataPoint> corr_points;
         public List<DataPoint> Corr_Points
         {
-            get { return corr_points;  }
+            get { return corr_points; }
             set { corr_points = value; }
         }
         private List<DataPoint> scatter_points;
         public List<DataPoint> Scatter_Points
         {
             get { return corr_points; }
-            set { corr_points = value;  }
+            set { corr_points = value; }
         }
         private List<DataPoint> line;
         public List<DataPoint> Line
         {
             get { return line; }
-            set { line = value; NotifyPropertyChanged("Line"); }
+            set
+            {
+                line = value;
+                NotifyPropertyChanged("Line");
+            }
         }
         // param index for switching
         private int param_index;
         public int Param_Index
         {
             get { return param_index; }
-            set { param_index = value; }
+            set
+            {
+                param_index = value;
+                // update line_reg of param and his corr_param
+                if (corrIndexes.Count > 0)
+                    Line = linear_reg(set_values[param_index], set_values[corrIndexes[param_index]]);
+            }
         }
 
         // curr line index of csv
@@ -100,30 +110,28 @@ namespace WpfApp1.Models
             }
             Points = new List<DataPoint>();
             Corr_Points = new List<DataPoint>();
-            corrIndexs = new Dictionary<int, int>();
+            corrIndexes = new Dictionary<int, int>();
         }
         // reset 1
         public void reset() => curr_line = 0;
         // update 2
         public void update(int i_line)
         {
-            // update line
-            Line = linear_reg(set_values[param_index], set_values[corrIndexs[param_index]]);
-
             // scatter points
-            
+
 
             // index of second parameter 
-            int param2 = corrIndexs[param_index];
-
+            int param2 = corrIndexes[param_index];
+            // update graphs efficently
             if (curr_line < i_line)
             {
-                // update graphs
+                // add points
                 Points.AddRange(set_points[param_index].GetRange(curr_line, i_line - curr_line));
                 Corr_Points.AddRange(set_points[param2].GetRange(curr_line, i_line - curr_line));
             }
             else if (curr_line > i_line)
             {
+                // remove points
                 Points.RemoveRange(i_line, curr_line - i_line);
                 Corr_Points.RemoveRange(i_line, curr_line - i_line);
             }
@@ -131,15 +139,18 @@ namespace WpfApp1.Models
             NotifyPropertyChanged("Points");
             NotifyPropertyChanged("Corr_Points");
             NotifyPropertyChanged("Scatter_Points");
+            // curr line
             curr_line = i_line;
         }
 
-        public int param2() {
-            if (corrIndexs.Count != 0) return corrIndexs[param_index];
+        // get param index
+        public int param2()
+        {
+            if (corrIndexes.Count != 0) return corrIndexes[param_index];
             else return 0;
         }
 
-        // calculations
+        // calculations of graph because its faster than dll file
 
         // E(W) Avg it can be everything
         private double Avg(List<double> list)
@@ -178,18 +189,18 @@ namespace WpfApp1.Models
             // E(Y) - a * E(X)
             double b = Avg(list2) - a * Avg(list1);
             // Create Line 
-            test.Add(new DataPoint(list1.First(), a * list1.First() + b));
-            test.Add(new DataPoint(list1.Last(), a * list1.Last() + b));
+            test.Add(new DataPoint(list1.Min(), a * list1.Min() + b));
+            test.Add(new DataPoint(list1.Max(), a * list1.Max() + b));
             return test;
         }
 
         // corr indexes
-        private Dictionary<int, int> corrIndexs;
+        private Dictionary<int, int> corrIndexes;
         private void corrlection()
         {
-            if (corrIndexs.Count > 0) corrIndexs.Clear(); 
+            if (corrIndexes.Count > 0) corrIndexes.Clear();
             int k;
-            double max_pearson , test = 0;
+            double max_pearson, test = 0;
             for (int i = 0; i < set_values.Length; i++)
             {
                 max_pearson = -1;
@@ -200,7 +211,7 @@ namespace WpfApp1.Models
                     test = Pearson(set_values[i], set_values[j]);
                     if (max_pearson < test) { max_pearson = test; k = j; }
                 }
-                corrIndexs.Add(i, k);
+                corrIndexes.Add(i, k);
             }
         }
     }

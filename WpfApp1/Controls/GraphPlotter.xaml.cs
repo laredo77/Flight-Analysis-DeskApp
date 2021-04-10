@@ -23,11 +23,11 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class GraphPlotter : UserControl
     {
-        public GraphVM vm;
+        private GraphVM vm;
         public GraphPlotter()
         {
             InitializeComponent();
-            vm = new GraphVM(new GraphModel());
+            vm = (Application.Current as App).Graph_VM;
             vm.addGraph(TimeChart.ActualModel);
             vm.addGraph(TimeCorrChart.ActualModel);
             // vm.addGraph(TimeChart.ActualModel);

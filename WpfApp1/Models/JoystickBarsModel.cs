@@ -17,7 +17,7 @@ namespace WpfApp1.Models
             set
             {
                 throttle = 50 * value;
-                NotifyPropertyChanged("Throttle");
+                NotifyPropertyChanged("Rudder");
             }
         }
         private double throttle;
