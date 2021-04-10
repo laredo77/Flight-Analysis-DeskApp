@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ViewModels;
 using WpfApp1.Models;
+using System.ComponentModel;
 
 namespace WpfApp1.Controls
 {
@@ -22,10 +23,10 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class compass : UserControl
     {
+        public ClockVM VM;
         public compass()
         {
             InitializeComponent();
-            DataContext = (Application.Current as App).Clock_VM;
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ViewModels;
 
 namespace WpfApp1.Controls
 {
@@ -20,10 +21,11 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class JoystickBars : UserControl
     {
+        public JoystickBarsVM VM;
         public JoystickBars()
         {
             InitializeComponent();
-            DataContext = (Application.Current as App).JoystickBars_VM;
+            DataContext = VM;
         }
     }
 }

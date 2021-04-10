@@ -17,8 +17,7 @@ using System.Windows.Shapes;
 using WpfApp1.ViewModels;
 using WpfApp1.Helpers;
 using WpfApp1.Models;
-
-
+using System.ComponentModel;
 
 namespace WpfApp1.Controls
 {
@@ -27,12 +26,12 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class MediaPlayer : UserControl
     {
-        private MediaPlayerVM VM;
+        public MediaPlayerVM VM;
         public MediaPlayer()
         {
             InitializeComponent();
-            VM = (Application.Current as App).MediaPlayer_VM;
-            this.DataContext = VM;
+            DataContext = VM;
+
         }
         // use events to get csv path
         public void Get_My_Paths(object sender, StringEventArgs args)

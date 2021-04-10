@@ -22,10 +22,11 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class SpeedClock : UserControl
     {
+        public ClockVM VM;
         public SpeedClock()
         {
             InitializeComponent();
-            DataContext = (Application.Current as App).Clock_VM;
+            
         }
     }
 }
