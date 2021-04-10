@@ -21,7 +21,7 @@
         <Controls:SpeedClock x:Name="Speed" Margin="485,14,194.667,446.667" RenderTransformOrigin="0.507,0.516" />
         <Controls:HeightClock x:Name="Height" Margin="494,135,198.667,303.667" RenderTransformOrigin="0.5,0.5"/>
         <Controls:compass x:Name="Compass"  Margin="616,169,5.667,214.667"/>
-        <Controls:ProgressBars x:Name="ProgressBar" Margin="403,362,-75.333,112.667" RenderTransformOrigin="0.54,0.529"/>
+        <Controls:ProgressBars x:Name="ProgressBar" Margin="274,303,-84.333,100.667" RenderTransformOrigin="0.54,0.529"/>
         <Controls:GraphPlotter x:Name="Graph" Margin="-48,10,272,117" />
     </Grid>
 </Window>

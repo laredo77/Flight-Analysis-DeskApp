@@ -38,13 +38,13 @@ namespace WpfApp1.ViewModels
         { get { return model.YawMax; } }
         public float VM_YawMin
         { get { return model.YawMin; } }
+        public void add_CSV_Path(string path) => model.CSV_Path = path;
         //public void add_CSV_Path(string path) => model.CSV_Path = path;
 
         // get my data by event
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             string[] currentLine = args.Data.Split(',');
-            /////????????
             model.Pitch = float.Parse(currentLine[18]);
             model.Roll = float.Parse(currentLine[17]);
             model.Yaw = float.Parse(currentLine[20]);

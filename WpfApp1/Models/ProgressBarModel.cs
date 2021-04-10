@@ -11,21 +11,58 @@ namespace WpfApp1.Models
 {
     public class ProgressBarModel : INotifyPropertyChanged
     {
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
+        private string[] arrayOfLines;
+        private string csv_path;
+        private float pitch;
+        private float roll;
+        private float yaw;
+        private float pitchMax;
+        private float pitchMin;
+        private float rollMax;
+        private float rollMin;
+        private float yawMax;
+        private float yawMin;
         public ProgressBarModel()
         {
             this.Pitch = 0;
             this.Roll = 0;
             this.Yaw = 0;
         }
-
-        float pitch;
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void NotifyPropertyChanged(string propName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+        }
+        public string CSV_Path
+        {
+            get { return csv_path; }
+            set
+            {
+                csv_path = value;
+                arrayOfLines = File.ReadAllLines(csv_path);
+                if (arrayOfLines[1] != null)
+                {
+                    string[] firstLine = arrayOfLines[1].Split(',');
+                    this.RollMax = float.Parse(firstLine[17]);
+                    this.RollMin = float.Parse(firstLine[17]);
+                    this.PitchMax = float.Parse(firstLine[18]);
+                    this.PitchMin = float.Parse(firstLine[18]);
+                    this.YawMax = float.Parse(firstLine[20]);
+                    this.YawMin = float.Parse(firstLine[20]);
+                    for (int i = 2; i < arrayOfLines.Length; i++)
+                    {
+                        string[] currentLine = arrayOfLines[i].Split(',');
+                        RollMax = Math.Max(RollMax, float.Parse(currentLine[17]));
+                        RollMin = Math.Min(RollMin, float.Parse(currentLine[17]));
+                        PitchMax = Math.Max(PitchMax, float.Parse(currentLine[18]));
+                        PitchMin = Math.Min(PitchMin, float.Parse(currentLine[18]));
+                        YawMax = Math.Max(YawMax, float.Parse(currentLine[20]));
+                        YawMin = Math.Min(YawMin, float.Parse(currentLine[20]));
+                    }
+                }
+            }
+        }
         public float Pitch
         {
             get
@@ -38,7 +75,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("Pitch");
             }
         }
-        float roll;
         public float Roll
         {
             get
@@ -51,8 +87,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("Roll");
             }
         }
-
-        private float yaw;
         public float Yaw
         {
             get
@@ -64,9 +98,7 @@ namespace WpfApp1.Models
                 yaw = value;
                 NotifyPropertyChanged("Yaw");
             }
-        }
- 
-        float pitchMax;
+        } 
         public float PitchMax
         {
             get
@@ -79,7 +111,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("PitchMax");
             }
         }
-        float pitchMin;
         public float PitchMin
         {
             get
@@ -92,7 +123,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("PitchMin");
             }
         }
-        float rollMax;
         public float RollMax
         {
             get
@@ -105,7 +135,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("RollMax");
             }
         }
-        float rollMin;
         public float RollMin
         {
             get
@@ -118,7 +147,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("RollMin");
             }
         }
-        float yawMax;
         public float YawMax
         {
             get
@@ -131,7 +159,6 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("YawMax");
             }
         }
-        float yawMin;
         public float YawMin
         {
             get

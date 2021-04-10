@@ -45,6 +45,7 @@ namespace WpfApp1.Controls
                 // invoke to mediaplayer and graph
                 (Application.Current as App).MediaPlayer_VM.add_CSV_Path(dialog.FileName);
                 (Application.Current as App).Graph_VM.add_CSV_Path(dialog.FileName);
+                (Application.Current as App).ProgressBar_VM.add_CSV_Path(dialog.FileName);
                 runFlightGear.IsEnabled = csvFlag && exeFlag;
             }
         }
