@@ -94,7 +94,7 @@
     <Compile Include="Controls\SpeedClock.xaml.cs">
       <DependentUpon>SpeedClock.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Client.cs" />
+    <Compile Include="Helpers\Client.cs" />
     <Compile Include="ViewModels\GraphVM.cs" />
     <Compile Include="ViewModels\MediaPlayerVM.cs" />
     <Compile Include="ViewModels\JoystickBarsVM.cs" />
@@ -140,7 +140,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\StringEventArgs.cs" />
-    <Compile Include="IClient.cs" />
+    <Compile Include="Helpers\IClient.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

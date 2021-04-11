@@ -64,8 +64,8 @@ namespace WpfApp1.ViewModels
             model.Points.Clear();
             model.Corr_Points.Clear();
             model.reset();
-            Application.Current.Dispatcher.Invoke(() => { 
-                foreach (PlotModel graph in graphs) graph.InvalidatePlot(true); 
+            Application.Current.Dispatcher.Invoke(() => {
+                foreach (PlotModel graph in graphs) graph.InvalidatePlot(true);
             });
         }
     }

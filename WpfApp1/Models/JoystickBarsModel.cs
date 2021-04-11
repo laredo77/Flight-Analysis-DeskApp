@@ -13,40 +13,40 @@ namespace WpfApp1.Models
         private double rudder;
         public double Rudder
         {
-            get { return throttle; }
+            get { return 50 * rudder; }
             set
             {
-                throttle = 50 * value;
+                rudder = value;
                 NotifyPropertyChanged("Rudder");
             }
         }
         private double throttle;
         public double Throttle
         {
-            get { return throttle; }
+            get { return -127 * throttle; }
             set
             {
-                throttle = -127 * value;
+                throttle = value;
                 NotifyPropertyChanged("Throttle");
             }
         }
         private double aileron;
         public double Aileron
         {
-            get { return aileron; }
+            get { return 50 * aileron; }
             set
             {
-                aileron = 50 * value;
+                aileron = value;
                 NotifyPropertyChanged("Aileron");
             }
         }
         private double elevator;
         public double Elevator
         {
-            get { return elevator; }
+            get { return -50 * elevator; }
             set
             {
-                elevator = -50 * value;
+                elevator = value;
                 NotifyPropertyChanged("Elevator");
             }
         }

@@ -46,7 +46,6 @@ namespace WpfApp1.Models
                     i_line++;
                 }
                 corrlection();
-
             }
         }
         // 2d array of parameters
@@ -70,8 +69,12 @@ namespace WpfApp1.Models
         private List<DataPoint> scatter_points;
         public List<DataPoint> Scatter_Points
         {
-            get { return corr_points; }
-            set { corr_points = value; }
+            get { return scatter_points; }
+            set
+            {
+                scatter_points = value;
+                NotifyPropertyChanged("Scatter_Points");
+            }
         }
         private List<DataPoint> line;
         public List<DataPoint> Line
@@ -93,12 +96,14 @@ namespace WpfApp1.Models
                 param_index = value;
                 // update line_reg of param and his corr_param
                 if (corrIndexes.Count > 0)
+                {
                     Line = linear_reg(set_values[param_index], set_values[corrIndexes[param_index]]);
+                }
             }
         }
-
         // curr line index of csv
         private int curr_line;
+        // Constructor
         public GraphModel()
         {
             set_points = new List<DataPoint>[42];
@@ -118,6 +123,16 @@ namespace WpfApp1.Models
         public void update(int i_line)
         {
             // scatter points
+            int i = 0;
+            List<DataPoint> test = new List<DataPoint>();
+            if (i_line > 300) i = i_line - 300; else i = 0;
+            for (; i < i_line; i++)
+            {
+                double x = set_values[param_index][i], y = set_values[corrIndexes[param_index]][i];
+                DataPoint p = new DataPoint(x, y);
+                test.Add(p);
+            }
+            Scatter_Points = test;
 
 
             // index of second parameter 
@@ -138,7 +153,6 @@ namespace WpfApp1.Models
             // notify after the update
             NotifyPropertyChanged("Points");
             NotifyPropertyChanged("Corr_Points");
-            NotifyPropertyChanged("Scatter_Points");
             // curr line
             curr_line = i_line;
         }
@@ -150,6 +164,8 @@ namespace WpfApp1.Models
             else return 0;
         }
 
+
+        // cpu cant deal with slow cpp calcs of dll
         // calculations of graph because its faster than dll file
 
         // E(W) Avg it can be everything

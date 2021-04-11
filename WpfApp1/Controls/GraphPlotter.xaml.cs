@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OxyPlot;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,5 +40,6 @@ namespace WpfApp1.Controls
             ListBoxItem lbi = sender as ListBoxItem;
             VM.Switch(lbi.Content.ToString());
         }
+
     }
 }

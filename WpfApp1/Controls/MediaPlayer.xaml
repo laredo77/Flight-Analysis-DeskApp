@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Controls" xmlns:models="clr-namespace:WpfApp1.Models"  xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" 
-             mc:Ignorable="d" Height="115" Width="664.5">
+             mc:Ignorable="d" Height="89.977" Width="664.5">
     <Viewbox>
-        <Grid Height="115" VerticalAlignment="Top" HorizontalAlignment="Left" Width="664">
+        <Grid Height="89" VerticalAlignment="Top" HorizontalAlignment="Left" Width="664">
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>
-        <Slider x:Name="slider" Maximum="{Binding VM_Num_Lines, Mode=OneWay}" Value="{Binding VM_Curr_Line,Mode=TwoWay}"  HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="49" Width="644"/>
+        <Slider x:Name="slider" Maximum="{Binding VM_Num_Lines, Mode=OneWay}" Value="{Binding VM_Curr_Line,Mode=TwoWay}"  HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="22" Width="644"/>
         <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="42,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="doublePreviousButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/WpfApp1;component/Pictures\doublePrevious.jpg"/>

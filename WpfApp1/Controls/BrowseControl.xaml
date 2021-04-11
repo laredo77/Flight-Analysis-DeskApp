@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Controls"
-             mc:Ignorable="d" Width="463.591" Height="69.933">
-    <Grid Margin="10,0,10,10">
+             mc:Ignorable="d" Width="311.905" Height="47.044">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="152,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click" RenderTransformOrigin="-0.046,0.163" >
+        <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="105,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click" RenderTransformOrigin="-0.046,0.163" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -17,7 +17,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="257,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
+        <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="runFlightGear" Content="Run FlightGear" HorizontalAlignment="Left" Margin="47,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="runFlightGear_Click" RenderTransformOrigin="-0.046,0.163" IsEnabled="False">
+        <Button x:Name="runFlightGear" Content="Run FlightGear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="45" Click="runFlightGear_Click" RenderTransformOrigin="-0.046,0.163" IsEnabled="False">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF3F3F3" Offset="0"/>
