@@ -41,16 +41,30 @@ namespace WpfApp1.Models
             {
                 csv_path = value;
                 arrayOfLines = File.ReadAllLines(csv_path);
-                if (arrayOfLines[1] != null)
+                bool isString = false;
+                int startLineNumber = 0;
+                if (arrayOfLines[0] != null)
                 {
-                    string[] firstLine = arrayOfLines[1].Split(',');
-                    this.RollMax = float.Parse(firstLine[17]);
-                    this.RollMin = float.Parse(firstLine[17]);
-                    this.PitchMax = float.Parse(firstLine[18]);
-                    this.PitchMin = float.Parse(firstLine[18]);
-                    this.YawMax = float.Parse(firstLine[20]);
-                    this.YawMin = float.Parse(firstLine[20]);
-                    for (int i = 2; i < arrayOfLines.Length; i++)
+                    string[] Line0 = arrayOfLines[0].Split(',');
+                    for (int i = 0; i < Line0.Length; i++)
+                    {
+                        if (Line0[i] is string)
+                        {
+                            isString = true;
+                            startLineNumber = 1;
+                        }
+                    }
+                }
+                if (arrayOfLines[startLineNumber] != null)
+                {
+                    string[] Line1 = arrayOfLines[startLineNumber].Split(',');
+                    this.RollMax = float.Parse(Line1[17]);
+                    this.RollMin = float.Parse(Line1[17]);
+                    this.PitchMax = float.Parse(Line1[18]);
+                    this.PitchMin = float.Parse(Line1[18]);
+                    this.YawMax = float.Parse(Line1[20]);
+                    this.YawMin = float.Parse(Line1[20]);
+                    for (int i = startLineNumber+1; i < arrayOfLines.Length; i++)
                     {
                         string[] currentLine = arrayOfLines[i].Split(',');
                         RollMax = Math.Max(RollMax, float.Parse(currentLine[17]));
@@ -71,8 +85,11 @@ namespace WpfApp1.Models
             }
             set
             {
-                pitch = value;
-                NotifyPropertyChanged("Pitch");
+                if (value >= pitchMin && value <= pitchMax)
+                {
+                    pitch = value;
+                    NotifyPropertyChanged("Pitch");
+                }
             }
         }
         public float Roll
@@ -83,8 +100,11 @@ namespace WpfApp1.Models
             }
             set
             {
-                roll = value;
-                NotifyPropertyChanged("Roll");
+                if (value >= rollMin && value <= rollMax)
+                {
+                    roll = value;
+                    NotifyPropertyChanged("Roll");
+                }
             }
         }
         public float Yaw
@@ -95,8 +115,11 @@ namespace WpfApp1.Models
             }
             set
             {
-                yaw = value;
-                NotifyPropertyChanged("Yaw");
+                if (value >= yawMin && value <= yawMax)
+                {
+                    yaw = value;
+                    NotifyPropertyChanged("Yaw");
+                }
             }
         } 
         public float PitchMax
