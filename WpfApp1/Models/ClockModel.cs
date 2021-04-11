@@ -17,14 +17,16 @@ namespace WpfApp1.Models
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-
+        private float compassAngle;
+        private float height;
+        private float speed;
         public ClockModel()
         {
             this.Speed = 0;
             this.Height = 0;
-            
+            this.CompassAngle = 0;
+
         }
-        float compassAngle;
         public float CompassAngle
         {
             get
@@ -39,7 +41,6 @@ namespace WpfApp1.Models
                 
             }
         }
-        float height;
         public float Height
         {
             get
@@ -48,15 +49,12 @@ namespace WpfApp1.Models
             }
             set
             {
-                if (value >= 0 && value <= 999)
-                {
+                
                     height = value;
                     NotifyPropertyChanged("Height");
-                }
+                
             }
         }
-
-        float speed;
         public float Speed
         {
             get
@@ -65,12 +63,10 @@ namespace WpfApp1.Models
             }
             set
             {
-                ///////////
-                if (value >= 0 && value <= 100)
-                {
+               
                     speed = value;
                     NotifyPropertyChanged("Speed");
-                }
+                
 
             }
         }
