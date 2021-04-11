@@ -29,7 +29,7 @@ namespace WpfApp1.ViewModels
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             string[] currentLine = args.Data.Split(',');
-            model.Speed = (int)double.Parse(currentLine[21]);
+            model.Speed = float.Parse(currentLine[21]);
             model.Height = float.Parse(currentLine[16]);
             ///////????????????????????????????????
             model.CompassAngle = float.Parse(currentLine[19]);

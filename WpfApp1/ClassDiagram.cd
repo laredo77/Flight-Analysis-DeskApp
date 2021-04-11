@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WpfApp1.Models.ClockModel">
+    <Position X="5.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAIQAAAAAAAEBgAABAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ClockModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.Models.GraphModel">
+    <Position X="8" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAQECkAADCgYAAAAAASAACgAEAAAgAAAAAIAAlAFA=</HashCode>
+      <FileName>Models\GraphModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.Models.JoystickBarsModel">
+    <Position X="3" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAggAIAIBAAAAAQAgAAAAAAAEAAAABAAAAA=</HashCode>
+      <FileName>Models\JoystickBarsModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.Models.MediaPlayerModel">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="WpfApp1.Models.MediaPlayerModel.MediaPlayerModelEventHandler">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\MediaPlayerModel.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABZQgAhAAAAQIFAAAAAAAAAkAAgAJhBAAAAFAAAIQA=</HashCode>
+      <FileName>Models\MediaPlayerModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.Models.ProgressBarModel">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQAABgAQAAAIEgACACIAAhggQABUgEAARAAAAAAQA=</HashCode>
+      <FileName>Models\ProgressBarModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.ViewModels.ClockVM">
+    <Position X="0.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAQAAAIAAACAAAAAAAAAAIAAA=</HashCode>
+      <FileName>ViewModels\ClockVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp1.ViewModels.GraphVM">
+    <Position X="2.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAQAAIAAAAAAQCIQCAAAAAAAAIAAAggIAAg=</HashCode>
+      <FileName>ViewModels\GraphVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp1.ViewModels.JoystickBarsVM">
+    <Position X="5.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAQAAAAAAAAAABBAAAAAAIAAA=</HashCode>
+      <FileName>ViewModels\JoystickBarsVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp1.ViewModels.MediaPlayerVM">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="WpfApp1.ViewModels.MediaPlayerVM.MediaPlayerModelEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ViewModels\MediaPlayerVM.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAARAgAAAAAAABAAAIAAAIAAAQKgAAACAAAAAgAIIAA=</HashCode>
+      <FileName>ViewModels\MediaPlayerVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp1.ViewModels.ProgressBarVM">
+    <Position X="7.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIAAAAAAIBAAAAAAQAAAQQAAAAAAgAAAAgCKAAA=</HashCode>
+      <FileName>ViewModels\ProgressBarVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp1.ViewModels.ViewModelBase">
+    <Position X="3.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.Helpers.StringEventArgs">
+    <Position X="0.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\StringEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
