@@ -1,4 +1,3 @@
-![readme](https://user-images.githubusercontent.com/60240620/114457742-0c3ce480-9be7-11eb-85f9-af6cdb72d605.jpg)
 # WpfApp1
 Desktop application for flight investigation using the Flightgear web flight simulator.
  
@@ -13,7 +12,7 @@ In order to use the application, you will need to load it using framework suppor
 In addition, to display the flight, the user must have the Flightgear program installed on their computer ([Download](https://www.flightgear.org/download/) [Steup tutorial](https://wiki.flightgear.org/New_to_FlightGear)) and csv files that contain the flight data. Also, the user should have the XML file which defines the functionality of the CSV file, translates and connects between the code and the flight simulator.
 
 ### Usage
-![FlighGear Desktop App.](/assets/images/readme.jpg "FlighGear Desktop App")
+![readme](https://user-images.githubusercontent.com/60240620/114457742-0c3ce480-9be7-11eb-85f9-af6cdb72d605.jpg)
 
 To run the flight on the simulator, please open the application and follow the steps below:
 > 1. Click on the 'Open CSV' button. A dialog will immediately pop up in which you can select and upload the file of the flight data - it has to be a csv file.
