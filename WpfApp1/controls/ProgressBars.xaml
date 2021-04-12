@@ -16,16 +16,12 @@
                 <Label Content="Max" Margin="263,19,26,239" FontSize="36"/>
                 <Label Content="Min" Margin="41,19,249,245" FontSize="36"/>
                 <Label Content="Cur" Margin="341,19,-38,244.171" FontSize="36"/>
-                <Label Content="{Binding Path=VM_PitchMin, Mode=OneWay}" Margin="0,75,0,0" Grid.RowSpan="2" FontSize="36"/>
-                <Label Content="{Binding Path=VM_PitchMax, Mode=OneWay}" Margin="250,75,0,0" Grid.RowSpan="2" FontSize="36"/>
+                
                 <ProgressBar  x:Name="progressBarPitch" HorizontalAlignment="Left" Height="45" Margin="41,75,0,0" 
                               VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Pitch,  Mode=OneWay}" Minimum="{Binding Path=VM_PitchMin, Mode=OneWay}" Maximum="{Binding Path=VM_PitchMax, Mode=OneWay}"/>
-                <Label Content="{Binding Path=VM_RollMin, Mode=OneWay}" Margin="0,175,0,0" Grid.RowSpan="2" FontSize="36"/>
-                <Label Content="{Binding Path=VM_RollMax, Mode=OneWay}" Margin="250,175,0,0" Grid.RowSpan="2" FontSize="36"/>
                 <ProgressBar  x:Name="progressBarRoll" HorizontalAlignment="Left" Height="45" Margin="41,175,0,0" 
                               VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Roll, Mode=OneWay}"  Minimum="{Binding Path=VM_RollMin, Mode=OneWay}" Maximum="{Binding Path=VM_RollMax, Mode=OneWay}"/>
-                <Label Content="{Binding Path=VM_YawMin, Mode=OneWay}" Margin="0,275,0,0" Grid.RowSpan="2" FontSize="36"/>
-                <Label Content="{Binding Path=VM_YawMax, Mode=OneWay}" Margin="250,275,0,0" Grid.RowSpan="2" FontSize="36"/>
+                
                 <ProgressBar x:Name="progressBarYaw" HorizontalAlignment="Left" Height="45" Margin="41,275,0,0" 
                              VerticalAlignment="Top" Width="300" Value="{Binding Path=VM_Yaw, Mode=OneWay}"  Minimum="{Binding Path=VM_YawMin, Mode=OneWay}" Maximum="{Binding Path=VM_YawMax, Mode=OneWay}" Grid.RowSpan="2"/>
                 <Label Content="Pitch:" FontSize="36" Foreground="Black" Margin="158,19,109,239" />
