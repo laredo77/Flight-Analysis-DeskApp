@@ -2,7 +2,7 @@
 Desktop application for flight investigation using the Flightgear web flight simulator.
  
 ### Description
-This app is a analysis tool to investigate flight on the popular FlightGear web flight simulator.
+This app is aמ analysis tool to investigate flight on the popular FlightGear web flight simulator.
 The user who is interested in conducting an investigation on his flight will be able to receive live data on the flight to the app.
 The dashboard screen will show the user the data on the plane, altitude clocks, speed, direction and graphs are indicating the statistical analysis. The application is convenient and easy to the use. It provides users with the combination of learning and investigating anomalies during the flight.
 This app was written with the MVVM code architecture.
