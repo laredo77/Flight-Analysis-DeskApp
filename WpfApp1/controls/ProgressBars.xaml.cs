@@ -26,5 +26,11 @@ namespace WpfApp1.Controls
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            VM = (Application.Current as App).ProgressBar_VM;
+            DataContext = VM;
+        }
     }
 }

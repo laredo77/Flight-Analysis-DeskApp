@@ -41,19 +41,11 @@ namespace WpfApp1.Models
             {
                 csv_path = value;
                 arrayOfLines = File.ReadAllLines(csv_path);
-                bool isString = false;
                 int startLineNumber = 0;
                 if (arrayOfLines[0] != null)
                 {
                     string[] Line0 = arrayOfLines[0].Split(',');
-                    for (int i = 0; i < Line0.Length; i++)
-                    {
-                        if (Line0[i] is string)
-                        {
-                            isString = true;
-                            startLineNumber = 1;
-                        }
-                    }
+                    if (Line0[0] is string) startLineNumber = 1;
                 }
                 if (arrayOfLines[startLineNumber] != null)
                 {

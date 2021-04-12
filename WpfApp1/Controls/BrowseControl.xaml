@@ -13,7 +13,7 @@
                 </Grid.RowDefinitions>
 
 
-                <Button x:Name="openFlightGear" Content="Open FlightGear" HorizontalAlignment="Left" Margin="110,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openFlightGear_Click" RenderTransformOrigin="-0.046,0.163" Grid.RowSpan="2" >
+                <Button x:Name="openFlightGear" HorizontalContentAlignment="Center" Content="Open FlightGear" HorizontalAlignment="Left" Margin="132,0,0,-2" VerticalAlignment="Top" Width="131" Height="45" Click="openFlightGear_Click" RenderTransformOrigin="-0.046,0.163" Grid.RowSpan="2" FontSize="16" FontWeight="Bold" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -21,7 +21,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click"  Margin="220,0,0,0" Grid.RowSpan="2">
+                <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Height="45" Click="openCSVButton_Click"  Margin="268,0,0,-2" Grid.RowSpan="2" FontSize="20" FontWeight="Bold">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -29,7 +29,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="runFlightGear" Content="Run FlightGear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="45" Click="runFlightGear_Click" RenderTransformOrigin="-0.046,0.163" IsEnabled="False" Margin="0,0,0,0" Grid.RowSpan="2">
+                <Button x:Name="runFlightGear" Content="Run FlightGear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="45" Click="runFlightGear_Click" RenderTransformOrigin="-0.046,0.163" IsEnabled="False" Margin="6,0,0,-2" Grid.RowSpan="2" FontSize="16" FontWeight="Bold" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -37,7 +37,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="loadDllButton" Content="Load Dll" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click" Grid.RowSpan="2" >
+                <Button x:Name="loadDllButton" Content="Load Dll" HorizontalAlignment="Left" Margin="381,0,0,-2" Width="100" Height="45"  Grid.RowSpan="2" FontSize="20" FontWeight="Bold" Click="loadDllButton_Click" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>

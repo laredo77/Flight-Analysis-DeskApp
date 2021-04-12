@@ -146,7 +146,6 @@ namespace WpfApp1.Models
                 }
                 catch (System.Threading.ThreadStateException e)
                 {
-                    client.disconnect();
                     player = new Thread(runner);
                     player.Start();
                 }
