@@ -22,7 +22,7 @@
             <RowDefinition Height="27*"/>
         </Grid.RowDefinitions>
 
-        <Controls:BrowseControl x:Name="BrowseControl" Margin="185,1.333,197.333,30" RenderTransformOrigin="0.498,1.616" Grid.ColumnSpan="3" Grid.Row="1" />
+        <Controls:BrowseControl x:Name="BrowseControl" Margin="156,1.333,226.333,30.333" RenderTransformOrigin="0.498,1.616" Grid.ColumnSpan="3" Grid.Row="1" />
 
         <Controls:MediaPlayer x:Name="Media" Margin="-5,444,-42.667,12.667" Grid.ColumnSpan="3" RenderTransformOrigin="0.503,0.3"/>
         <Controls:JoystickBars x:Name="Joystick" Margin="116,-58,-24.667,295.667" Width="Auto" Grid.Column="2" />

@@ -39,9 +39,9 @@
                 <Label Content="Pitch:" FontSize="36" Foreground="#FFFBFBFB" Margin="158,19,109,239" />
                 <Label Content="Roll:" FontSize="36" Foreground="#FFFBFBFB" Margin="167,117,122,144" />
                 <Label Content="Yaw:" FontSize="36" Foreground="#FFFBFBFB" Margin="167,221,115,44" />
-                <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="{Binding Path=VM_Pitch, Mode=OneWay}" VerticalAlignment="Top" Width="65" Margin="346,74,-44,0" FontSize="24" BorderBrush="#FFADDEF5"/>
-                <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="{Binding Path=VM_Roll, Mode=OneWay}" VerticalAlignment="Top" Width="64" Margin="346,175,-43,0" FontSize="24" BorderBrush="#FFADDEF5"/>
-                <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="{Binding Path=VM_Yaw, Mode=OneWay}" VerticalAlignment="Top" Width="65" Margin="346,275,-44,0" Grid.RowSpan="2" FontSize="24" BorderBrush="#FFADDEF5"/>
+                <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="{Binding Path=VM_Pitch, Mode=OneWay}" VerticalAlignment="Top" Width="65" Margin="346,74,-44,0" FontSize="26" BorderBrush="#FFADDEF5" />
+                <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="{Binding Path=VM_Roll, Mode=OneWay}" VerticalAlignment="Top" Width="64" Margin="346,175,-43,0" FontSize="26" BorderBrush="#FFADDEF5"/>
+                <TextBox HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="{Binding Path=VM_Yaw, Mode=OneWay}" VerticalAlignment="Top" Width="65" Margin="346,275,-44,0" Grid.RowSpan="2" FontSize="26" BorderBrush="#FFADDEF5"/>
 
             </Grid>
         </Viewbox>

@@ -6,6 +6,10 @@
              xmlns:local="clr-namespace:WpfApp1.Controls">
     <Viewbox>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="24*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -17,7 +21,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click">
+            <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click" Grid.ColumnSpan="2">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -33,6 +37,15 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
+            <Button x:Name="loadDllButton" Content="Load Dll" HorizontalAlignment="Left" Margin="106,0,-110,0" VerticalAlignment="Top" Width="100" Height="45" Click="openCSVButton_Click" Grid.Column="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFADDEF5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
         </Grid>
     </Viewbox>
 </UserControl>
