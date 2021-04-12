@@ -14,4 +14,10 @@ In addition, in order to view the flight, the user must have the Flightgear flig
 ### Usage
 ![FlighGear Desktop App.](C:\Users\lared\Desktop\readme.jpg "FlighGear Desktop App")
 
+To run the flight on the simulator, you must open the application and follow the steps below:
+> 1. Click the 'Open CSV' button. A dialog will immediately open in which you select and upload the flight data file - must be a csv file.
+> 2. Click the 'Open FlightGear' button. By providing the path to Flightgear execute file, the application will run it for you and connect to a dedicated communication server using the TCP internet protocol.
+> 3. Click the 'Run FlightGear' button - the app will automatically connect you to the simulator.
+> 4. Once the flight simulator is up, you can click the 'Play' button and start exploring the playback vedio of the your flight.
+
   
