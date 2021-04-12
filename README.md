@@ -1,24 +1,24 @@
 # WpfApp1
-A Desktop application for flight investigation in the Flightgear flight simulator.
-
+Desktop application for flight investigation using the Flightgear web flight simulator.
+ 
 ### Description
-This app is a flight investigation analysis tool in the popular FlightGear web flight simulator.
-A user who is interested in researching his flight will be able to use the app and receive live data from the flight to the app.
-The dashboard screen will show the user data about the aircraft, altitude clocks, speed and direction, as well as graphs and indices for statistical analysis. The application is convenient and clear to the user, allows a combination of learning and investigating anomalies during the flight.
-This app written in the MVVM code architecture.
+This app is a analysis tool to investigate flight on the popular FlightGear web flight simulator.
+The user who is interested in conducting an investigation on his flight will be able to receive live data on the flight to the app.
+The dashboard screen will show the user the data on the plane, altitude clocks, speed, direction and graphs are indicating the statistical analysis. The application is convenient and easy to the use. It provides users with the combination of learning and investigating anomalies during the flight.
+This app was written with the MVVM code architecture.
 
 ### Installation
-In order to use the application, you will need to load it using framework suppurt C# code - our recommendation [Visual Studio 2019](https://visualstudio.microsoft.com/vs/).
-In addition, in order to view the flight, the user must have the Flightgear flight simulator installed on the computer [Download](https://www.flightgear.org/download/) [Steup tutorial](https://wiki.flightgear.org/New_to_FlightGear) . As well, csv files that contain flight data, XML file which defines the functionality of the CSV file and translates and connect between the code to the flight simulator.
+In order to use the application, you will need to load it using framework support C# code - our recommendation [Visual Studio 2019](https://visualstudio.microsoft.com/vs/).
+In addition, to display the flight, the user must have the Flightgear program installed on their computer ([Download](https://www.flightgear.org/download/) [Steup tutorial](https://wiki.flightgear.org/New_to_FlightGear)) and csv files that contain the flight data. Also, the user should have the XML file which defines the functionality of the CSV file, translates and connects between the code and the flight simulator.
 
 ### Usage
 ![FlighGear Desktop App.](C:\Users\lared\Desktop\readme.jpg "FlighGear Desktop App")
 
-To run the flight on the simulator, you must open the application and follow the steps below:
-> 1. Click the 'Open CSV' button. A dialog will immediately open in which you select and upload the flight data file - must be a csv file.
-> 2. Click the 'Open FlightGear' button. By providing the path to Flightgear execute file, the application will run it for you and connect to a dedicated communication server using the TCP internet protocol.
-> 3. Click the 'Run FlightGear' button - the app will automatically connect you to the simulator.
-> 4. Once the flight simulator is up, you can click the 'Play' button and start exploring the playback vedio of the your flight.
+To run the flight on the simulator, please open the application and follow the steps below:
+> 1. Click on the 'Open CSV' button. A dialog will immediately pop up in which you can select and upload the file of the flight data - it has to be a csv file.
+> 2. Click on the 'Open FlightGear' button. By providing the path to Flightgear execute file, the application will collect the data; necessary for the upcoming process.
+> 3. Click on the 'Run FlightGear' button - the app will automatically connect you to the simulator server using TCP internet protocol.
+> 4. Once the flight simulator is set, you can click on the 'Play' button and start your investigation of your flight.
 
 **Additional features**
 > * On the bottom of the application there is a video player which help the user investigate the flight. You can control the data transfer rate from the app to the simulator by pressing the appropriate button: Pressing the Pause, Stop, previous, or next button will operate according to the accepted convention in video players. In addition, you have a slider that shows the progress of the flight and the time of it, you can choose a start point of displaying the playback vedio by moving the slider to the point of time and play the playback from there.
