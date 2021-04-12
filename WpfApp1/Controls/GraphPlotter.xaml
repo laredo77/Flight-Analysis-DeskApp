@@ -6,7 +6,7 @@
              xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"
              xmlns:local="clr-namespace:WpfApp1.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="500" Loaded="UserControl_Loaded">
     <Viewbox>
         <Grid Height="500" Width="500">
             <ListBox ItemsSource = "{Binding Path = Parameters}" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="250" Margin="0,250,0,0" >
@@ -18,7 +18,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <ListBoxItem x:Name="Clone"   HorizontalContentAlignment="Center" Content = "{Binding}"/>
+                            <ListBoxItem x:Name="Clone"   HorizontalContentAlignment="Center" Content = "{Binding}" FontSize="20" FontWeight="Bold"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

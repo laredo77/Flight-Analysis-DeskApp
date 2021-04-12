@@ -68,7 +68,16 @@ namespace WpfApp1.Controls
                 File.Copy(@"../../Helpers/playback_small.xml", xmlPath, true);
             }
         }
-
+        // load DLL
+        private void loadDllButton_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.InitialDirectory = "c:\\";
+            dialog.Filter = "DLL Files(*.dll)| *.dll";
+            dialog.FilterIndex = 2;
+            dialog.RestoreDirectory = true;
+        }
+        // Run FG
         private void runFlightGear_Click(object sender, RoutedEventArgs e)
         {
             if (runFlightGear.IsEnabled)

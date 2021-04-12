@@ -37,6 +37,7 @@ namespace WpfApp1.Controls
         public void Get_My_Paths(object sender, StringEventArgs args)
         {
             VM.add_CSV_Path(args.Data);
+            
         }
      
         private void playButton_Click(object sender, RoutedEventArgs e)
@@ -82,6 +83,12 @@ namespace WpfApp1.Controls
         private void fasterButton_Click(object sender, RoutedEventArgs e)
         {
             VM.faster();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            VM = (Application.Current as App).MediaPlayer_VM;
+            DataContext = VM;
         }
     }
 }

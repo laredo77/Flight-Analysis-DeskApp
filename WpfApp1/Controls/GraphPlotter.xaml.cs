@@ -24,13 +24,10 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class GraphPlotter : UserControl
     {
-        public GraphVM VM;
-        private bool load = false;
+        GraphVM VM;
         public GraphPlotter()
         {
             InitializeComponent();
-            
-            // vm.addGraph(TimeChart.ActualModel);
         }
 
 
@@ -41,5 +38,13 @@ namespace WpfApp1.Controls
             VM.Switch(lbi.Content.ToString());
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            VM = (Application.Current as App).Graph_VM;
+            VM.addGraph(TimeChart.ActualModel);
+            VM.addGraph(TimeCorrChart.ActualModel);
+            VM.addGraph(RegLinear.ActualModel);
+            DataContext = VM;
+        }
     }
 }
