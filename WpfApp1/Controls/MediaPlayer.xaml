@@ -3,46 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1.Controls" xmlns:models="clr-namespace:WpfApp1.Models"  xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" 
-             mc:Ignorable="d" Height="89.977" Width="664.5">
+             xmlns:local="clr-namespace:WpfApp1.Controls" xmlns:models="clr-namespace:WpfApp1.Models"  xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels">
     <Viewbox>
-        <Grid Height="89" VerticalAlignment="Top" HorizontalAlignment="Left" Width="664">
-        <Grid.RowDefinitions>
-        </Grid.RowDefinitions>
-        <Slider x:Name="slider" Maximum="{Binding VM_Num_Lines, Mode=OneWay}" Value="{Binding VM_Curr_Line,Mode=TwoWay}"  HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="22" Width="644"/>
-        <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="42,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="doublePreviousButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\doublePrevious.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="previousButton" HorizontalAlignment="Left" Margin="100,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="previousButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\previous.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="playButton" HorizontalAlignment="Left" Margin="156,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="playButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\play.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="pauseButton" HorizontalAlignment="Left" Margin="210,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="pauseButton_Click" >
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\pause.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="stopButton" HorizontalAlignment="Left" Margin="266,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="stopButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\stop.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="nextButton" HorizontalAlignment="Left" Margin="320,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="nextButton_Click" >
-            <Button.Background>
-                <ImageBrush ImageSource="/WpfApp1;component/Pictures\next.jpg"/>
-            </Button.Background>
-        </Button>
-            <Label x:Name="playSpeedLabel" Content="Play speed" HorizontalAlignment="Left" Margin="427,27,0,0" VerticalAlignment="Top" Height="26" Width="79"/>
-        <Label x:Name="timeLabel" Content="{Binding VM_Time, Mode=OneWay}" HorizontalAlignment="Left" Margin="577,27,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106" Height="26" Width="77"/>
-            <TextBox HorizontalAlignment="Left" Height="46" Margin="526,17,0,0" TextWrapping="Wrap" Text="{Binding Path=VM_CurrentSpeed, Mode=OneWay}" TextAlignment="Center"  VerticalAlignment="Top" Width="40"/>
+        <Grid Height="89" VerticalAlignment="Center" HorizontalAlignment="Center" Width="780">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="201*"/>
+                <ColumnDefinition Width="59*"/>
+            </Grid.ColumnDefinitions>
+            <Slider x:Name="slider" Maximum="{Binding VM_Num_Lines, Mode=OneWay}" Value="{Binding VM_Curr_Line,Mode=TwoWay}" Minimum="0" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Height="22" Width="644" Grid.ColumnSpan="2"/>
+            <Button x:Name="doublePreviousButton" HorizontalAlignment="Left" Margin="42,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="doublePreviousButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\doublePrevious.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="previousButton" HorizontalAlignment="Left" Margin="100,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="previousButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\previous.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="playButton" HorizontalAlignment="Left" Margin="156,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="playButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\play.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="pauseButton" HorizontalAlignment="Left" Margin="210,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="pauseButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\pause.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="stopButton" HorizontalAlignment="Left" Margin="266,15,0,0" VerticalAlignment="Top" Width="40" Height="46" Click="stopButton_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\stop.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="doublenextButton" HorizontalAlignment="Left" Margin="320,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="nextButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures\next.jpg"/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="playSpeedLabel" Content="Play speed:" HorizontalAlignment="Left" Margin="418,20,0,0" VerticalAlignment="Top" Height="36" Width="99" Foreground="#FFE8E8F3" FontSize="17" FontWeight="Bold" Background="{x:Null}"/>
+            <Label x:Name="timeLabel" Content="{Binding VM_Time, Mode=OneWay}" HorizontalAlignment="Left" Margin="75.333,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.24,0.106" Height="33" Width="98" Foreground="#FFFBFBFB" FontWeight="Bold" FontSize="17" Grid.Column="1" Background="{x:Null}"/>
+            <TextBox HorizontalAlignment="Left" Height="46" Margin="573,15,0,0" TextWrapping="Wrap" Text="{Binding Path=VM_CurrentSpeed, Mode=OneWay}" TextAlignment="Center"  VerticalAlignment="Top" Width="40" Grid.ColumnSpan="2"/>
+            <Button x:Name="nextButton" HorizontalAlignment="Left" Margin="320,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="nextButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures/next.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="doubleNextButton" HorizontalAlignment="Left" Margin="376,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="doubleNextButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures/doubleNext.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="slowerButton" HorizontalAlignment="Left" Margin="520,15,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="slowerButton_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures/minus.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="fasterButton" HorizontalAlignment="Left" Margin="23.754,14,0,0" VerticalAlignment="Top" Width="42" Height="46" Click="fasterButton_Click" Grid.Column="1" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures/plus.jpg"/>
+                </Button.Background>
+            </Button>
+            <Label Content="Time:" HorizontalAlignment="Left" Margin="80.754,21,0,0" VerticalAlignment="Top" Height="30" Width="84" Foreground="WhiteSmoke" FontSize="17" FontWeight="Bold" Grid.Column="1" Background="{x:Null}"/>
         </Grid>
     </Viewbox>
 </UserControl>

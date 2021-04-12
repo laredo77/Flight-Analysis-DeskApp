@@ -6,22 +6,30 @@
         xmlns:local="clr-namespace:WpfApp1" 
         xmlns:Controls="clr-namespace:WpfApp1.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Background="#FFB4B4B4">
+        Title="MainWindow" Height="629" Width="654.666" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Pictures/backgroundSpace.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="444*"/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="277*"/>
+        </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="197*"/>
             <RowDefinition Height="27*"/>
         </Grid.RowDefinitions>
 
-        <Controls:BrowseControl x:Name="BrowseControl" Margin="210,34,272,0" Grid.Row="1" />
+        <Controls:BrowseControl x:Name="BrowseControl" Margin="185,1.333,197.333,30" RenderTransformOrigin="0.498,1.616" Grid.ColumnSpan="3" Grid.Row="1" />
 
-        <Controls:MediaPlayer x:Name="Media" Margin="61,513,68,52" Grid.RowSpan="2"/>
-        <Controls:JoystickBars x:Name="Joystick" Margin="594,-52,-24,358" Width="Auto" />
-        <Controls:SpeedClock x:Name="Speed" Margin="485,14,194.667,446.667" RenderTransformOrigin="0.507,0.516" />
-        <Controls:HeightClock x:Name="Height" Margin="494,135,198.667,303.667" RenderTransformOrigin="0.5,0.5"/>
-        <Controls:compass x:Name="Compass"  Margin="643,167,11.667,249.667"/>
-        <Controls:ProgressBars x:Name="ProgressBar" Margin="262,304,-85.333,98.667" RenderTransformOrigin="0.54,0.529"/>
-        <Controls:GraphPlotter x:Name="Graph" Margin="-48,10,272,117" />
+        <Controls:MediaPlayer x:Name="Media" Margin="-5,444,-42.667,12.667" Grid.ColumnSpan="3" RenderTransformOrigin="0.503,0.3"/>
+        <Controls:JoystickBars x:Name="Joystick" Margin="116,-58,-24.667,295.667" Width="Auto" Grid.Column="2" />
+        <Controls:SpeedClock x:Name="Speed" Margin="31,19,128.333,384.667" RenderTransformOrigin="0.277,0.428" Grid.Column="2" />
+        <Controls:HeightClock x:Name="Height" Margin="37,120,121.333,240.667" RenderTransformOrigin="0.5,0.5" Grid.Column="2"/>
+        <Controls:compass x:Name="Compass"  Margin="135,143,5.333,244.667" Grid.Column="2"/>
+        <Controls:ProgressBars x:Name="ProgressBar" Margin="203,268,-171.667,105.667" RenderTransformOrigin="0.54,0.529" Grid.ColumnSpan="3"/>
+        <Controls:GraphPlotter x:Name="Graph" Margin="0,13,217.333,105.667" Grid.ColumnSpan="3" />
     </Grid>
 </Window>

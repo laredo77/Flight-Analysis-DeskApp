@@ -192,5 +192,20 @@
   <ItemGroup>
     <Resource Include="Helpers\playback_small.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\plus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\minus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\backgroundSpace.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\spaceProgressBar.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

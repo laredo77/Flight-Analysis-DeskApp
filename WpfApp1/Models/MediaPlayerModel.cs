@@ -16,7 +16,7 @@ namespace WpfApp1.Models
         // send data event to other models
         public delegate void MediaPlayerModelEventHandler(object sender, StringEventArgs args);
         public event MediaPlayerModelEventHandler Shared;
-        
+
         // properties
         private string time;
         public string Time
@@ -65,6 +65,9 @@ namespace WpfApp1.Models
         private Thread player;
         private Client client;
         private string csv_path;
+        private bool isPlayed;
+        private bool isPause;
+        private bool isStop;
         public string CSV_Path
         {
             get { return csv_path; }
@@ -93,9 +96,11 @@ namespace WpfApp1.Models
             // loop of sending
             while (Curr_Line < Num_Lines || 0 < Curr_Line)
             {
+
                 for (; isBackward == 0 && Curr_Line < Num_Lines - 1; Curr_Line++) send();
                 for (; isBackward == 1 && 0 < Curr_Line; Curr_Line--) send();
                 if (isBackward == -1) send();
+
             }
             // disconnect
             client.disconnect();
@@ -110,23 +115,34 @@ namespace WpfApp1.Models
             player.IsBackground = true;
             this.sleep = 100;
             this.CurrentSpeed = 0;
+            this.isPlayed = false;
+            this.isPause = true;
+            this.isStop = true;
         }
 
         // methods
-        public void playforward()
+        public void play()
         {
             CurrentSpeed = 1;
+            if (isPlayed == false)
+            {
+                Curr_Line = 0;
+            }
+            isPlayed = true;
+            isPause = false;
+            isStop = false;
             if (player != null && player.IsAlive)
             {
                 isBackward = 0;
                 sleep = 100;
+
                 return;
             }
             else
             {
                 try
                 {
-                    player.Start(); 
+                    player.Start();
                 }
                 catch (System.Threading.ThreadStateException e)
                 {
@@ -134,43 +150,141 @@ namespace WpfApp1.Models
                     player = new Thread(runner);
                     player.Start();
                 }
-            }     
+            }
         }
-
-        public void playbackward()
+        // methods for the video player
+        // jumps forward in the video
+        public void jumpForward()
         {
-            isBackward = 1;
-            sleep = 100;
-            CurrentSpeed = 1;
+            if (isPlayed)
+            {
+                if (currIndex + 5 < Num_Lines)
+                {
+                    Curr_Line += 5;
+                }
+                if (!isPause && !isStop)
+                {
+                    isBackward = 0;
+                }
+                else
+                {
+                    isBackward = -1;
+                }
+            }
         }
-
+        // jumps backward in the video
+        public void jumpBackward()
+        {
+            if (isPlayed)
+            {
+                if (currIndex - 5 > 0)
+                {
+                    Curr_Line -= 5;
+                }
+                if (!isPause && !isStop)
+                {
+                    isBackward = 1;
+                }
+                else
+                {
+                    isBackward = -1;
+                }
+            }
+        }
+        // pauses the video
         public void pause()
         {
-            isBackward = -1;
-            CurrentSpeed = 0;
+            if (isPlayed)
+            {
+                isBackward = -1;
+                CurrentSpeed = 0;
+                isPause = true;
+            }
         }
-
+        // stops the video
         public void stop()
         {
-            isBackward = -1;
-            currIndex = 0;
-            CurrentSpeed = 0;
+            if (isPlayed)
+            {
+                isBackward = -1;
+                Curr_Line = 0;
+                CurrentSpeed = 0;
+                isStop = true;
+            }
         }
-
-        public void playforwardfaster()
+        // jumps double times backward in the video
+        public void jumpForwardX2()
         {
-            isBackward = 0;
-            sleep = 50;
-            CurrentSpeed = 2;
-        }
+            if (isPlayed)
+            {
 
-        public void playbackwardfaster()
+                if (currIndex + 10 < Num_Lines)
+                {
+                    Curr_Line += 10;
+                }
+                if (!isPause && !isStop)
+                {
+                    isBackward = 0;
+                }
+                else
+                {
+                    isBackward = -1;
+                }
+            }
+        }
+        // jumps double times forward in the video
+        public void jumpBackwardX2()
         {
-            isBackward = 1;
-            sleep = 50;
-            CurrentSpeed = 2;
-        }
+            if (isPlayed)
+            {
+                if (currIndex - 10 > 0)
+                {
+                    Curr_Line -= 10;
+                }
 
+                if (!isPause && !isStop)
+                {
+                    isBackward = 1;
+                }
+                else
+                {
+                    isBackward = -1;
+                }
+            }
+        }
+        // plays the video faster
+        public void faster()
+        {
+
+            if (isPlayed)
+            {
+                isBackward = 0;
+                if (sleep > 50)
+                {
+                    sleep -= 10;
+                    CurrentSpeed += 0.1;
+                }
+            }
+        }
+        // plays the video slower
+        public void slower()
+        {
+            if (isPlayed)
+            {
+                isBackward = 0;
+                if (currentSpeed >= 0.2)
+                {
+                    sleep += 10;
+                    CurrentSpeed -= 0.1;
+
+                }
+                else if (currentSpeed < 0.2)
+                {
+                    this.pause();
+                }
+            }
+
+        }
         // helper methods
         private void send()
         {
@@ -178,7 +292,7 @@ namespace WpfApp1.Models
             {
                 string line = arrayOfLines[currIndex];
                 client.write(line);
-                Shared?.Invoke(this, new StringEventArgs { Data = line , ID = currIndex });
+                Shared?.Invoke(this, new StringEventArgs { Data = line, ID = currIndex });
                 Time = TimeSpan.FromSeconds(currIndex * 0.1).ToString("hh':'mm':'ss");
                 Thread.Sleep(sleep);
             }

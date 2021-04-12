@@ -51,22 +51,22 @@ namespace WpfApp1.Controls
 
         private void previousButton_Click(object sender, RoutedEventArgs e)
         {
-            VM.playback();
+            VM.jumpBackward();
         }
 
         private void doublePreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            VM.playbackfaster();
+            VM.jumpBackwardX2();
         }
 
         private void doubleNextButton_Click(object sender, RoutedEventArgs e)
         {
-
+            VM.jumpForwardX2();
         }
 
         private void nextButton_Click(object sender, RoutedEventArgs e)
         {
-            VM.playfaster();
+            VM.jumpForward();
         }
 
         private void pauseButton_Click(object sender, RoutedEventArgs e)
@@ -74,9 +74,14 @@ namespace WpfApp1.Controls
             VM.pause();
         }
 
-        private void doubleNextButton_Click_1(object sender, RoutedEventArgs e)
+        private void slowerButton_Click(object sender, RoutedEventArgs e)
         {
-            VM.playfarwardfaster();
+            VM.slower();
+        }
+
+        private void fasterButton_Click(object sender, RoutedEventArgs e)
+        {
+            VM.faster();
         }
     }
 }

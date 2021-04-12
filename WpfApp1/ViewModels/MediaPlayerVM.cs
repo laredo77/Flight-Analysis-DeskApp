@@ -31,13 +31,15 @@ namespace WpfApp1.ViewModels
         public event MediaPlayerModelEventHandler Shared;
 
         //methods
-        public void play() => this.model.playforward();
-        public void playfaster() => this.model.playforwardfaster();
-        public void playback() => this.model.playbackward();
-        public void playbackfaster() => this.model.playbackwardfaster(); 
-        public void playfarwardfaster() => this.model.playforwardfaster();
+        public void play() => this.model.play();
         public void pause() => this.model.pause();
         public void stop() => this.model.stop();
+        public void faster() => this.model.faster();
+        public void slower() => this.model.slower();
+        public void jumpBackward() => this.model.jumpBackward(); 
+        public void jumpForward() => this.model.jumpForward();
+        public void jumpBackwardX2() => this.model.jumpBackwardX2();
+        public void jumpForwardX2() => this.model.jumpForwardX2();
         public void add_CSV_Path(string path) => model.CSV_Path = path;
 
 
