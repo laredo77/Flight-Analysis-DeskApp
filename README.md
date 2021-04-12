@@ -12,5 +12,5 @@ In order to use the application, you will need to load it using framework suppur
 In addition, in order to view the flight, the user must have the Flightgear flight simulator installed on the computer [Download](https://www.flightgear.org/download/) [Steup tutorial](https://wiki.flightgear.org/New_to_FlightGear) . As well, csv files that contain flight data, XML file which defines the functionality of the CSV file and translates and connect between the code to the flight simulator.
 
 ### Usage
-	![alt text](readme.jpg)
+	![alt text](C:\Users\lared\Desktop\readme.jpg)
   
