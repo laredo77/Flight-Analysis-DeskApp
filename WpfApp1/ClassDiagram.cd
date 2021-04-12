@@ -12,6 +12,9 @@
   <Comment CommentText="Helper">
     <Position X="21.069" Y="0.765" Height="0.75" Width="1.7" />
   </Comment>
+  <Comment CommentText="App">
+    <Position X="22.456" Y="4.407" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="WpfApp1.Controls.BrowseControl" BaseTypeListCollapsed="true">
     <Position X="18" Y="8.25" Width="1.5" />
     <TypeIdentifier>
@@ -222,5 +225,34 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="WpfApp1.App">
+    <Position X="21.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAYAAAAIAEAAAAAADAAAAgAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Clock_VM" />
+      <Property Name="Graph_VM" />
+      <Property Name="JoystickBars_VM" />
+      <Property Name="MediaPlayer_VM" />
+      <Property Name="ProgressBar_VM" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WpfApp1.Client">
+    <Position X="21.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAACQAABAAEAAA=</HashCode>
+      <FileName>Helpers\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WpfApp1.IClient">
+    <Position X="23" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAQAAAAAEAAA=</HashCode>
+      <FileName>Helpers\IClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
