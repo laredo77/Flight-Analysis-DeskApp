@@ -21,21 +21,21 @@ To run the flight on the simulator, please open the application and follow the s
 > 4. Once the flight simulator is set, you can click on the 'Play' button and start your investigation of your flight.
 
 **Additional features**
-> * On the bottom of the application there is a video player which help the user investigate the flight. You can control the data transfer rate from the app to the simulator by pressing the appropriate button: Pressing the Pause, Stop, previous, or next button will operate according to the accepted convention in video players. In addition, you have a slider that shows the progress of the flight and the time of it, you can choose a start point of displaying the playback vedio by moving the slider to the point of time and play the playback from there.
-> * A dashboard which may be relevant to the flight analysis. A speedometer, height clock of the plane, a compass that indicates the direction and other indicators of the plan such as yaw, pich, roll that will help the user to investigate the flight in the best and most accurate way.
-> * User can select a data from the XML data file which the app supports and analyze it specifically.
-By clicking on a data from the list of data features, the app will display using dedicated graphs, statistics about the data, and the data feature that is most correlative to it. As well, its display a regression line between those two data features, and other statistics will be displayed live.
-> * User can upload Dll files during the flight (On Run-Time) which include algorithms for detecting anomalies of the flight.
-The first Algorithem which provide is linear regression-based. The algorithm returns the regression line between two correlative featueres, as well the samples during the flight that deviated from the norm, and displays them to the user on the graph.
-The second algorithm is based on welzl's algorithm. The algorithem detect the time step deviated from a circle that defines the radius of the norm.
+> * At the bottom of the application there is a video player which is another useful tool to investigate the flight. You can control the data transfer rate from the app to the simulator by pressing any of the following buttons. Pressing the Pause, Stop, previous, or next buttons will operate according to the accepted convention of common video players. In addition, there is a slider that shows the progress and duration of the flight. The start point of the video can be chosen on the slider.
+> * A dashboard which may be relevant to the flight analysis. A speedometer, height clock of the plane, a compass that indicates the direction and other indicators of the plane such as yaw, pich, roll that will help user investigating the flight the efficient and accurate way.
+> * Users can select data from the XML file which is supported by the app and can be analyzed specifically.
+By clicking on the data from the list of data features, the app will display using dedicated graphs, statistics and the data feature which correlates the most. Also, it will display a regression line between those two data features, and other statistics will be displayed live.
+> * Users can load Dynamic Linking Files (Dll files) during the flight (On Run-Time) which include algorithms that detect anomalies of the flight.
+The first Algorithm provided, is linear regression-based. The regression line between two correlative features and the anomalies detected out of the norm are returned and displayed on the graph by the first algorithm.
+The second algorithm is based on Welzl's algorithm. This algorithm determines the radius of a cirlce as the norm and detects anomalies out of range.
 
 ### Dictionary
-/!\ HERE WE WILL EXPLAIN ON DICTIONARY USER CAN FIND IN THE PROJECY /!\
+/!\ HERE WE WILL EXPLAIN THE DICTIONARY USER CAN FIND IN THE PROJECY /!\
 
-### Professional explanations
-The app written in C# language, built using WPF tool. The project is written according to the MVVM code architecture which separates the functionality of the data presentation and the processing and calculation of the data. The ViewModel link between them to provide safety and separation of responsibilities.
-The algorithms for detecting anomalies dynamically load are written in c++.
-The advantage of dynamically loading the algorithms expressed that using them is an important tool for flight investigation on live, and on the other hand using them does not require restarting the flight or stopping the program. User can load them during the flight, choose which algorithm is more suitable for investigating the situation and even replace them. In addition, this method allows the use of additional algorithms that can be adapted to the investigator and simply added to the project.
+### Technical explanation
+The app was written in C# language and was built using WPF tool. The project was written according to the MVVM code architecture, which separates the functionality of the data presentation from the processing and calculation of the data. The ViewModel link between them is to provide safety and separation of responsibilities.
+The algorithms for detecting anomalies which are loading dynamically on run time were written in c++.
+The advantage of loading the algorithms dynamically is that using them is important for flight investigation on run time. On the other hand using them does not require restarting the flight or the program. Users can load it during the flight, choose which algorithm is more suitable for investigating the situation and even replace them. In addition, this method allows the use of additional algorithms that can be adapted by the investigator and simply added to the project.
 
 ### Credits
 
