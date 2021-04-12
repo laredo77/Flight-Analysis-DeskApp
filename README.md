@@ -12,7 +12,7 @@ In order to use the application, you will need to load it using framework suppor
 In addition, to display the flight, the user must have the Flightgear program installed on their computer ([Download](https://www.flightgear.org/download/) [Steup tutorial](https://wiki.flightgear.org/New_to_FlightGear)) and csv files that contain the flight data. Also, the user should have the XML file which defines the functionality of the CSV file, translates and connects between the code and the flight simulator.
 
 ### Usage
-![FlighGear Desktop App.](C:\Users\lared\Desktop\readme.jpg "FlighGear Desktop App")
+![FlighGear Desktop App.](/assets/images/readme.jpg "FlighGear Desktop App")
 
 To run the flight on the simulator, please open the application and follow the steps below:
 > 1. Click on the 'Open CSV' button. A dialog will immediately pop up in which you can select and upload the file of the flight data - it has to be a csv file.
