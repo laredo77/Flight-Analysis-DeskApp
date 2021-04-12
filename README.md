@@ -1,3 +1,4 @@
+![readme](https://user-images.githubusercontent.com/60240620/114457742-0c3ce480-9be7-11eb-85f9-af6cdb72d605.jpg)
 # WpfApp1
 Desktop application for flight investigation using the Flightgear web flight simulator.
  
