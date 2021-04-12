@@ -28,3 +28,15 @@ By clicking on a data from the list of data features, the app will display using
 > * User can upload Dll files during the flight (On Run-Time) which include algorithms for detecting anomalies of the flight.
 The first Algorithem which provide is linear regression-based. The algorithm returns the regression line between two correlative featueres, as well the samples during the flight that deviated from the norm, and displays them to the user on the graph.
 The second algorithm is based on welzl's algorithm. The algorithem detect the time step deviated from a circle that defines the radius of the norm.
+
+### Dictionary
+/!\ HERE WE WILL EXPLAIN ON DICTIONARY USER CAN FIND IN THE PROJECY /!\
+
+### Professional explanations
+The app written in C# language, built using WPF tool. The project is written according to the MVVM code architecture which separates the functionality of the data presentation and the processing and calculation of the data. The ViewModel link between them to provide safety and separation of responsibilities.
+The algorithms for detecting anomalies dynamically load are written in c++.
+The advantage of dynamically loading the algorithms expressed that using them is an important tool for flight investigation on live, and on the other hand using them does not require restarting the flight or stopping the program. User can load them during the flight, choose which algorithm is more suitable for investigating the situation and even replace them. In addition, this method allows the use of additional algorithms that can be adapted to the investigator and simply added to the project.
+
+### Credits
+
+The project was written by Maoz Kosover, Ofir Stronberg and Itamar Lardo, as part of a project in Advanced programming 2 course, Bar-Ilan University.
