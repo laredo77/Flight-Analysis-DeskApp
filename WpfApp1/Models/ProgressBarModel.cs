@@ -87,7 +87,7 @@ namespace WpfApp1.Models
             {
                 if (value >= pitchMin && value <= pitchMax)
                 {
-                    pitch = (float)Math.Floor((value)*100)/100;
+                    pitch = value;
                     NotifyPropertyChanged("Pitch");
                 }
             }
@@ -102,7 +102,7 @@ namespace WpfApp1.Models
             {
                 if (value >= rollMin && value <= rollMax)
                 {
-                    roll = (float)Math.Floor((value) * 100) / 100;
+                    roll = value;
                     NotifyPropertyChanged("Roll");
                 }
             }
@@ -117,7 +117,7 @@ namespace WpfApp1.Models
             {
                 if (value >= yawMin && value <= yawMax)
                 {
-                    yaw = (float)Math.Floor((value) * 100) / 100;
+                    yaw = value;
                     NotifyPropertyChanged("Yaw");
                 }
             }

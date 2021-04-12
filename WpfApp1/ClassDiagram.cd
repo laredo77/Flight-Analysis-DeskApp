@@ -232,11 +232,11 @@
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Clock_VM" />
       <Property Name="Graph_VM" />
-      <Property Name="JoystickBars_VM" />
+      <Property Name="Clock_VM" />
       <Property Name="MediaPlayer_VM" />
       <Property Name="ProgressBar_VM" />
+      <Property Name="JoystickBars_VM" />
     </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp1.Client">
