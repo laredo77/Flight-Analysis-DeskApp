@@ -11,8 +11,7 @@ namespace WpfApp1.ViewModels
 {
     public class ClockVM : ViewModelBase
     {
-
-        private ClockModel model;
+        public ClockModel model;
         public ClockVM(ClockModel model)
         {
             this.model = model;

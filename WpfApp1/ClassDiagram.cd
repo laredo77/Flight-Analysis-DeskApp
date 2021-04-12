@@ -1,7 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Models">
+    <Position X="8.888" Y="9.223" Height="0.642" Width="1.763" />
+  </Comment>
+  <Comment CommentText="ViewModels">
+    <Position X="9.85" Y="0.899" Height="0.642" Width="1.763" />
+  </Comment>
+  <Comment CommentText="Views">
+    <Position X="19.973" Y="0.573" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Helper">
+    <Position X="25.069" Y="0.515" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="WpfApp1.Controls.BrowseControl" BaseTypeListCollapsed="true">
+    <Position X="22" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAgAAAIAAEABA=</HashCode>
+      <FileName>Controls\BrowseControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.compass" BaseTypeListCollapsed="true">
+    <Position X="20" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\compass.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.GraphPlotter" BaseTypeListCollapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAACCAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\GraphPlotter.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.HeightClock" BaseTypeListCollapsed="true">
+    <Position X="22" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\HeightClock.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.JoystickBars" BaseTypeListCollapsed="true">
+    <Position X="22" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\JoystickBars.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.MediaPlayer" BaseTypeListCollapsed="true">
+    <Position X="20" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAACAAAAAAAAAAABSAAAABAAAQgAAAABAAIAAAA=</HashCode>
+      <FileName>Controls\MediaPlayer.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.ProgressBars" BaseTypeListCollapsed="true">
+    <Position X="22" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\ProgressBars.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Controls.SpeedClock" BaseTypeListCollapsed="true">
+    <Position X="20" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\SpeedClock.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="WpfApp1.Helpers.StringEventArgs">
+    <Position X="25.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\StringEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="WpfApp1.Models.ClockModel">
-    <Position X="5.25" Y="0.75" Width="2" />
+    <Position X="4" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAIQAAAAAAAEBgAABAQAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\ClockModel.cs</FileName>
@@ -9,7 +113,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WpfApp1.Models.GraphModel">
-    <Position X="8" Y="0.75" Width="2" />
+    <Position X="10.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAQECkAADCgYAAAAAASAACgAEAAAgAAAAAIAAlAFA=</HashCode>
       <FileName>Models\GraphModel.cs</FileName>
@@ -17,7 +121,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WpfApp1.Models.JoystickBarsModel">
-    <Position X="3" Y="0.5" Width="1.75" />
+    <Position X="16.25" Y="12" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAggAIAIBAAAAAQAgAAAAAAAEAAAABAAAAA=</HashCode>
       <FileName>Models\JoystickBarsModel.cs</FileName>
@@ -25,12 +129,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WpfApp1.Models.MediaPlayerModel">
-    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Position X="6.5" Y="11.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Delegate Name="WpfApp1.Models.MediaPlayerModel.MediaPlayerModelEventHandler">
+      <Delegate Name="WpfApp1.Models.MediaPlayerModel.MediaPlayerModelEventHandler" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Models\MediaPlayerModel.cs</NewMemberFileName>
         </TypeIdentifier>
@@ -43,7 +147,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WpfApp1.Models.ProgressBarModel">
-    <Position X="5.75" Y="4.5" Width="1.5" />
+    <Position X="13.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAQAABgAQAAAIEgACACIAAhggQABUgEAARAAAAAAQA=</HashCode>
       <FileName>Models\ProgressBarModel.cs</FileName>
@@ -51,28 +155,37 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WpfApp1.ViewModels.ClockVM">
-    <Position X="0.5" Y="14.5" Width="1.5" />
+    <Position X="3.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAQAAAIAAACAAAAAAAAAAIAAA=</HashCode>
       <FileName>ViewModels\ClockVM.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp1.ViewModels.GraphVM">
-    <Position X="2.5" Y="14.5" Width="1.5" />
+    <Position X="8" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAQAAIAAAAAAQCIQCAAAAAAAAIAAAggIAAg=</HashCode>
       <FileName>ViewModels\GraphVM.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp1.ViewModels.JoystickBarsVM">
-    <Position X="5.25" Y="14.75" Width="1.5" />
+    <Position X="12.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgAAAQAAAAAAAAAABBAAAAAAIAAA=</HashCode>
       <FileName>ViewModels\JoystickBarsVM.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp1.ViewModels.MediaPlayerVM">
-    <Position X="3.75" Y="4.75" Width="1.5" />
+    <Position X="5.75" Y="2.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -87,28 +200,27 @@
       <HashCode>AAARAgAAAAAAABAAAIAAAIAAAQKgAAACAAAAAgAIIAA=</HashCode>
       <FileName>ViewModels\MediaPlayerVM.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp1.ViewModels.ProgressBarVM">
-    <Position X="7.5" Y="14.5" Width="1.5" />
+    <Position X="10.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAIAAAAAAIBAAAAAAQAAAQQAAAAAAgAAAAgCKAAA=</HashCode>
       <FileName>ViewModels\ProgressBarVM.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp1.ViewModels.ViewModelBase">
-    <Position X="3.75" Y="12" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModels\ViewModelBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="WpfApp1.Helpers.StringEventArgs">
-    <Position X="0.75" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>Helpers\StringEventArgs.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
