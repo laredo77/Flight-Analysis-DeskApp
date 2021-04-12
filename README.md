@@ -20,4 +20,6 @@ To run the flight on the simulator, you must open the application and follow the
 > 3. Click the 'Run FlightGear' button - the app will automatically connect you to the simulator.
 > 4. Once the flight simulator is up, you can click the 'Play' button and start exploring the playback vedio of the your flight.
 
-  
+**Additional features**
+> * On the bottom of the application there is a video player which help the user investigate the flight. You can control the data transfer rate from the app to the simulator by pressing the appropriate button: Pressing the Pause, Stop, previous, or next button will operate according to the accepted convention in video players. In addition, you have a slider that shows the progress of the flight and the time of it, you can choose a start point of displaying the playback vedio by moving the slider to the point of time and play the playback from there.
+> * A dashboard which may be relevant to the flight analysis. A speedometer, height clock of the plane, a compass that indicates the direction and other indicators of the plan such as yaw, pich, roll that will help the user to investigate the flight in the best and most accurate way.
