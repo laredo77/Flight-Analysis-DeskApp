@@ -39,4 +39,4 @@ The advantage of dynamically loading the algorithms expressed that using them is
 
 ### Credits
 
-The project was written by Maoz Kosover, Ofir Stronberg and Itamar Lardo, as part of a project in Advanced programming 2 course, Bar-Ilan University.
+The project was written by Maoz Kosover, Ofir Shtrosberg and Itamar Laredo, as part of a project in Advanced programming 2 course, Bar-Ilan University.
