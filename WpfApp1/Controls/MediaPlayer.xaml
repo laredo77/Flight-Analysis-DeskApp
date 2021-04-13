@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1.Controls" xmlns:models="clr-namespace:WpfApp1.Models"  xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels" Loaded="UserControl_Loaded">
+             xmlns:local="clr-namespace:WpfApp1.Controls" xmlns:models="clr-namespace:WpfApp1.Models"  xmlns:viewmodels="clr-namespace:WpfApp1.ViewModels">
     <Viewbox>
         <Grid Height="89" VerticalAlignment="Center" HorizontalAlignment="Center" Width="785">
             <Grid.ColumnDefinitions>

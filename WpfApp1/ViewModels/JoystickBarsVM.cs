@@ -23,11 +23,15 @@ namespace WpfApp1.ViewModels
         public double VM_Aileron { get { return model.Aileron; } }
         public double VM_Elevator { get { return model.Elevator; } }
         public double VM_Throttle { get { return model.Throttle; } }
+        public double VM_Rudder { get { return model.Rudder; } }
+
+
         public void Get_My_Data(object sender, StringEventArgs args)
         {
             string[] currentLine = args.Data.Split(',');
             model.Aileron = double.Parse(currentLine[0]);
             model.Elevator = double.Parse(currentLine[1]);
+            model.Rudder = double.Parse(currentLine[2]);
             model.Throttle = double.Parse(currentLine[6]);
         }
     }

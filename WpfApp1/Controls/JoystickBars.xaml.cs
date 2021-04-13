@@ -27,11 +27,5 @@ namespace WpfApp1.Controls
             InitializeComponent();
             DataContext = VM;
         }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            VM = (Application.Current as App).JoystickBars_VM;
-            DataContext = VM;
-        }
     }
 }

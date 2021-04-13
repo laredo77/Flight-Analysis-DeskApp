@@ -26,11 +26,6 @@ namespace WpfApp1.Controls
         public HeightClock()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            VM = (Application.Current as App).Clock_VM;
             DataContext = VM;
         }
     }

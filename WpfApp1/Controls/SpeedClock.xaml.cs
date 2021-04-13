@@ -13,19 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.ViewModels;
+using WpfApp1.Models;
 
 namespace WpfApp1.Controls
 {
     /// <summary>
-    /// Interaction logic for ProgressBars.xaml
+    /// Interaction logic for SpeedClock.xaml
     /// </summary>
-    public partial class ProgressBars : UserControl
+    public partial class SpeedClock : UserControl
     {
-        public ProgressBarVM VM;
-        public ProgressBars()
+        public ClockVM VM;
+        public SpeedClock()
         {
             InitializeComponent();
             DataContext = VM;
         }
+
+     
     }
 }

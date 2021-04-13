@@ -84,11 +84,5 @@ namespace WpfApp1.Controls
         {
             VM.faster();
         }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            VM = (Application.Current as App).MediaPlayer_VM;
-            DataContext = VM;
-        }
     }
 }

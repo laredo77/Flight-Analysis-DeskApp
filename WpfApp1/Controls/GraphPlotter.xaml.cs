@@ -28,23 +28,17 @@ namespace WpfApp1.Controls
         public GraphPlotter()
         {
             InitializeComponent();
+            //VM = (Application.Current as App).Graph_VM;
+            //VM.addGraph(TimeChart.ActualModel);
+            //VM.addGraph(TimeCorrChart.ActualModel);
+            //VM.addGraph(RegLinear.ActualModel);
+            DataContext = VM;
         }
-
-
         // select items
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
             ListBoxItem lbi = sender as ListBoxItem;
             VM.Switch(lbi.Content.ToString());
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            VM = (Application.Current as App).Graph_VM;
-            VM.addGraph(TimeChart.ActualModel);
-            VM.addGraph(TimeCorrChart.ActualModel);
-            VM.addGraph(RegLinear.ActualModel);
-            DataContext = VM;
         }
     }
 }
