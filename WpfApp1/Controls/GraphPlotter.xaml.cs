@@ -24,21 +24,22 @@ namespace WpfApp1.Controls
     /// </summary>
     public partial class GraphPlotter : UserControl
     {
-        GraphVM VM;
+        public GraphVM VM;
+        private bool load = false;
         public GraphPlotter()
         {
             InitializeComponent();
-            //VM = (Application.Current as App).Graph_VM;
-            //VM.addGraph(TimeChart.ActualModel);
-            //VM.addGraph(TimeCorrChart.ActualModel);
-            //VM.addGraph(RegLinear.ActualModel);
-            DataContext = VM;
+
+            // vm.addGraph(TimeChart.ActualModel);
         }
+
+
         // select items
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
             ListBoxItem lbi = sender as ListBoxItem;
             VM.Switch(lbi.Content.ToString());
         }
+
     }
 }

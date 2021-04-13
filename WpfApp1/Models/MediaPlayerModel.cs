@@ -126,7 +126,7 @@ namespace WpfApp1.Models
             CurrentSpeed = 1;
             if (isPlayed == false)
             {
-                Curr_Line = 1;
+                Curr_Line = 0;
             }
             isPlayed = true;
             isPause = false;
@@ -146,6 +146,7 @@ namespace WpfApp1.Models
                 }
                 catch (System.Threading.ThreadStateException e)
                 {
+                    client.disconnect();
                     player = new Thread(runner);
                     player.Start();
                 }
@@ -300,4 +301,3 @@ namespace WpfApp1.Models
 
     }
 }
-

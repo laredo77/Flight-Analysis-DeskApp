@@ -15,6 +15,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            Initializer();
         }
 
         // cant copy viewmodels to usercontrols ( breaking the xaml designer of mainwindow )
