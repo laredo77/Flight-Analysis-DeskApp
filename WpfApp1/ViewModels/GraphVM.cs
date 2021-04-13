@@ -34,8 +34,12 @@ namespace WpfApp1.ViewModels
         public void addGraph(PlotModel model) => graphs.Add(model);
         // add csv for model
         public void add_CSV_Path(string path) => model.CSV_Path = path;
+        // add algorithm detection
+        public void add_Algo_Detect(List<string> data) => model.Algo_Detect = data;
         // points
         public List<DataPoint> VM_Points { get { return model.Points; }  }
+        // Algo Points
+        public List<DataPoint> VM_Algo_Points { get { return model.Algo_Points; } }
         // points of corr
         public List<DataPoint> VM_Corr_Points { get { return model.Corr_Points; } }
         // create scatter points
@@ -63,6 +67,7 @@ namespace WpfApp1.ViewModels
             // update the graph
             model.Points.Clear();
             model.Corr_Points.Clear();
+            model.Algo_Points.Clear();
             model.reset();
             Application.Current.Dispatcher.Invoke(() => {
                 foreach (PlotModel graph in graphs) graph.InvalidatePlot(true);

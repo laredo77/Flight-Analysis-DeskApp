@@ -126,7 +126,7 @@ namespace WpfApp1.Models
             CurrentSpeed = 1;
             if (isPlayed == false)
             {
-                Curr_Line = 0;
+                Curr_Line = 1;
             }
             isPlayed = true;
             isPause = false;

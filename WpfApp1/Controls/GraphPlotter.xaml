@@ -33,6 +33,7 @@
                 <oxy:Plot.Series >
                     <oxy:LineSeries x:Name="RegLine" Background="White" ItemsSource="{Binding VM_Line}" LineStyle="Solid" Color="OrangeRed" MarkerType="None" MarkerSize="5" MarkerFill="Black"/>
                     <oxy:LineSeries x:Name="scattman" Background="White" ItemsSource="{Binding VM_Scatter_Points}" LineStyle="None"  MarkerType="Circle" MarkerSize="1" MarkerFill="Brown"/>
+                    <oxy:LineSeries x:Name="Algo" Background="White" ItemsSource="{Binding VM_Algo_Points}" LineStyle="None"  MarkerType="Circle" MarkerSize="1" MarkerFill="Red"/>
                 </oxy:Plot.Series>
             </oxy:Plot>
             <oxy:Plot x:Name="TimeCorrChart" Title="TimeCorrChart" FontFamily="Bosch Sans Medium" Foreground="#FF0C6596" FontSize="12"  Background="AliceBlue" Margin="250,0,0,250">

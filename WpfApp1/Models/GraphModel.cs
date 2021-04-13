@@ -18,6 +18,29 @@ namespace WpfApp1.Models
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public List<string> Algo_Detect
+        {
+            set
+            {
+                foreach (string str1 in value)
+                {
+                    string[] split1 = str1.Split('-');
+                    string[] split2 = split1[0].Split(' ');
+                    // split 2
+                    int index = int.Parse(split2[0]);
+                    // contradiction
+                    if ((param_index != int.Parse(split2[1]) || corrIndexes[param_index] != int.Parse(split1[1])) &&
+                        (param_index != int.Parse(split1[1]) || corrIndexes[param_index] != int.Parse(split2[1])))
+                    { continue; }
+                    double x = set_values[param_index][index];
+                    double y = set_values[corrIndexes[param_index]][index];
+                    DataPoint p = new DataPoint(x,y);
+                    algo_points.Add(p);
+                }
+                NotifyPropertyChanged("Algo_Points");
+            }
+        }
+
         // props
         private string csv_path;
         public string CSV_Path
@@ -76,6 +99,11 @@ namespace WpfApp1.Models
                 NotifyPropertyChanged("Scatter_Points");
             }
         }
+        private List<DataPoint> algo_points;
+        public List<DataPoint> Algo_Points
+        {
+            get { return algo_points; }
+        }
         private List<DataPoint> line;
         public List<DataPoint> Line
         {
@@ -115,6 +143,7 @@ namespace WpfApp1.Models
             }
             Points = new List<DataPoint>();
             Corr_Points = new List<DataPoint>();
+            algo_points = new List<DataPoint>();
             corrIndexes = new Dictionary<int, int>();
         }
         // reset 1
