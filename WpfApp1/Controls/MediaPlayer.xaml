@@ -65,6 +65,7 @@
                     <ImageBrush ImageSource="/WpfApp1;component/Pictures/plus.jpg"/>
                 </Button.Background>
             </Button>
+           
             <Label Content="Time:" HorizontalAlignment="Left" Margin="89,20,0,0" VerticalAlignment="Top" Height="41" Width="84" Foreground="WhiteSmoke" FontSize="20" Grid.Column="1" Background="{x:Null}" FontWeight="Bold"/>
         </Grid>
     </Viewbox>

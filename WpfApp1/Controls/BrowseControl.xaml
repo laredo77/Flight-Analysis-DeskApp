@@ -21,7 +21,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Height="45" Click="openCSVButton_Click"  Margin="268,0,0,-2" Grid.RowSpan="2" FontSize="20" FontWeight="Bold">
+                <Button x:Name="openCSVButton" Content="Open CSV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Height="45" Click="openCSVButton_Click"  Margin="268,0,0,-2" Grid.RowSpan="2" FontSize="16" FontWeight="Bold">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -37,7 +37,7 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="loadDllButton" Content="Load Dll" HorizontalAlignment="Left" Margin="381,0,0,-2" Width="100" Height="45"  Grid.RowSpan="2" FontSize="20" FontWeight="Bold" Click="loadDllButton_Click" >
+                <Button x:Name="loadDllButton" Content="Load Dll" HorizontalAlignment="Left" Margin="381,0,0,-2" Width="100" Height="45"  Grid.RowSpan="2" FontSize="16" FontWeight="Bold" Click="loadDllButton_Click" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FFF3F3F3" Offset="0"/>
