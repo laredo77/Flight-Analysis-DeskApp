@@ -37,10 +37,10 @@ namespace WpfApp1.Controls
         [DllImport("kernel32.dll", EntryPoint = "FreeLibrary")]
         static extern bool FreeLibrary(int hModule);
         // methods
-        delegate IntPtr Create();
-        delegate void Run(IntPtr test, string csvfile1, string csvfile2);
-        delegate int Size(IntPtr vec);
-        delegate void GetIndex(IntPtr vec, int index, StringBuilder sb);
+        delegate void Create();
+        delegate void Run();
+        delegate int Size();
+        delegate IntPtr GetIndex();
 
         // vars
         private string exePath;
@@ -127,26 +127,28 @@ namespace WpfApp1.Controls
             if (dialog.ShowDialog() == true)
             {
                 int hModule = LoadLibrary(dialog.FileName);
+                //delegate
                 IntPtr func = GetProcAddress(hModule, "CreateAlgorithem");
                 IntPtr func2 = GetProcAddress(hModule, "RunAlgorithem");
                 IntPtr func3 = GetProcAddress(hModule, "GetVectorSize");
                 IntPtr func4 = GetProcAddress(hModule, "GetByIndex");
+
                 // func 
                 Create maker = (Create)Marshal.GetDelegateForFunctionPointer(func, typeof(Create));
                 Run runner = (Run)Marshal.GetDelegateForFunctionPointer(func2, typeof(Run));
                 Size sizer = (Size)Marshal.GetDelegateForFunctionPointer(func3, typeof(Size));
                 GetIndex indexer = (GetIndex)Marshal.GetDelegateForFunctionPointer(func4, typeof(GetIndex));
-                // test
-                IntPtr mc = maker();
-                runner(mc, "old.csv", "new.csv");
-                StringBuilder sb = new StringBuilder(512);
-                int size = sizer(mc);
 
+                // test
+                maker();
+                runner();
+                int size = sizer();
                 List<string> list = new List<string>();
+                // test
+
                 for (int i = 0; i < size; i++)
                 {
-                    indexer(mc, i, sb);
-                    string str = sb.ToString();
+                    string str = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(indexer());
                     list.Add(str);
                 }
                 if( list.Count > 0)
