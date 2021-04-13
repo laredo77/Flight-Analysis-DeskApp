@@ -59,13 +59,13 @@ namespace WpfApp1.Models
             }
         }
         // variables
-        private int isBackward;
+        private int isCurrentlyPlay;
         private int sleep;
         private string[] arrayOfLines;
         private Thread player;
         private Client client;
         private string csv_path;
-        private bool isPlayed;
+        private bool playAlreadyPressed;
         private bool isPause;
         private bool isStop;
         public string CSV_Path
@@ -97,9 +97,8 @@ namespace WpfApp1.Models
             while (Curr_Line < Num_Lines || 0 < Curr_Line)
             {
 
-                for (; isBackward == 0 && Curr_Line < Num_Lines - 1; Curr_Line++) send();
-                for (; isBackward == 1 && 0 < Curr_Line; Curr_Line--) send();
-                if (isBackward == -1) send();
+                for (; isCurrentlyPlay == 1 && Curr_Line < Num_Lines - 1; Curr_Line++) send();
+                if (isCurrentlyPlay == 0) send();
 
             }
             // disconnect
@@ -115,25 +114,27 @@ namespace WpfApp1.Models
             player.IsBackground = true;
             this.sleep = 100;
             this.CurrentSpeed = 0;
-            this.isPlayed = false;
+            this.playAlreadyPressed = false;
             this.isPause = true;
             this.isStop = true;
+            this.isCurrentlyPlay = 0;
+
         }
 
-        // methods
+        // methods for the video player
         public void play()
         {
             CurrentSpeed = 1;
-            if (isPlayed == false)
+            if (playAlreadyPressed == false)
             {
                 Curr_Line = 0;
             }
-            isPlayed = true;
+            playAlreadyPressed = true;
             isPause = false;
             isStop = false;
             if (player != null && player.IsAlive)
             {
-                isBackward = 0;
+                isCurrentlyPlay = 1;
                 sleep = 100;
 
                 return;
@@ -152,51 +153,34 @@ namespace WpfApp1.Models
                 }
             }
         }
-        // methods for the video player
         // jumps forward in the video
         public void jumpForward()
         {
-            if (isPlayed)
+            if (playAlreadyPressed)
             {
                 if (currIndex + 5 < Num_Lines)
                 {
                     Curr_Line += 5;
-                }
-                if (!isPause && !isStop)
-                {
-                    isBackward = 0;
-                }
-                else
-                {
-                    isBackward = -1;
                 }
             }
         }
         // jumps backward in the video
         public void jumpBackward()
         {
-            if (isPlayed)
+            if (playAlreadyPressed)
             {
                 if (currIndex - 5 > 0)
                 {
                     Curr_Line -= 5;
-                }
-                if (!isPause && !isStop)
-                {
-                    isBackward = 1;
-                }
-                else
-                {
-                    isBackward = -1;
                 }
             }
         }
         // pauses the video
         public void pause()
         {
-            if (isPlayed)
+            if (playAlreadyPressed)
             {
-                isBackward = -1;
+                isCurrentlyPlay = 0;
                 CurrentSpeed = 0;
                 isPause = true;
             }
@@ -204,9 +188,9 @@ namespace WpfApp1.Models
         // stops the video
         public void stop()
         {
-            if (isPlayed)
+            if (playAlreadyPressed)
             {
-                isBackward = -1;
+                isCurrentlyPlay = 0;
                 Curr_Line = 0;
                 CurrentSpeed = 0;
                 isStop = true;
@@ -215,50 +199,31 @@ namespace WpfApp1.Models
         // jumps double times backward in the video
         public void jumpForwardX2()
         {
-            if (isPlayed)
+            if (playAlreadyPressed)
             {
 
                 if (currIndex + 10 < Num_Lines)
                 {
                     Curr_Line += 10;
                 }
-                if (!isPause && !isStop)
-                {
-                    isBackward = 0;
-                }
-                else
-                {
-                    isBackward = -1;
-                }
             }
         }
         // jumps double times forward in the video
         public void jumpBackwardX2()
         {
-            if (isPlayed)
+            if (playAlreadyPressed)
             {
                 if (currIndex - 10 > 0)
                 {
                     Curr_Line -= 10;
-                }
-
-                if (!isPause && !isStop)
-                {
-                    isBackward = 1;
-                }
-                else
-                {
-                    isBackward = -1;
                 }
             }
         }
         // plays the video faster
         public void faster()
         {
-
-            if (isPlayed)
+            if (playAlreadyPressed && isCurrentlyPlay == 1)
             {
-                isBackward = 0;
                 if (sleep > 50)
                 {
                     sleep -= 10;
@@ -269,9 +234,8 @@ namespace WpfApp1.Models
         // plays the video slower
         public void slower()
         {
-            if (isPlayed)
+            if (playAlreadyPressed && isCurrentlyPlay == 1)
             {
-                isBackward = 0;
                 if (currentSpeed >= 0.2)
                 {
                     sleep += 10;
@@ -296,7 +260,7 @@ namespace WpfApp1.Models
                 Time = TimeSpan.FromSeconds(currIndex * 0.1).ToString("hh':'mm':'ss");
                 Thread.Sleep(sleep);
             }
-            catch (Exception e) { isBackward = -10; MessageBox.Show(e.Message); player.Abort(); };
+            catch (Exception e) { isCurrentlyPlay = -10; MessageBox.Show(e.Message); player.Abort(); };
         }
 
     }
