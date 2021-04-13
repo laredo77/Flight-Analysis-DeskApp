@@ -211,5 +211,8 @@
   <ItemGroup>
     <Resource Include="Pictures\backgroundSpaceNew.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\joystickNew.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

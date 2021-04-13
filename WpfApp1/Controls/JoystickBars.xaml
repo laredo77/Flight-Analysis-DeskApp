@@ -8,25 +8,10 @@
     <!--test part1-->
     <Viewbox Margin="10">
         <Grid Width="230">
-            <Ellipse x:Name="Cricle" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Margin="46,4,0,0">
-                <Ellipse.Fill>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#FF262525"/>
-                    </RadialGradientBrush>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Ellipse x:Name="KnobBase" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" Margin="96,54,0,0">
-                <Ellipse.Fill>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#FFE6D5AE" />
-                    </RadialGradientBrush>
-                </Ellipse.Fill>
-                <Ellipse.RenderTransform>
-                    <TransformGroup>
-                        <TranslateTransform  X="{Binding VM_Aileron}" Y="{Binding VM_Elevator}" />
-                    </TransformGroup>
-                </Ellipse.RenderTransform>
-            </Ellipse>
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
+     
             <!--test part2-->
             <Rectangle x:Name="RudderRect" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Margin="46,168,0,0" StrokeThickness="1" Stroke="Black">
                 <Rectangle.Fill>
@@ -44,6 +29,7 @@
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform X="{Binding VM_Rudder}" />
+
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
@@ -75,6 +61,32 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
+            <Border HorizontalAlignment="left" Height="153" VerticalAlignment="Top" Width="163" RenderTransformOrigin="0.5,0.5" Margin="39,2,0,0" CornerRadius="400 400 400 400" >
+                <Border.Background>
+                    <ImageBrush ImageSource="/WpfApp1;component/Pictures/joystickNew.png" Stretch="UniformToFill"/>
+                </Border.Background>
+            </Border>
+            <Ellipse x:Name="KnobBase_Copy" HorizontalAlignment="Left" Height="79" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.5,0.5" Margin="83,40,0,0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Black" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse x:Name="KnobBase" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" Margin="96,54,0,0">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF565555"/>
+                        <GradientStop Color="#FFB7B7B7" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform  X="{Binding VM_Aileron}" Y="{Binding VM_Elevator}" />
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
         </Grid>
     </Viewbox>
 </UserControl>
