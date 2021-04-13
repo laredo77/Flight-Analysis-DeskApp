@@ -199,13 +199,16 @@
     <Resource Include="Pictures\minus.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Pictures\backgroundSpace.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Pictures\spaceProgressBar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\newBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\backgroundSpaceNew.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

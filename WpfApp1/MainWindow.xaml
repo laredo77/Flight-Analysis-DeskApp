@@ -9,7 +9,7 @@
         Title="MainWindow" Height="629" Width="654.666" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Pictures/backgroundSpace.jpg"/>
+            <ImageBrush ImageSource="Pictures/backgroundSpaceNew.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="444*"/>
