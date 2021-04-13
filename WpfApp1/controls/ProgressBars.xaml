@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApp1.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" Width="618" Loaded="UserControl_Loaded">
+             d:DesignHeight="450" Width="618">
     <Grid>
         <Viewbox Margin="0,11,-4,0">
             <Grid Width="367" Height="323">
