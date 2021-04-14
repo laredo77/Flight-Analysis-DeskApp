@@ -17,8 +17,33 @@
   </Comment>
   <Class Name="WpfApp1.Controls.BrowseControl" BaseTypeListCollapsed="true">
     <Position X="18" Y="8.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="WpfApp1.Controls.BrowseControl.Create" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\BrowseControl.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="WpfApp1.Controls.BrowseControl.Run" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\BrowseControl.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="WpfApp1.Controls.BrowseControl.Size" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\BrowseControl.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="WpfApp1.Controls.BrowseControl.GetIndex" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controls\BrowseControl.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAgAAAIAAEABA=</HashCode>
+      <HashCode>BAAAAAAEAAAAAgAAQAAAAAAAAAAAAAAAgQAAYAAEABA=</HashCode>
       <FileName>Controls\BrowseControl.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -70,7 +95,7 @@
   <Class Name="WpfApp1.Controls.MediaPlayer" BaseTypeListCollapsed="true">
     <Position X="16" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAQAACAAAAAAAAAAABSAAAABAAAQgAAAABAAIAAAA=</HashCode>
+      <HashCode>AAAAQAACAAAAAAAABAADSAAAABAAAQgAAAAAAAIAAAA=</HashCode>
       <FileName>Controls\MediaPlayer.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -118,7 +143,7 @@
   <Class Name="WpfApp1.Models.GraphModel">
     <Position X="7" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAQECkAADCgYAAAAAASAACgAEAAAgAAAAAIAAlAFA=</HashCode>
+      <HashCode>IAEAQEC0AADCkYAAAAAASAACgAEAAAgAAAAAIAAlAFA=</HashCode>
       <FileName>Models\GraphModel.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -137,16 +162,19 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Delegate Name="WpfApp1.Models.MediaPlayerModel.MediaPlayerModelEventHandler" Collapsed="true">
+      <Delegate Name="WpfApp1.Models.MediaPlayerModel.MediaPlayerModelEventHandler">
         <TypeIdentifier>
           <NewMemberFileName>Models\MediaPlayerModel.cs</NewMemberFileName>
         </TypeIdentifier>
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AABZQgAhAAAAQIFAAAAAAAAAkAAgAJhBAAAAFAAAIQA=</HashCode>
+      <HashCode>BAAZAAIgwAAAUYFAQAAAAAAIkACwAJhBAAAAFAgAIQA=</HashCode>
       <FileName>Models\MediaPlayerModel.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="client" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WpfApp1.Models.ProgressBarModel">
@@ -170,7 +198,7 @@
   <Class Name="WpfApp1.ViewModels.GraphVM">
     <Position X="6" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAAQAAIAAAAAAQCIQCAAAAAAAAIAAAggIAAg=</HashCode>
+      <HashCode>ACAAAAAEAAQAAIAAAAAAQCIQCAAAAAAAAIgAAggIAAg=</HashCode>
       <FileName>ViewModels\GraphVM.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -180,7 +208,7 @@
   <Class Name="WpfApp1.ViewModels.JoystickBarsVM">
     <Position X="10.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAgAAAQAAAAAAAAAABBAAAAAAIAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAQAAAAAAAAAABBAAAAAAIACA=</HashCode>
       <FileName>ViewModels\JoystickBarsVM.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -193,14 +221,14 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Delegate Name="WpfApp1.ViewModels.MediaPlayerVM.MediaPlayerModelEventHandler" Collapsed="true">
+      <Delegate Name="WpfApp1.ViewModels.MediaPlayerVM.MediaPlayerModelEventHandler">
         <TypeIdentifier>
           <NewMemberFileName>ViewModels\MediaPlayerVM.cs</NewMemberFileName>
         </TypeIdentifier>
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAARAgAAAAAAABAAAIAAAIAAAQKgAAACAAAAAgAIIAA=</HashCode>
+      <HashCode>BAAQAAAAAAAAEQAAQAAAAIAAAQKwAAACAAAAAggIIAA=</HashCode>
       <FileName>ViewModels\MediaPlayerVM.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -244,6 +272,14 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAACQAABAAEAAA=</HashCode>
       <FileName>Helpers\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp1.MainWindow">
+    <Position X="23" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
