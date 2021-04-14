@@ -9,7 +9,7 @@ This app was written with the MVVM code architecture.
 
 ### Installation
 In order to use the application, you will need to load it using framework support C# code - our recommendation [Visual Studio 2019](https://visualstudio.microsoft.com/vs/).
-In addition, to display the flight, the user must have the Flightgear program installed on their computer ([Download](https://www.flightgear.org/download/),  [Steup tutorial](https://wiki.flightgear.org/New_to_FlightGear)) and csv files that contain the flight data. Also, the user should have the XML file which defines the functionality of the CSV file, translates and connects between the code and the flight simulator.
+In addition, to display the flight, the user must have the Flightgear program installed on their computer ([Download](https://www.flightgear.org/download/),  [Setup tutorial](https://wiki.flightgear.org/New_to_FlightGear)) and csv files that contain the flight data. Also, the user should have the XML file which defines the functionality of the CSV file, translates and connects between the code and the flight simulator.
 
 ### Usage
 ![Application](https://user-images.githubusercontent.com/60240620/114538320-ed2c6a00-9c5b-11eb-8d2d-6a48ddb99fd0.jpeg)
