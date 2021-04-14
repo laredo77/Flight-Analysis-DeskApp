@@ -162,14 +162,11 @@ namespace WpfApp1.Controls
                     {
                         string str = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(circle_indexer());
                         circle_list.Add(str);
-                        Console.WriteLine(str);
                     }
                 }
 
                 if ( list.Count > 0)
                     (Application.Current as App).Graph_VM.add_Algo_Detect(list);
-                else if(circle_list.Count > 0)
-                    (Application.Current as App).Graph_VM.add_Algo_Detect(circle_list);
             }
         }
         // Run FG

@@ -41,38 +41,6 @@ namespace WpfApp1.Models
             }
         }
 
-        // Display min circle
-        //public List<string> Display_MinCircle
-        //{
-        //    set
-        //    {
-        //        foreach (string str1 in value)
-        //        {
-        //            string[] split1 = str1.Split('-');
-        //            string[] split2 = split1[0].Split(' ');
-        //            // split 2
-        //            int index = int.Parse(split2[0]);
-        //            int center_x = int.Parse(split2[1].Split('.')[0]);
-        //            int center_y = int.Parse(split2[2].Split('.')[0]);
-        //            int radius = int.Parse(split2[3].Split('.')[0]);
-        //            // contradiction
-        //            if ((param_index != int.Parse(split2[1]) || corrIndexes[param_index] != int.Parse(split1[1])) &&
-        //                (param_index != int.Parse(split1[1]) || corrIndexes[param_index] != int.Parse(split2[1])))
-        //            { continue; }
-        //            double x = set_values[param_index][index];
-        //            double y = set_values[corrIndexes[param_index]][index];
-
-        //            DataPoint p = new DataPoint(x, y);
-        //            center_points.Add(p);
-        //            c_radius.Add(radius);
-        //        }
-        //        NotifyPropertyChanged("Center_Point");
-        //        NotifyPropertyChanged("Radius");
-        //    }
-        //}
-
-
-
         // props
         private string csv_path;
         public string CSV_Path
@@ -136,19 +104,6 @@ namespace WpfApp1.Models
         {
             get { return algo_points; }
         }
-
-        //private List<DataPoint> center_points;
-        //public List<DataPoint> Center_Points
-        //{
-        //    get { return center_points; }
-        //}
-
-        //private List<double> c_radius;
-        //public List<double> Radius
-        //{
-        //    get { return c_radius; }
-        //}
-
 
         private List<DataPoint> line;
         public List<DataPoint> Line
