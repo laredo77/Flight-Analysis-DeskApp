@@ -36,6 +36,8 @@ namespace WpfApp1.ViewModels
         public void add_CSV_Path(string path) => model.CSV_Path = path;
         // add algorithm detection
         public void add_Algo_Detect(List<string> data) => model.Algo_Detect = data;
+        // display min circle
+        //public void add_min_circle(List<string> data) => model.Display_MinCircle = data;
         // points
         public List<DataPoint> VM_Points { get { return model.Points; }  }
         // Algo Points

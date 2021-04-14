@@ -132,28 +132,44 @@ namespace WpfApp1.Controls
                 IntPtr func2 = GetProcAddress(hModule, "RunAlgorithem");
                 IntPtr func3 = GetProcAddress(hModule, "GetVectorSize");
                 IntPtr func4 = GetProcAddress(hModule, "GetByIndex");
+                IntPtr func5 = GetProcAddress(hModule, "GetDataVectorSize"); // Mustly use for minCircle alg
+                IntPtr func6 = GetProcAddress(hModule, "GetDataByIndex");
 
                 // func 
                 Create maker = (Create)Marshal.GetDelegateForFunctionPointer(func, typeof(Create));
                 Run runner = (Run)Marshal.GetDelegateForFunctionPointer(func2, typeof(Run));
                 Size sizer = (Size)Marshal.GetDelegateForFunctionPointer(func3, typeof(Size));
                 GetIndex indexer = (GetIndex)Marshal.GetDelegateForFunctionPointer(func4, typeof(GetIndex));
-
+                Size circle_sizer = (Size)Marshal.GetDelegateForFunctionPointer(func5, typeof(Size));
+                GetIndex circle_indexer = (GetIndex)Marshal.GetDelegateForFunctionPointer(func6, typeof(GetIndex));
                 // test
                 maker();
                 runner();
                 int size = sizer();
+                int circle_size = circle_sizer();
                 List<string> list = new List<string>();
+                List<string> circle_list = new List<string>();
                 // test
-
                 for (int i = 0; i < size; i++)
                 {
                     string str = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(indexer());
                     list.Add(str);
                 }
-                if( list.Count > 0)
-                    (Application.Current as App).Graph_VM.add_Algo_Detect(list);
 
+                if (circle_size > 0)
+                {
+                    for (int i = 0; i < circle_size; i++)
+                    {
+                        string str = System.Runtime.InteropServices.Marshal.PtrToStringAnsi(circle_indexer());
+                        circle_list.Add(str);
+                        Console.WriteLine(str);
+                    }
+                }
+
+                if ( list.Count > 0)
+                    (Application.Current as App).Graph_VM.add_Algo_Detect(list);
+                else if(circle_list.Count > 0)
+                    (Application.Current as App).Graph_VM.add_Algo_Detect(circle_list);
             }
         }
         // Run FG
