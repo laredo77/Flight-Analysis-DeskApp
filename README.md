@@ -32,8 +32,8 @@ The first Algorithm provided, is linear regression-based. The regression line be
 The second algorithm is based on Welzl's algorithm. This algorithm determines the radius of a cirlce as the norm and detects anomalies out of range.
 
 ### Dictionary
-Folders of the project :
-Controls - Views
+Folders of the project : \n
+Controls - Views \n
 Helpers  
 Models 
 Pictures
