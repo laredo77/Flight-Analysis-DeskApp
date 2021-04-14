@@ -18,7 +18,7 @@ To run the flight on the simulator, please open the application and follow the s
 > 1. Click on the 'Open CSV' button. A dialog will immediately pop up in which you can select and upload the file of the flight data - it has to be a csv file.
 > 2. Click on the 'Open FlightGear' button. By providing the path to Flightgear execute file, the application will collect the data; necessary for the upcoming process.
 > 3. Click on the 'Run FlightGear' button - the app will automatically connect you to the simulator server using TCP internet protocol.
-> 4. Once the flight simulator is set, you can click on the 'Play' button and start your investigation of your flight.
+> 4. Once the flight simulator is set, you can double click on the 'Play' button and start your investigation of your flight.
 > 5. In order to use DLL file, click on Load DLL button.
 > You can also see our video:          in which we explain about the app.
 
