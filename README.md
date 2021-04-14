@@ -33,12 +33,12 @@ The second algorithm is based on Welzl's algorithm. This algorithm determines th
 
 ### Dictionary
 Folders of the project 
-> Controls - Views 
-> Helpers  
-> Models 
-> Pictures
-> Properties
-> ViewModels
+> Controls - Views  
+> Helpers   
+> Models  
+> Pictures  
+> Properties  
+> ViewModels  
 
 ### Technical explanation
 The app was written in C# language and was built using WPF tool. The project was written according to the MVVM code architecture, which separates the functionality of the data presentation from the processing and calculation of the data. The ViewModel link between them is to provide safety and separation of responsibilities.
